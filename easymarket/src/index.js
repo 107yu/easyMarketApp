@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from "mobx-react"
+import  store from "./store/index"
 import IndexPage from "./views/indexPage"
 
-ReactDOM.render(<IndexPage />, document.getElementById('root'));
+ReactDOM.render(<Provider {...store}>
+    <IndexPage />
+</Provider>, document.getElementById('root'));
 
