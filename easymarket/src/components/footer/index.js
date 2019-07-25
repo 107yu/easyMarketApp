@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom'
 
 class Footer extends React.Component {
     render() {
-        console.log(this.props.routes)
         return <ul className='footer'>
             {
                 this.props.routes && this.props.routes.map((item, index) => {
