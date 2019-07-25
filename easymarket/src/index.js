@@ -8,7 +8,7 @@ import  store from "./store/index"
 import IndexPage from "./views/indexPage"
 //样式
 import "./index.css"
-import 'antd-mobile/dist/antd-mobile.css';
+// import 'antd-mobile/dist/antd-mobile.css';
 ReactDOM.render(<Provider {...store}>
     <IndexPage />
 </Provider>, document.getElementById('root'));
