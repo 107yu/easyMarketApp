@@ -12,7 +12,11 @@
   display: flex;
   line-height: 0.7rem;
   background: #ccc;
-  justify-content: space-between;
+}
+
+.footer li {
+  flex: 1;
+  text-align: center;
 }
 
 .footer a {

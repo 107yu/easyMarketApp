@@ -5,38 +5,28 @@ import { NavLink } from 'react-router-dom'
 
 class Footer extends React.Component {
     render() {
-        return <div className='footer'>
-            <ul>
+        return <ul className='footer'>
                 <li>
-                    <i className='iconfont &#xe663'></i>
+                    <i></i>
                     <NavLink to='page'>首页</NavLink>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <i></i>
                     <NavLink to='special'>专题</NavLink>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <i></i>
                     <NavLink to='classify'>分类</NavLink>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <i></i>
                     <NavLink to='shopping'>购物车</NavLink>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <i></i>
                     <NavLink to='my'>我的</NavLink>
                 </li>
-            </ul>
-        </div>
+        </ul>
     }
 }
 
