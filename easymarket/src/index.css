@@ -15,3 +15,7 @@ input{
 li{
     list-style: none;
 }
+a {
+    color: #000;
+    -webkit-tap-highlight-color: transparent;
+  }
