@@ -1,33 +1,40 @@
 import axios from 'axios'
-import { getToken } from "../utils/index";
-// create an axios instance
-const service = axios.create({
-  baseURL: 'https://exam.jasonandjay.com',
-  // withCredentials: true, // 跨域请求时发送 cookies
+const instance = axios.create({
+  baseURL: 'http://127.0.0.1:8888',
+  // withCredentials: true, 
   timeout: 5000 // request timeout
 })
-// request interceptor
-service.interceptors.request.use(
-  config => {
-    // 判断是否有登陆态
-    if (getToken()) {
-      // 让每个请求携带authorization
-      config.headers['authorization'] = getToken()
-    }
-    return config
-  },
-  error => {
-    return Promise.reject(error)
+const getNewHeaders = () =>{
+  return {'x-nideshop-token': window.localStorage.getItem('token')}
+}
+// instance.interceptors.response.use(
+//   response => response.data,
+//   error => {
+//     return Promise.reject(error)
+//   }
+// )
+class service {
+  static get (url, params = {}) {
+    return new Promise((resolve, reject) => {
+      instance.get(url, { params, headers: getNewHeaders() },).then(({ data }) => {
+        if(data.errno === 0){
+          resolve(data.data)
+        }else{
+          resolve(data)
+        }
+      }).catch((err) => {
+        reject({ err: JSON.stringify(err) })
+      })
+    })
   }
-)
-
-// response interceptor
-service.interceptors.response.use(
-  response => response.data,
-  error => {
-    return Promise.reject(error)
-    // message.error(error.message);
+  static post (url, params = {}) {
+    return new Promise((resolve, reject) => {
+      instance.post(url, { ...params },{headers: getNewHeaders()}).then(({ data }) => {
+        resolve(data)
+      }).catch((err) => {
+        reject({ err: JSON.stringify(err) })
+      })
+    })
   }
-)
-
+}
 export default service
