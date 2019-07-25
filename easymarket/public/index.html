@@ -19,7 +19,30 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>易购</title>
+      <script>
+      // 计算rem
+      var fun = function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+            //这里是假设在750px宽度设计稿的情况下，1rem = 100px；
+            //可以根据实际需要修改
+            docEl.style.fontSize = (clientWidth / 750) * 100 + 'px';
+          };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      }
+      fun(document, window);
+    </script> 
+    <!--<style>
+      html{
+        font-size: calc(100/750*100vw);
+      }
+    </style>-->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
