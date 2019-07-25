@@ -10,7 +10,8 @@ import IndexPage from "./views/indexPage"
 import "./index.css"
 // import 'antd-mobile/dist/antd-mobile.css';
 ReactDOM.render(<Provider {...store}>
-    <IndexPage />
+        <IndexPage />
+
     </Provider>, 
 document.getElementById('root'));
 
