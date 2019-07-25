@@ -1,11 +1,11 @@
 import React from 'react';
 
-class Page extends React.Component{
+class Login extends React.Component{
     render(){
         return <div>
-            首页
+            登录
         </div>
     }
 }
 
-export default Page;
+export default Login;
