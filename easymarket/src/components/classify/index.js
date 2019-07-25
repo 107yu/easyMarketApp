@@ -12,24 +12,24 @@ class CategoContent extends Component {
         super(props)
     }
     render() {
-        let data=this.props.classify.categoryList[this.props.ind]
+        let data=this.props.classify.categoryChild
         return (
             <div className="Catego_Content">
-                <div className="Catego_banner" style={{backgroundImage:`url(${data&&data.banner_url})`,backgroundSize:"100%"}}>
-                    {data&&data.front_desc}
-                </div>
-                <div className="Catego_title">
-                    <div>
+                 <div className="Catego_banner" style={{backgroundImage:`url(${data&&data.banner_url})`,backgroundSize:"100%"}}>
+                     {data&&data.front_desc}
+                 </div>
+                 <div className="Catego_title">
+                     <div>
+                         <div className="line"></div>
+                         <div>{data&&data.name}</div>
                         <div className="line"></div>
-                        <div>{data&&data.name}</div>
-                        <div className="line"></div>
-                    </div>
-                </div>
-                <div className="sub_content">
-                    {data&&data.subCategoryList&&data.subCategoryList.map((item,index)=>{
-                        return <CategoItem key={item.id} item={item}></CategoItem>
-                    })}
-                </div>
+                     </div>
+                 </div>
+                 <div className="sub_content">
+                    {data&&data.subCategoryList.map((item,index)=>{
+                        return <CategoItem key={item.id} item={item} id={data.id}></CategoItem>
+                     })}
+                 </div>
             </div>
         )
     }

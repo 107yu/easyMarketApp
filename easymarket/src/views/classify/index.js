@@ -15,12 +15,15 @@ class Classify extends React.Component{
     componentDidMount(){
         //获取分类页数据
         this.props.classify.getClassify_data()
+        this.props.classify.getClassify_Nav(1005000)
+        
     }
-    changeStyle(ind){
+    changeStyle(ind,id){
         //点击左侧菜单切换样式
         this.setState({
             ind:ind
         })
+        this.props.classify.getClassify_Nav(id)
     }
     render(){
         //获取到分类页初始化数据
@@ -32,7 +35,7 @@ class Classify extends React.Component{
             <div className="classify_wrapper">
                 <ul className="classify_left">
                     {data&&data.map((item,index)=>{
-                    return <li key={item.id} onClick={()=>{this.changeStyle(index)}}
+                    return <li key={item.id} onClick={()=>{this.changeStyle(index,item.id)}}
                     className={index===this.state.ind?"active":""}>{item.name}</li>
                     })}
                 </ul>
