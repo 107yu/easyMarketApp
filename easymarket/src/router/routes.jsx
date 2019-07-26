@@ -7,6 +7,7 @@ import Classify from '../views/pages/classify'
 import Shopping from '../views/pages/shopping'
 import My from '../views/pages/my'
 import TopicalDetail from "../views/pages/special/topicalDetail"
+import TopicalComment from "../views/pages/special/allRelated"
 const routes = [{
     path: '/login',
     component: Login
@@ -42,6 +43,9 @@ const routes = [{
 },{
     path:'/topicalDetail/:id',
     component:TopicalDetail
+},{
+    path:'/topicalComment',
+    component:TopicalComment
 }]
 
 export default routes

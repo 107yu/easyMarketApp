@@ -1,0 +1,66 @@
+.topicItemTitle{
+    padding: .1rem;
+    padding-top: .2rem;
+    font-size: .3rem;
+    line-height: .4rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: .7rem;
+}
+.topicItemSubtitle{
+    padding: .1rem .2rem;
+    font-size: .26rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: gray;
+    height: .4rem;
+}
+.topicItemPrice{
+    padding: .1rem;
+    padding-bottom: .2rem;
+    font-size: .28rem;
+    text-align: center;
+    color: red;
+    line-height: .4rem;
+    height: .7rem;
+}
+.topical_detail_related{
+    background: #fff;
+}
+.topical_detail_related li{
+    border-top:1px solid #aaa;
+    padding: .2rem;
+}
+.topical_detail_related li p{
+    padding: .05rem 0;
+    display: flex;
+    justify-content:space-between;
+}
+.guestbook{
+    width: 100%;
+    padding: .2rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.topic_guestbook_header{
+    display: flex;
+    padding: .2rem 0;
+    justify-content: space-between;
+}
+.topical_guestbook_more{
+    width: 100%;
+    text-align: center;
+}
+.comment_list{
+    background: #fff;
+    padding: 0 .1rem;
+}
+.comment_list li{
+    border-top: 1px solid #aaa;
+    padding: 0 .1rem;
+}

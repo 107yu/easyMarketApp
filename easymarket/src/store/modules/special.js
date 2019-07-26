@@ -5,6 +5,7 @@ export default class Special{
     @observable detail={};      //专题的详情
     @observable relateds=[];    //与本专题相关的专题
     @observable comments=[];    //本专题或商品的评论
+    @observable Allcomments=[];    //本专题或商品的评论
     //获取专题列表
     @action getTopicData=  (info)=>{
         getTopicList(info).then(res => {
@@ -29,6 +30,12 @@ export default class Special{
     @action topicalComment=(payload)=>{
         getComment(payload).then(res=>{
             this.comments=res.data;
+            // console.log(res)
+        })
+    }
+    @action topicalAllComment=(payload)=>{
+        getComment(payload).then(res=>{
+            this.Allcomments=res.data;
             console.log(res)
         })
     }
