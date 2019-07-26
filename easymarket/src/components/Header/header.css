@@ -5,7 +5,7 @@
   display: flex;
 }
 
-.header > span {
+.header > span, .header > a {
   width: .6rem;
   height: .8rem;
   text-align: center;

@@ -23,4 +23,3 @@ class CategoItem extends Component {
     }
 }
 export default  withRouter(CategoItem)
-

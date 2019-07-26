@@ -15,11 +15,13 @@ import "./categoItem.scss"
     componentDidMount(){
         let id=window.location.search.slice(1).split("=")[1];
         this.props.classify.getClassify_Nav(id)
+        this.props.classify.getproduct_Info(1008002)
     }
     changeCon(id,ind){
         this.setState({
             ind:ind
         })
+        console.log(id)
         this.props.classify.getproduct_Info(id)
     }
     render() {
@@ -29,7 +31,6 @@ import "./categoItem.scss"
                 <div className="CategoItem_nav">
                     <ul className="CategoItem_wrap">
                         {this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList.map((item,index)=>{
-                            {console.log(item)}
                             return <li className={index===this.state.ind?"active":""} key={item.id} onClick={()=>{this.changeCon(item.id,index)}}>{item.name}</li>
                         })}
                     </ul>
@@ -40,7 +41,6 @@ import "./categoItem.scss"
                         <div className="CategoItem_sub_title">{this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList[this.state.ind].front_name}</div>
                     </div>
                     <div className="CategoItem_con">
-                        {console.log(this.props.classify.ProductInfo)}
                         {this.props.classify.ProductInfo&&this.props.classify.ProductInfo.map((item,index)=>{
                             return <ProductInfo key={item.id} item={item}></ProductInfo>
                         })}

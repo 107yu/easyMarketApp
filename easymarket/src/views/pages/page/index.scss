@@ -1,0 +1,129 @@
+.page{
+    width: 100%;
+    height: 100%;
+}
+
+.tab{
+    width: 100%;
+    height: 0.9rem;
+    display: flex;
+    margin-top: 0.2rem;
+    justify-content: space-between;
+    background: #FFF;
+    a{
+        flex: 1;
+        text-align: center;
+        color: #000;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    i{
+        display: block;
+        font-size: 0.4rem;
+    }
+    .active{
+        color: rgb(68,166,243);
+    }
+}
+
+.list{
+    width: 100%;
+    margin-top: 0.6rem;
+    h5{
+        text-align: center;
+        font-weight:1000;
+    }
+}
+
+.img{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+    p{
+        width: 3.7rem;
+        height: 2.6rem;
+        padding-left: 0.06rem;
+        img{
+           width: 3.7rem;
+           height: 2.6rem;
+        }
+    }
+}
+
+.list_add{
+    width: 100%;
+    margin-top: 0.6rem;
+    h5{
+        text-align: center;
+        font-weight:1000;
+    }
+}
+
+.newGoodsWrap{
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    .newGoodsItem{
+        width: 50%;
+        height: 4rem;
+        img{
+            height: 70%;
+            width: 100%;
+        }
+        .newGoodsName{
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .3rem;
+        }
+        .newGoodsPrice{
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .3rem;
+            color: darkred;
+        }
+    }
+}
+
+.list_egg{
+    width: 100%;
+    margin-top: 0.6rem;
+    h5{
+        text-align: center;
+        font-weight:1000;
+    }
+}
+
+.newGoodsWrap{
+    width: 100%;
+    padding: 0 .2rem;
+    min-height: 200px;
+    .hotGoodsItem{
+        height: 3rem;
+        position: relative;
+        padding: 0.1rem 0;
+        display: flex;
+        img{
+                width: auto;
+                height: 100%;
+        }
+        .hotGoodsInfos{
+                flex: 1 1;
+                padding: 0.5rem 0;
+                .hotGoodsName{
+                    font-size: .32rem;
+                }
+                .hotGoodsInfo{
+                    color: darkgray;
+                    font-size: .28rem;
+                }
+                .hotGoodsPrice{
+                        color: darkred;
+                        font-size: .3rem;
+                }
+        }
+    }
+}

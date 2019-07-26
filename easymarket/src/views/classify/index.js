@@ -23,6 +23,7 @@ class Classify extends React.Component{
         this.setState({
             ind:ind
         })
+
         this.props.classify.getClassify_Nav(id)
     }
     render(){
@@ -35,6 +36,7 @@ class Classify extends React.Component{
             <div className="classify_wrapper">
                 <ul className="classify_left">
                     {data&&data.map((item,index)=>{
+                        console.log(item,"item")
                     return <li key={item.id} onClick={()=>{this.changeStyle(index,item.id)}}
                     className={index===this.state.ind?"active":""}>{item.name}</li>
                     })}

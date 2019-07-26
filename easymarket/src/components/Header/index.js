@@ -9,7 +9,7 @@ export default class Header extends Component {
         let {title,flag}=this.props
         return (
             <div className="header">
-                <span className={flag?"show":""}>&lt;</span>
+                <a href="/pages/classify"  className={flag?"show":""}>&lt;</a>
                 <p>{title}</p>
                 <span></span>
             </div>

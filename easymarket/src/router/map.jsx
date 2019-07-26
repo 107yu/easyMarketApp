@@ -6,7 +6,7 @@ class RouterMap extends React.Component {
     render() {
         const { routes } = this.props
         const defaultRouter = <Route key={0} path='/' render={() => {
-            return <Redirect to='/page' />
+            return <Redirect to='/pages/page' />
         }} exact />
         return <Switch>
             {
@@ -15,7 +15,7 @@ class RouterMap extends React.Component {
                     if (Component) {
                         return <Route key={index} path={item.path} render={(config) => {
                             return <Component routes={routes} {...config} />
-                        }} />
+                        }}/>
                     }
                     return true;
                 }).concat([defaultRouter])

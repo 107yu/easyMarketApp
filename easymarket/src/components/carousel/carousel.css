@@ -1,0 +1,20 @@
+.ant-carousel{
+  width:100%;
+  height: 190px;
+}
+.ant-carousel img{
+  width: 100%;
+  height: 190px;
+}
+
+.slick-track{
+  top:-2.3rem;
+}
+
+.carouselchild dt img{
+  width:100%;
+  height: 170px;
+}
+.left ul li{
+	height:40px;
+}

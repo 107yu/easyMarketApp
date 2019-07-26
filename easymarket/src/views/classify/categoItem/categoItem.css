@@ -24,21 +24,23 @@
 
 .catego_wrapper .CategoItem_nav li.active {
   border-bottom: .2rem solid skyblue;
-  color: skyblue;
+  color: #108ee9;
 }
 
 .catego_wrapper .CategoItem_content {
-  background: #eee;
+  background: #ededed;
   flex: 1;
   overflow-y: scroll;
-  padding: .1rem 0;
+  padding: .2rem 0;
 }
 
 .catego_wrapper .CategoItem_content .CategoItem_detail {
   height: .6rem;
+  line-height: .6rem;
   width: 100%;
   text-align: center;
   font-size: .3rem;
+  color: #000;
 }
 
 .catego_wrapper .CategoItem_content .CategoItem_sub_title {
@@ -51,6 +53,5 @@
 .catego_wrapper .CategoItem_content .CategoItem_con {
   width: 100%;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
 }

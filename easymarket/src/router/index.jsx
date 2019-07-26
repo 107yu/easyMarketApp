@@ -7,9 +7,7 @@ import Routes from "./routes.jsx"
 class RouterView extends React.Component {
     render() {
         const routes = this.props.routes ? this.props.routes : Routes
-        return <div>
-            <RouterMap routes={routes} />
-        </div>
+        return <RouterMap routes={routes} />
     }
 }
 
