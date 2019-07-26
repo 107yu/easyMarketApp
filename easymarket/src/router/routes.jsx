@@ -1,11 +1,7 @@
 import Login from '../views/login'
 import Pages from '../views/indexPage'
 
-import Page from '../views/pages/page'
-import Special from '../views/pages/special'
-import Classify from '../views/pages/classify'
-import Shopping from '../views/pages/shopping'
-import My from '../views/pages/my'
+
 
 // import Living from '../views/pages/page/living'
 
@@ -14,6 +10,14 @@ import TopicalDetail from "../views/pages/special/topicalDetail"
 
 import TopicalComment from "../views/pages/special/allRelated"
 import TopicCommentWrite from "../views/pages/special/topicCommentWrite"
+import Page from '../views/pages/page'
+import Special from '../views/pages/special'
+import Classify from '../views/classify/index'
+import Shopping from '../views/pages/shopping'
+import My from '../views/pages/my'
+import TopicalDetail from "../views/pages/special/topicalDetail"
+import Catego from "../views/classify/categoItem/categoItem"
+import ProductDetail from "../views/classify/productDetail/productDetail"
 const routes = [{
     path: '/login',
     component: Login
@@ -55,6 +59,13 @@ const routes = [{
 },{
     path:'/topicCommentWrite',
     component:TopicCommentWrite
+},{
+    path:'/catego_detail',
+    component:Catego
+},
+{
+    path:'/productDetail',
+    component:ProductDetail
 }]
 
 export default routes

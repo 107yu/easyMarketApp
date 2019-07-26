@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 import {getTopicList, getTopicDetail,getTopicRelated,getComment,addComment} from "../../services/index"
+=======
+import {getTopicList, getTopicDetail,getTopicRelated,getComment} from "../../services/index"
+>>>>>>> klf
 import {observable,action} from "mobx"
 export default class Special{
     @observable topicList=[]; //专题列表
     @observable detail={};      //专题的详情
     @observable relateds=[];    //与本专题相关的专题
     @observable comments=[];    //本专题或商品的评论
+<<<<<<< HEAD
     @observable Allcomments=[];    //本专题或商品的评论
     @observable commentStatus=-1;    //添加评论是否成功----状态
+=======
+>>>>>>> klf
     //获取专题列表
     @action getTopicData=  (info)=>{
         getTopicList(info).then(res => {
@@ -31,6 +38,7 @@ export default class Special{
     @action topicalComment=(payload)=>{
         getComment(payload).then(res=>{
             this.comments=res.data;
+<<<<<<< HEAD
             // console.log(res)
         })
     }
@@ -49,3 +57,9 @@ export default class Special{
         }
     }
 }
+=======
+            console.log(res)
+        })
+    }
+} 
+>>>>>>> klf
