@@ -7,6 +7,8 @@ import Classify from '../views/pages/classify'
 import Shopping from '../views/pages/shopping'
 import My from '../views/pages/my'
 
+// import Living from '../views/pages/page/living'
+
 const routes = [{
     path: '/login',
     component: Login
@@ -42,3 +44,29 @@ const routes = [{
 }]
 
 export default routes
+
+
+// import Living from '../views/pages/page/living'
+// import Hutch from '../views/pages/page/hutch'
+// import Clothing from '../views/pages/page/clothing'
+// import Incliinstion from '../views/pages/page/inclination'
+// import Accessories from '../views/pages/page/accessories'
+
+
+// ,
+//         children:[{
+//             path:'/pages/page/living',
+//             component:Living
+//         },{
+//             path:'/pages/page/hutch',
+//             component:Hutch
+//         },{
+//             path:'/pages/page/clothing',
+//             component:Clothing
+//         },{
+//             path:'/pages/page/inclination',
+//             component:Incliinstion
+//         },{
+//             path:'/pages/page/accessories',
+//             component:Accessories
+//         }]
