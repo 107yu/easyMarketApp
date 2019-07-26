@@ -26,13 +26,11 @@ class Login extends React.Component{
       }
      this.props.login.sendLogin(info)
     }
-    componentDidUpdate(){
+    render(){
         if(this.props.login.isLogin===0){
             this.props.history.push("/pages/page")
+            return null;
         }
-    }
-    render(){
-        console.log(this.props.login.isLogin)
         return <div className="login_page">
             <div className="login_logo">
                 <img src="http://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt=""/>

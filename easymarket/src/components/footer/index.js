@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss'
+import './index.css'
 import { NavLink } from 'react-router-dom'
 class Footer extends React.Component {
     render() {
