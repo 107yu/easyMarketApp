@@ -15,7 +15,6 @@ import Special from '../views/pages/special'
 import Classify from '../views/classify/index'
 import Shopping from '../views/pages/shopping'
 import My from '../views/pages/my'
-import TopicalDetail from "../views/pages/special/topicalDetail"
 import Catego from "../views/classify/categoItem/categoItem"
 import ProductDetail from "../views/classify/productDetail/productDetail"
 const routes = [{
