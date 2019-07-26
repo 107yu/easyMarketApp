@@ -3,3 +3,4 @@ import request from '../utils/request';
 export function getIdentity() {
     return request.get('/user/identity');
 }
+

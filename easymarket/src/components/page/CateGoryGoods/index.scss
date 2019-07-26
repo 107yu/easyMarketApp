@@ -1,0 +1,70 @@
+.cateGoryBox{
+    height: auto;
+    margin-top: 0.2rem;
+    .box{
+
+    }
+    .cateGoryName{
+        height: 1rem;
+        text-align: center;
+        line-height: 1rem;
+        background: #ccc;
+    }
+    .Name{
+        display: flex;
+        flex-wrap: wrap;
+         a{
+                width: 50%;
+                height: auto;
+                background: white;
+                padding: .2rem;
+                position: relative;
+                .goodsItemImg{
+                        width: 100%;
+                        min-height: 2rem;
+                        text-align: center;
+                        height: auto;
+                        img{
+                            width: 50%;
+                            height: auto
+                        }
+                }
+                .goodsItemName{
+                        text-align: center;
+                        font-size: .28rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        padding-bottom: .3rem;
+                        padding-top: .1rem;
+                }
+                .goodsItemPrice{
+                    text-align: center;
+                    font-size: .28rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    color: red;
+                }
+        }
+    }
+    .categoryMoreGoods{
+        width: 50%;
+        height: auto;
+        background: white;
+        padding: .2rem;
+        position: relative;
+        div{
+            width: 100%;
+            text-align: center;
+            margin-top: 0.8rem;
+        }
+        img{
+            padding: .4rem;
+            height: 1.4rem;
+            width: 1.4rem;
+            margin-left: 0.8rem;
+            // margin-top: 0.4rem;
+        }
+    }
+}

@@ -1,57 +1,32 @@
 import React from 'react';
-
+import './index.scss'
 class TopGoods extends React.Component {
     render() {
+        let {topicList} =this.props;
         return <div className='topGoodsBox'>
             <div className='topGoodsTitle'>专题精选</div>
-            <div className='topGoodsWrap'>
+            {
+                topicList && topicList.map((item,index)=>{
+                    return   <div key={index} className='topGoodsWrap'>
                 <div className='slider'>
                     <div className='frame'>
                         <ul className='list'>
                             <li className='slides'>
                                 <a className='topGoodsItem'>
-                                    <img src="https://yanxuan.nosdn.127.net/14943267735961674.jpg" alt="" />
+                                    <img src={item.item_pic_url} alt="" />
                                     <div className='topGoodSubTitle'>
-                                        关爱他成长的每一个足迹
-                                                    <span className='topGoodPrice'>￥0元起</span>
+                                        {item.title}
+                                                    <span className='topGoodPrice'>￥{item.price_info}元起</span>
                                     </div>
-                                    <div className='topGoodTitle'>专业运动品牌同厂，毛毛虫鞋买二送一</div>
-                                </a>
-                            </li>
-                            <li className='slides'>
-                                <a className='topGoodsItem'>
-                                    <img src="https://yanxuan.nosdn.127.net/14939843143621089.jpg" alt="" />
-                                    <div className='topGoodSubTitle'>
-                                        关爱他成长的每一个足迹
-                                                    <span className='topGoodPrice'>￥0元起</span>
-                                    </div>
-                                    <div className='topGoodTitle'>专业运动品牌同厂，毛毛虫鞋买二送一</div>
-                                </a>
-                            </li>
-                            <li className='slides'>
-                                <a className='topGoodsItem'>
-                                    <img src="https://yanxuan.nosdn.127.net/14939843143621089.jpg" alt="" />
-                                    <div className='topGoodSubTitle'>
-                                        关爱他成长的每一个足迹
-                                                    <span className='topGoodPrice'>￥0元起</span>
-                                    </div>
-                                    <div className='topGoodTitle'>专业运动品牌同厂，毛毛虫鞋买二送一</div>
-                                </a>
-                            </li>
-                            <li className='slides'>
-                                <a className='topGoodsItem'>
-                                    <img src="https://yanxuan.nosdn.127.net/14942996754171334.jpg" alt="" />
-                                    <div className='topGoodSubTitle'>
-                                        关爱他成长的每一个足迹
-                                                    <span className='topGoodPrice'>￥0元起</span>
-                                    </div>
-                                    <div className='topGoodTitle'>专业运动品牌同厂，毛毛虫鞋买二送一</div>
+                                    <div className='topGoodTitle'>{item.subtitle}</div>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+                })
+            }
         </div>
     }
 }

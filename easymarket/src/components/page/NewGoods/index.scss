@@ -1,0 +1,46 @@
+.newGoodsBox{
+    margin-top: .2rem;
+    background: white;
+    .newGoodsTitle{
+        height: 1rem;
+        background: white;
+        text-align: center;
+        font-size: .3rem;
+        line-height: 1rem;
+        letter-spacing: .02rem;
+        font-weight: bold;
+    }
+     .title{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    .newGoodsWrap{
+        width: 50%;
+        background: white;
+        display: flex;
+        flex-wrap: wrap;
+        .newGoodsItem{
+            width: 100%;
+            height: 4rem;
+            img{
+                height: 70%;
+                width: 100%;
+            }
+            .newGoodsName{
+                height: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: .3rem;
+            }
+            .newGoodsPrice{
+                height: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: .3rem;
+                color: darkred;
+            }
+        }
+    }
+}

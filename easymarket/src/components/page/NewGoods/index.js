@@ -1,31 +1,23 @@
 import React from 'react';
-
+import './index.scss'
 
 class NewGoods extends React.Component {
     render() {
+        let { newGoodsList } = this.props;
         return <div className='newGoodsBox'>
             <div className='newGoodsTitle'>新品首发</div>
-            <div className='newGoodsWrap'>
-                <a className='newGoodsItem'>
-                    <img src="http://yanxuan.nosdn.127.net/767b370d07f3973500db54900bcbd2a7.png" alt=""/>
-                    <div className='newGoodsName'>蔓越莓曲奇 200克</div>
-                    <div className='newGoodsPrice'>￥36元</div>
-                </a>
-                <a className='newGoodsItem'>
-                    <img src="http://yanxuan.nosdn.127.net/767b370d07f3973500db54900bcbd2a7.png" alt=""/>
-                    <div className='newGoodsName'>蔓越莓曲奇 200克</div>
-                    <div className='newGoodsPrice'>￥36元</div>
-                </a>
-                <a className='newGoodsItem'>
-                    <img src="http://yanxuan.nosdn.127.net/767b370d07f3973500db54900bcbd2a7.png" alt=""/>
-                    <div className='newGoodsName'>蔓越莓曲奇 200克</div>
-                    <div className='newGoodsPrice'>￥36元</div>
-                </a>
-                <a className='newGoodsItem'>
-                    <img src="http://yanxuan.nosdn.127.net/767b370d07f3973500db54900bcbd2a7.png" alt=""/>
-                    <div className='newGoodsName'>蔓越莓曲奇 200克</div>
-                    <div className='newGoodsPrice'>￥36元</div>
-                </a>
+            <div className='title'>
+                {
+                newGoodsList && newGoodsList.map((item, index) => {
+                    return <div key={index} className='newGoodsWrap'>
+                        <a className='newGoodsItem'>
+                            <img src={item.list_pic_url} alt="" />
+                            <div className='newGoodsName'>{item.name}</div>
+                            <div className='newGoodsPrice'>￥{item.retail_price}元</div>
+                        </a>
+                    </div>
+                })
+            }
             </div>
         </div>
     }
@@ -33,30 +25,3 @@ class NewGoods extends React.Component {
 
 
 export default NewGoods
-
-
-// <div className='list_add'>
-//             <h5>新品首发</h5>
-//             <div className='newGoodsWrap'>
-//                 <a className='newGoodsItem'>
-//                     <img className='imgLazyload' src="http://yanxuan.nosdn.127.net/767b370d07f3973500db54900bcbd2a7.png" alt="" />
-//                     <div className='newGoodsName'>蔓越莓曲奇 200克</div>
-//                     <div className='newGoodsPrice'>￥36</div>
-//                 </a>
-//                 <a className='newGoodsItem'>
-//                     <img className='imgLazyload' src="http://yanxuan.nosdn.127.net/6c03ca93d8fe404faa266ea86f3f1e43.png" alt="" />
-//                     <div className='newGoodsName'>蔓越莓曲奇 200克</div>
-//                     <div className='newGoodsPrice'>￥36</div>
-//                 </a>
-//                 <a className='newGoodsItem'>
-//                     <img className='imgLazyload' src="http://yanxuan.nosdn.127.net/aa49dfe878becf768eddc4c1636643a6.png" alt="" />
-//                     <div className='newGoodsName'>蔓越莓曲奇 200克</div>
-//                     <div className='newGoodsPrice'>￥36</div>
-//                 </a>
-//                 <a className='newGoodsItem'>
-//                     <img className='imgLazyload' src="http://yanxuan.nosdn.127.net/8b30eeb17c831eba08b97bdcb4c46a8e.png" alt="" />
-//                     <div className='newGoodsName'>蔓越莓曲奇 200克</div>
-//                     <div className='newGoodsPrice'>￥36</div>
-//                 </a>
-//             </div>
-//         </div>
