@@ -9,6 +9,9 @@ import My from '../views/pages/my'
 
 // import Living from '../views/pages/page/living'
 
+import TopicalDetail from "../views/pages/special/topicalDetail"
+
+
 const routes = [{
     path: '/login',
     component: Login
@@ -41,6 +44,9 @@ const routes = [{
         name:'我的',
         component: My
     }]
+},{
+    path:'/topicalDetail/:id',
+    component:TopicalDetail
 }]
 
 export default routes

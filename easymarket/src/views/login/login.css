@@ -1,0 +1,36 @@
+.login_page{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+.login_logo{
+    width: 100%;
+    height: 2.56rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login_logo img{
+    width: 3.2rem;
+    height: 1.06rem;
+}
+.login_main{
+    width: 100%;
+    padding: 1.8rem .4rem 0 .4rem;
+}
+.login_main>div{
+    height: 1.8rem;
+    padding:.3rem 0;
+}
+input{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(232, 240, 254) !important;
+    border:none;
+    font-size: .4rem!important;
+    padding-left:.2rem;
+}
+.login_btn span{
+    font-size: .4rem;
+}

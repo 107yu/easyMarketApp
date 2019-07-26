@@ -10,14 +10,12 @@ import RouterView from './router/index'
 import store from "./store/index"
 //样式
 import "./index.css"
+import 'antd-mobile/dist/antd-mobile.css';
 //iconfonts图标
 import './fonts/iconfont.css'
-
-
 ReactDOM.render(<Provider {...store}>
     <Router>    
-            <RouterView/>
+        <RouterView/>
     </Router>
-    </Provider>,
-document.getElementById('root'));
+</Provider>,document.getElementById('root'));
 

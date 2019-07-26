@@ -14,6 +14,9 @@ import CateGoryGoods from '../../../components/page/CateGoryGoods'
 import {Link} from 'react-router-dom'
 
 class Page extends React.Component {
+    componentDidMount(){
+        
+    }
     render() {
         return <div className='page'>
             <Carousel></Carousel>

@@ -3,8 +3,3 @@ import request from '../utils/request';
 export function getIdentity() {
     return request.get('/user/identity');
 }
-
-//请求首页数据
-export function getIdentity() {
-    return request.get('/');
-}
