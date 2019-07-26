@@ -10,7 +10,7 @@ export default class Header extends Component {
         return (
             <div className="header">
                 <span className={flag?"show":""}>&lt;</span>
-                <h3>{title}</h3>
+                <p>{title}</p>
                 <span></span>
             </div>
         )

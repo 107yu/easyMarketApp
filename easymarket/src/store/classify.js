@@ -1,5 +1,6 @@
 import {observable,action} from "mobx"
 import {getTypeInit,getClassifyNav,getClassifyChild,getproductInfo} from "../services/index"
+import Axios from "axios";
 
 
 class Classify{

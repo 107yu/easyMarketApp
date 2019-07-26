@@ -6,11 +6,20 @@ import "./categoItem.scss"
 @inject("classify")
 @observer
  class CategoItem extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            ind:0
+        }
+    }
     componentDidMount(){
         let id=window.location.search.slice(1).split("=")[1];
         this.props.classify.getClassify_Nav(id)
     }
-    changeCon(id){
+    changeCon(id,ind){
+        this.setState({
+            ind:ind
+        })
         this.props.classify.getproduct_Info(id)
     }
     render() {
@@ -19,22 +28,23 @@ import "./categoItem.scss"
                 <Header title={"奇趣分类"} flag={true}></Header>
                 <div className="CategoItem_nav">
                     <ul className="CategoItem_wrap">
-                        {console.log(this.props.classify)}
                         {this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList.map((item,index)=>{
                             {console.log(item)}
-                            return <li key={item.id} onClick={()=>{this.changeCon(item.id)}}>{item.name}</li>
+                            return <li className={index===this.state.ind?"active":""} key={item.id} onClick={()=>{this.changeCon(item.id,index)}}>{item.name}</li>
                         })}
                     </ul>
                 </div>
-                <div>
-
-                </div>
-                <div>
-                    {console.log(this.props.classify.ProductInfo)}
-                    {this.props.classify.ProductInfo&&this.props.classify.ProductInfo.map((item,index)=>{
-                        return <ProductInfo key={item.id} item={item}></ProductInfo>
-                    })}
-                    
+                <div className="CategoItem_content">
+                    <div className="CategoItem_title">
+                        <div className="CategoItem_detail">{this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList[this.state.ind].name}</div>
+                        <div className="CategoItem_sub_title">{this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList[this.state.ind].front_name}</div>
+                    </div>
+                    <div className="CategoItem_con">
+                        {console.log(this.props.classify.ProductInfo)}
+                        {this.props.classify.ProductInfo&&this.props.classify.ProductInfo.map((item,index)=>{
+                            return <ProductInfo key={item.id} item={item}></ProductInfo>
+                        })}
+                    </div>
                 </div>
             </div>
         )
