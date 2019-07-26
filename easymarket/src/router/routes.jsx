@@ -1,14 +1,5 @@
-<<<<<<< HEAD
 import Login from '../views/login'
 import Pages from '../views/indexPage'
-=======
-import Page from '../views/page'
-import Special from '../views/special'
-import Classify from '../views/classify'
-import Shopping from '../views/shopping'
-import My from '../views/my'
-import Catego from "../views/classify/categoItem/categoItem"
->>>>>>> klf
 
 import Page from '../views/pages/page'
 import Special from '../views/pages/special'
@@ -49,25 +40,8 @@ const routes = [{
         component: My
     }]
 },{
-<<<<<<< HEAD
     path:'/topicalDetail/:id',
     component:TopicalDetail
-=======
-    path:'/special',
-    component:Special
-},{
-    path:'/classify',
-    component:Classify
-},{
-    path:'/shopping',
-    component:Shopping
-},{
-    path:'/my',
-    component:My
-},{
-    path:'/catego_detail',
-    component:Catego
->>>>>>> klf
 }]
 
 export default routes
