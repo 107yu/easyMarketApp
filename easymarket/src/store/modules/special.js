@@ -1,4 +1,4 @@
-import {getTopicList, getTopicDetail,getTopicRelated,getComment} from "../../services/index"
+import {getTopicList, getTopicDetail,getTopicRelated,getComment,addComment} from "../../services/index"
 import {observable,action} from "mobx"
 export default class Special{
     @observable topicList=[]; //专题列表
@@ -6,6 +6,7 @@ export default class Special{
     @observable relateds=[];    //与本专题相关的专题
     @observable comments=[];    //本专题或商品的评论
     @observable Allcomments=[];    //本专题或商品的评论
+    @observable commentStatus=-1;    //添加评论是否成功----状态
     //获取专题列表
     @action getTopicData=  (info)=>{
         getTopicList(info).then(res => {
@@ -33,10 +34,18 @@ export default class Special{
             // console.log(res)
         })
     }
+    //获取所有的评论
     @action topicalAllComment=(payload)=>{
         getComment(payload).then(res=>{
             this.Allcomments=res.data;
             console.log(res)
         })
     }
-} 
+     //添加评论
+     @action setComments= async (payload)=>{
+       let data=await  addComment(payload)
+        if(data.errno===0){
+            this.commentStatus=0
+        }
+    }
+}

@@ -1,3 +1,11 @@
+.topicItem{
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    margin:.2rem 0;
+    display: block;
+    overflow: hidden;
+}
 .topicItemTitle{
     padding: .1rem;
     padding-top: .2rem;
@@ -17,7 +25,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: gray;
-    height: .4rem;
+    height: .6rem;
 }
 .topicItemPrice{
     padding: .1rem;
@@ -28,33 +36,21 @@
     line-height: .4rem;
     height: .7rem;
 }
-.topical_detail_related{
-    background: #fff;
-}
-.topical_detail_related li{
-    border-top:1px solid #aaa;
-    padding: .2rem;
-}
-.topical_detail_related li p{
-    padding: .05rem 0;
-    display: flex;
-    justify-content:space-between;
-}
 .guestbook{
     width: 100%;
-    padding: .2rem;
     background: #fff;
     display: flex;
     flex-direction: column;
 }
 .topic_guestbook_header{
     display: flex;
-    padding: .2rem 0;
+    padding: .2rem .1rem;
     justify-content: space-between;
 }
 .topical_guestbook_more{
     width: 100%;
     text-align: center;
+    padding: .1rem 0;
 }
 .comment_list{
     background: #fff;
@@ -62,5 +58,23 @@
 }
 .comment_list li{
     border-top: 1px solid #aaa;
-    padding: 0 .1rem;
+    padding: 0 .06rem;
+}
+.comment_list li p{
+    display: flex;
+    justify-content:space-between;
+}
+.topicItemIsShow{
+    display: none;
+    padding: 2rem 0;
+}
+.topicItemShow{
+    width: 95%;
+    margin:.2rem auto;
+    padding: .2rem;
+    text-align: left;
+}
+.topicItemShow div{
+    text-align: left;
+    font-size: .3rem;
 }

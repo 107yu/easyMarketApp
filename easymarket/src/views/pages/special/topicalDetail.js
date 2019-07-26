@@ -16,12 +16,17 @@ import {inject,observer} from "mobx-react"
         this.props.special.topicalComment({valueId:id*1,typeId:1,page:1,size:5})
     }
     render() {
+        let relateds=this.props.special.relateds
         return (
             <div className="topical_detail">
                <Goback title={this.props.special.detail.title} {...this.props}></Goback>
                <div  dangerouslySetInnerHTML={{__html:this.props.special.detail.content}} className="topical_detail_main"></div>
                <Guestbook {...this.props}></Guestbook>
-               <Recommend></Recommend>
+               <div>
+                    <h3 style={{textAlign:'center',padding:".3rem 0"}}>推荐专题</h3>
+                    <Recommend relateds={relateds} isShow={false}></Recommend>
+               </div>
+              
             </div>
         )
     }

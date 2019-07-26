@@ -15,3 +15,8 @@ export function getTopicRelated(params) {
 export function getComment(params) {
     return request.get('/comment/list',params)
 }
+
+//针对某个专题添加评论：
+export function addComment(params) {
+  return request.post('/comment/post',params)
+}

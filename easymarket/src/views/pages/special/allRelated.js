@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Goback from "../../../components/goback/goBack"
 import {inject,observer} from "mobx-react"
 import List from "../../../components/topical/guestbookList"
+import "./special.css"
 @inject('special')
 @observer
  class AllRelated extends Component {
@@ -15,7 +16,9 @@ import List from "../../../components/topical/guestbookList"
         return (
             <div className="allComment">
                 <Goback title="查看更多评论" {...this.props}></Goback>
-                <List comments={comments&&comments} style={{marginTop:'1rem'}}></List>
+               <div className="allComment_list">
+                    <List comments={comments&&comments}></List>
+               </div>
             </div>
         )
     }
