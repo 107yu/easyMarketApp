@@ -27,4 +27,8 @@ html,body{
 .section{
     flex: 1;
     overflow: hidden;
+    >div{
+        width:100%;
+        height:100%;
+    }
 }
