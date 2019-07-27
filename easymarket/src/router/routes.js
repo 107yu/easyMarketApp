@@ -1,8 +1,10 @@
 import React from "react"
 import Loadable from "react-loadable"
+import Catego from "../views/classify/categoItem/categoItem"
+import ProductDetail from "../views/classify/productDetail/productDetail"
 function Loading(){
     return <div className="loading">
-        <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3201738150,2092078290&fm=26&gp=0.jpg" alt=""/>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564210029472&di=3da7da476dc8bd9ac1d42afaa7c05d9a&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F611bb3198c03cfefea188d170f33f27f1611c8e8a3ea-o8nm2q_fw658" alt=""/>
     </div>
 }
 const Login=Loadable({
@@ -90,28 +92,3 @@ const routes = [{
 
 export default routes
 
-
-// import Living from '../views/pages/page/living'
-// import Hutch from '../views/pages/page/hutch'
-// import Clothing from '../views/pages/page/clothing'
-// import Incliinstion from '../views/pages/page/inclination'
-// import Accessories from '../views/pages/page/accessories'
-
-
-// ,
-//         children:[{
-//             path:'/pages/page/living',
-//             component:Living
-//         },{
-//             path:'/pages/page/hutch',
-//             component:Hutch
-//         },{
-//             path:'/pages/page/clothing',
-//             component:Clothing
-//         },{
-//             path:'/pages/page/inclination',
-//             component:Incliinstion
-//         },{
-//             path:'/pages/page/accessories',
-//             component:Accessories
-//         }]
