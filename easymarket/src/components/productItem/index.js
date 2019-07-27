@@ -8,7 +8,6 @@ class ProductInfo extends Component {
         super(props)
     }
     goToDetail(id){
-        console.log(id)
         this.props.history.push(`/productDetail?id=${id}`)
         
     }

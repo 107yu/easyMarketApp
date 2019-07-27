@@ -7,11 +7,11 @@ export function getTypeInit() {
 export function getClassifyNav(id) {
     return request.get(`/goods/category?id=${id}`);
 }
-//获取当前分类信息和子分类
+//获取导航信息
 export function getClassifyChild(id) {
     return request.get(`/catalog/current?id=${id}`);
 }
 //获取当前分类信息和子分类
-export function getproductInfo(id) {
-    return request.get(`/goods/list?categoryId=${id}`);
+export function getproductInfo(id,size,page) {
+    return request.get(`/goods/list?categoryId=${id}&&size=${size}&&page=${page}`);
 }

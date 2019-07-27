@@ -8,15 +8,14 @@ import "./productDetail.scss"
     componentDidMount(){
         let id=window.location.search.slice(1).split("=")[1];
         //根据商品id获取到相关商品
-        this.props.product.product(id)
+        this.props.product.products(id)
 
     }
     render() {
-        let {product}=this.props
         return (
             <div className="product_wrap">
-                <Header title={product.productInfo&&product.productInfo.info.name} flag={true}></Header>
-                {console.log(product.productInfo&&product.productInfo.info.name,"111")}
+                <Header title={this.props.product.productInfo&&this.props.product.productInfo.info.name} flag={true}></Header>
+                {console.log(this.props.product.productInfo,"1111111")}
                 shangpinhgxiangqinag 
             </div>
         )
