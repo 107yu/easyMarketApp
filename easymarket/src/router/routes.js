@@ -1,19 +1,50 @@
-import Login from '../views/login'
-import Pages from '../views/indexPage'
-
-import Page from '../views/pages/page'
-import Special from '../views/pages/special'
-import Classify from '../views/pages/classify'
-import Shopping from '../views/pages/shopping'
-import My from '../views/pages/my'
-
-// import Living from '../views/pages/page/living'
-
-import TopicalDetail from "../views/pages/special/topicalDetail"
-
-
-import TopicalComment from "../views/pages/special/allRelated"
-import TopicCommentWrite from "../views/pages/special/topicCommentWrite"
+import React from "react"
+import Loadable from "react-loadable"
+function Loading(){
+    return <div className="loading">
+        <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3201738150,2092078290&fm=26&gp=0.jpg" alt=""/>
+    </div>
+}
+const Login=Loadable({
+    loader:()=>import('../views/login'),
+    loading:Loading
+})
+const Pages=Loadable({
+    loader:()=>import('../views/indexPage'),
+    loading:Loading
+})
+const Page=Loadable({
+    loader:()=>import('../views/pages/page'),
+    loading:Loading
+})
+const Special=Loadable({
+    loader:()=>import('../views/pages/special'),
+    loading:Loading
+})
+const Classify=Loadable({
+    loader:()=>import('../views/pages/classify'),
+    loading:Loading
+})
+const Shopping=Loadable({
+    loader:()=>import('../views/pages/shopping'),
+    loading:Loading
+})
+const My=Loadable({
+    loader:()=>import('../views/pages/my'),
+    loading:Loading
+})
+const TopicalDetail=Loadable({
+    loader:()=>import("../views/pages/special/topicalDetail"),
+    loading:Loading
+})
+const TopicalComment=Loadable({
+    loader:()=>import("../views/pages/special/allRelated"),
+    loading:Loading
+})
+const TopicCommentWrite=Loadable({
+    loader:()=>import("../views/pages/special/topicCommentWrite"),
+    loading:Loading
+})
 const routes = [{
     path: '/login',
     component: Login

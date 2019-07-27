@@ -1,9 +1,6 @@
 import React from 'react';
-
-import RouterMap from './map.jsx'
-
-import Routes from "./routes.jsx"
-
+import RouterMap from './map'
+import Routes from "./routes"
 class RouterView extends React.Component {
     render() {
         const routes = this.props.routes ? this.props.routes : Routes
