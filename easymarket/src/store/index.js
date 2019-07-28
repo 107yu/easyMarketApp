@@ -9,14 +9,17 @@ let login=new Login()
 let special=new Special()
 let page=new Page()
 
+
 //分类页所有数据
 const classify=new Classify()
 //产品详情
 const product=new Product()
+
 export default{
     login,
     special,
     classify,
     product,
     page
+    // my
 }

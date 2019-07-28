@@ -8,4 +8,4 @@ class Classify extends React.Component{
     }
 }
 
-export default Classify;
+export default Classify;     
