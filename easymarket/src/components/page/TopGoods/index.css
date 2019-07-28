@@ -1,0 +1,94 @@
+.topGoodsBox {
+  margin-top: .2rem;
+  background: white;
+}
+
+.topGoodsBox .topGoodsTitle {
+  height: 1rem;
+  background: white;
+  text-align: center;
+  font-size: .3rem;
+  line-height: 1rem;
+  letter-spacing: .02rem;
+  font-weight: bold;
+}
+
+.topGoodsBox .topGoodsWrap {
+  height: auto;
+  padding-bottom: .2rem;
+}
+
+.topGoodsBox .topGoodsWrap .slider {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  visibility: visible;
+}
+
+.topGoodsBox .topGoodsWrap .slider .frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  transform: translate3d(0px, 0px, 0px);
+  box-sizing: border-box;
+}
+
+.topGoodsBox .topGoodsWrap .slider .frame .list {
+  transform: translate3d(31.05px, 0px, 0px);
+  position: relative;
+  display: block;
+  margin: 0px -5px;
+  padding: 0px;
+  height: 278px;
+  width: 1085.7px;
+  cursor: inherit;
+  box-sizing: border-box;
+}
+
+.topGoodsBox .topGoodsWrap .slider .frame .list .slides {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: inline-block;
+  list-style-type: none;
+  vertical-align: top;
+  width: 351.9px;
+  height: auto;
+  box-sizing: border-box;
+  margin: auto 5px;
+}
+
+.topGoodsBox .topGoodsWrap .slider .frame .list .slides .topGoodsItem {
+  height: 5rem;
+}
+
+.topGoodsBox .topGoodsWrap .slider .frame .list .slides .topGoodsItem img {
+  height: 4rem;
+  width: 100%;
+}
+
+.topGoodsBox .topGoodsWrap .slider .frame .list .slides .topGoodsItem .topGoodSubTitle {
+  margin-top: .1rem;
+  height: .4rem;
+  line-height: .4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: .32rem;
+}
+
+.topGoodsBox .topGoodsWrap .slider .frame .list .slides .topGoodsItem .topGoodPrice {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-weight: normal;
+  color: darkred;
+}

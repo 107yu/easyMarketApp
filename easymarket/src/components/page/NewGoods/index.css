@@ -1,0 +1,53 @@
+.newGoodsBox {
+  margin-top: .2rem;
+  background: white;
+}
+
+.newGoodsBox .newGoodsTitle {
+  height: 1rem;
+  background: white;
+  text-align: center;
+  font-size: .3rem;
+  line-height: 1rem;
+  letter-spacing: .02rem;
+  font-weight: bold;
+}
+
+.newGoodsBox .title {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newGoodsBox .newGoodsWrap {
+  width: 50%;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newGoodsBox .newGoodsWrap .newGoodsItem {
+  width: 100%;
+  height: 4rem;
+}
+
+.newGoodsBox .newGoodsWrap .newGoodsItem img {
+  height: 70%;
+  width: 100%;
+}
+
+.newGoodsBox .newGoodsWrap .newGoodsItem .newGoodsName {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .3rem;
+}
+
+.newGoodsBox .newGoodsWrap .newGoodsItem .newGoodsPrice {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .3rem;
+  color: darkred;
+}

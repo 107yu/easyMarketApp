@@ -1,11 +1,11 @@
 import React from 'react';
 
-class Special extends React.Component{
+class Classify extends React.Component{
     render(){
         return <div>
-            专题
+            分类
         </div>
     }
 }
 
-export default Special;
+export default Classify;
