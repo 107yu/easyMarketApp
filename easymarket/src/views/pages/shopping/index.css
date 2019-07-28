@@ -74,3 +74,19 @@
 .shopCar_item_msg .shopCar_item_price{
     color:red;
 }
+.shopCar_do>div{
+    height: 1.1rem;
+    line-height: 1.1rem;
+}
+.shopCar_allMsg{
+    flex:1;
+}
+.shopCar_edit{
+    padding: 0 .5rem;
+}
+.shopCar_pay{
+    width: 2.6rem;
+    text-align: center;
+    background: #ab2b2b;
+    color: #fff;
+}
