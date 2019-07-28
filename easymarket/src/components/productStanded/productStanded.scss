@@ -1,0 +1,69 @@
+.goods_standed_wrapper{
+    background: #fff;
+   
+}
+.goods_standed_info{
+    padding:.2rem .4rem;
+    
+}
+.goods_standed_detail{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    .goods_standed_left{
+        display: flex;
+
+    }
+    .goods_standed_img{
+        width:2rem;
+        height:2rem;
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+    .goods_standed_info{
+        flex:1;
+        padding:0 .1rem;
+        >div{
+            height:.6rem;
+        }
+        span{
+            color: #f00
+        }
+    }
+    .goods_standed_close{
+        i{
+            display:inline-block;
+            width:.4rem;
+            height:.4rem;
+            line-height: .4rem;
+            text-align: center;
+            color:#f00;
+            border:1px solid #f00;
+        }
+    }
+}
+.goods_standed_num{
+    width:100%;
+    p{
+        text-align: left;
+        height:.324rem;
+        padding:.5rem 0;
+    }
+    >div{
+        display:flex;
+        align-items: center;
+        .standed_btn{
+            width:1.2rem;
+            height:.8rem;
+            line-height: .8rem;
+            text-align: center;
+            border:1px solid #ccc;
+            &:nth-child(2){
+                width:1.6rem;
+            }
+        }
+        
+    }
+}

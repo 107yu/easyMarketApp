@@ -1,7 +1,41 @@
 .product_wrap {
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product_content {
+  flex: 1;
   overflow-y: scroll;
+}
+
+.product_footer {
+  height: 1rem;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.product_footer .addcartBtn {
+  position: relative;
+}
+
+.product_footer i {
+  display: inline-block;
+  width: 1.5rem;
+  text-align: center;
+  font-size: .6rem;
+}
+
+.product_footer span {
+  position: absolute;
+  right: .2rem;
+  top: 0;
+  color: #FF0000;
+  font-weight: bold;
 }
 
 .product_swiper {
@@ -38,6 +72,28 @@
   width: 100%;
   height: 2.78rem;
   padding: .4rem;
+}
+
+.goods_message > div {
+  text-align: center;
+}
+
+.goods_message .goods_title {
+  font-size: .4rem;
+  color: #000;
+  padding-bottom: .2rem;
+}
+
+.goods_message .goods_subTitle {
+  font-size: .3rem;
+  color: #444444;
+  padding-bottom: .1rem;
+}
+
+.goods_message .goods_price {
+  height: 1rem;
+  color: #f00;
+  font-size: .4rem;
 }
 
 .goods_size {
@@ -125,4 +181,10 @@
 .attribute_questions .attribute_qes_anwers {
   color: #808080;
   font-size: .3rem;
+}
+
+.attribute_con {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }

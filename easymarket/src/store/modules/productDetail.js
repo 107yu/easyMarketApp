@@ -13,7 +13,7 @@ class Product{
     }
     @action async relatedProducts(id){
         const data=await getRelated(id)
-        this.relatedInfo=data
+        this.relatedInfo=data.goodsList
         console.log(data,"relate")
     }
 }

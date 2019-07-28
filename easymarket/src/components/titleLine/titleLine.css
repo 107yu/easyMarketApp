@@ -1,0 +1,22 @@
+.line_title {
+  height: .9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2196f3;
+  font-size: .3rem;
+}
+
+.line_title > div {
+  height: .356rem;
+  display: flex;
+  align-items: center;
+  font-size: .28rem;
+}
+
+.line_title > div .line {
+  width: .516rem;
+  height: .01rem;
+  background: #2196f3;
+  margin: 0 .24rem;
+}

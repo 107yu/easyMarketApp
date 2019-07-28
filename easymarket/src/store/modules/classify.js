@@ -4,7 +4,7 @@ import {getTypeInit,getClassifyNav,getClassifyChild,getproductInfo} from "../../
 class Classify{
     @observable categoryList;
     @observable categoryChild;
-    @observable ProductInfo;
+    @observable ProductInfo=[];
 
     //分类页左侧导航
     @action  getClassify_Nav=async(id)=>{
@@ -33,6 +33,12 @@ class Classify{
     @action getproduct_Info(id,size,page){
         getproductInfo(id,size,page).then(res=>{
             this.ProductInfo=res.data
+            // if(!this.ProductInfo.length){
+            //     this.ProductInfo=res.data
+            // }else{
+            //     this.ProductInfo.push(...res.data)
+            // }
+            
         })
     }
 }
