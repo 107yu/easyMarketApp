@@ -20,8 +20,8 @@ class CategoContent extends Component {
                  </div>
                  <div className="Catego_title">
                      <div>
-                         <div className="line"></div>
-                         <div>{data&&data.name}</div>
+                        <div className="line"></div>
+                        <div>{data&&data.name}</div>
                         <div className="line"></div>
                      </div>
                  </div>

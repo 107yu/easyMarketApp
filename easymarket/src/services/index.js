@@ -5,3 +5,4 @@ export * from "./classify/index"
 export * from "./productDetail/productDetail"
 export * from "./shopCar/shopCar"
 
+export * from "./addCart/index"

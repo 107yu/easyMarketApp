@@ -8,16 +8,15 @@ class ProductInfo extends Component {
         super(props)
     }
     goToDetail(id){
-        console.log(id)
-        this.props.history.push(`/productDetail?id=${id}`)
-        
+        sessionStorage.setItem("productId",JSON.stringify({id:id}))
+        this.props.history.push(`/productDetail?id=${id}`) 
     }
     render() {
         let {item}=this.props
         return (
             <div className="pro_wrap" onClick={()=>{this.goToDetail(item.id)}}>
                 <img src={item.list_pic_url}/>
-                <p>{item.name}</p>
+                <p className="product_name">{item.name}</p>
                 <p style={{color:"#f00",textAlign:"center"}}>{`￥${item.retail_price}元`}</p>
             </div>
         )

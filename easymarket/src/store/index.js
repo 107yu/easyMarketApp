@@ -5,10 +5,12 @@ import Page from "./modules/page"
 import Classify from "./modules/classify"
 import Product from "./modules/productDetail"
 import ShopCar from "./modules/shopCar"
+import Addcart from "./modules/addcart"
 //实例化
 let login=new Login()
 let special=new Special()
 let page=new Page()
+let addCart=new Addcart()
 
 
 //分类页所有数据
@@ -23,6 +25,6 @@ export default{
     classify,
     product,
     page,
-    shopCar
-   
+    shopCar,
+    addCart
 }

@@ -1,14 +1,20 @@
-import {getProduct} from "../../services/index"
+import {getProduct,getRelated} from "../../services/index"
 import {observable,action} from "mobx"
 
 class Product{
     //产品信息
     @observable productInfo;
+    @observable relatedInfo;
 
-    @action async product(id){
+    @action async products(id){
         const data=await getProduct(id)
         this.productInfo=data
-        console.log(data,"produvt")
+        console.log(data,"produvt11")
+    }
+    @action async relatedProducts(id){
+        const data=await getRelated(id)
+        this.relatedInfo=data.goodsList
+        console.log(data,"relate")
     }
 }
 export default Product;

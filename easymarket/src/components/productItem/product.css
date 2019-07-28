@@ -14,3 +14,11 @@
   width: 100%;
   overflow: hidden;
 }
+
+.pro_wrap .product_name {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000000;
+}
