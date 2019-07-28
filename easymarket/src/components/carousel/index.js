@@ -7,11 +7,11 @@ class Carousels extends React.Component{
     super(props)
     this.state={
       carousellist:[{
-        img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2610773359,894980206&fm=26&gp=0.jpg'
+        img:'http://yanxuan.nosdn.127.net/65091eebc48899298171c2eb6696fe27.jpg'
       },{
-        img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2906072269,2725895769&fm=26&gp=0.jpg'
+        img:'http://yanxuan.nosdn.127.net/bff2e49136fcef1fd829f5036e07f116.jpg'
       },{
-        img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2831471841,3427110066&fm=26&gp=0.jpg'
+        img:'http://yanxuan.nosdn.127.net/8e50c65fda145e6dd1bf4fb7ee0fcecc.jpg'
       }]
     }
   }

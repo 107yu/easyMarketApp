@@ -11,7 +11,9 @@ import My from '../views/pages/my'
 
 import TopicalDetail from "../views/pages/special/topicalDetail"
 
-
+import Collectdetail from "../views/pages/my/collectdetail"
+import Addressdetail from "../views/pages/my/addressdetail"
+        
 const routes = [{
     path: '/login',
     component: Login
@@ -47,6 +49,12 @@ const routes = [{
 },{
     path:'/topicalDetail/:id',
     component:TopicalDetail
+},{
+    path:'/collectdetail',
+    component:Collectdetail
+},,{
+    path:'/addressdetail',
+    component:Addressdetail
 }]
 
 export default routes

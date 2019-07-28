@@ -1,0 +1,76 @@
+#collect {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-weight: normal;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: white;
+  box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.header div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .left {
+  width: .6rem;
+}
+
+.header .title {
+  flex: 1 1;
+  font-size: .32rem;
+}
+
+.header .right {
+  width: .6rem;
+}
+
+.touchClear {
+  width: 100%;
+  height: 2.3rem;
+  margin-top: 1.1rem;
+}
+
+.touchClear .test {
+  width: 100%;
+  display: flex;
+}
+
+.touchClear .test .collectItem {
+  width: 45%;
+  height: 2.5rem;
+}
+
+.touchClear .test .collectItem img {
+  width: 85%;
+  height: 2.1rem;
+}
+
+.collectMsg > div:nth-child(1) {
+  font-size: .32rem;
+}
+
+.collectMsg > div:nth-child(2) {
+  color: darkgrey;
+}
+
+.collectMsg > div:nth-child(3) {
+  color: red;
+}

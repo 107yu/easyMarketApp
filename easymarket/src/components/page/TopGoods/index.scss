@@ -15,7 +15,7 @@
         padding-bottom: .2rem;
         .slider{
             position: relative;
-            display: block;
+            display: flex;
             width: 100%;
             height: auto;
             box-sizing: border-box;
@@ -29,27 +29,6 @@
                     padding: 0px;
                     transform: translate3d(0px, 0px, 0px);
                     box-sizing: border-box;
-                .list{
-                        transform: translate3d(31.05px, 0px, 0px);
-                        position: relative;
-                        display: block;
-                        margin: 0px -5px;
-                        padding: 0px;
-                        height: 278px;
-                        width: 1085.7px;
-                        cursor: inherit;
-                        box-sizing: border-box;
-                    .slides{
-                            position: absolute;
-                            left: 0px;
-                            top: 0px;
-                            display: inline-block;
-                            list-style-type: none;
-                            vertical-align: top;
-                            width: 351.9px;
-                            height: auto;
-                            box-sizing: border-box;
-                            margin: auto 5px;
                         .topGoodsItem{
                             height: 5rem;
                             img{
@@ -79,6 +58,4 @@
                     }
                 }
             }
-        }
-    }
 }
