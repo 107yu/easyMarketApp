@@ -7,12 +7,6 @@ const instance = axios.create({
 const getNewHeaders = () =>{
   return {'x-nideshop-token': window.localStorage.getItem('token')}
 }
-// instance.interceptors.response.use(
-//   response => response.data,
-//   error => {
-//     return Promise.reject(error)
-//   }
-// )
 class service {
   static get (url, params = {}) {
     return new Promise((resolve, reject) => {

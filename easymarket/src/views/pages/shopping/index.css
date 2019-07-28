@@ -1,0 +1,76 @@
+.shopCar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.shopCar_header{
+    width: 100%;
+    height: .8rem;
+    display: flex;
+    align-items: center;
+}
+.shopCar_header span{
+    flex: 1;
+    text-align: center;
+}
+.shopCar_header span b{
+    color:red;
+}
+.shopCar_main{
+    flex: 1;
+    overflow: hidden;
+    background: #fff;
+}
+.shopCar_do{
+    width: 100%;
+    height: 1.1rem;
+    display: flex;
+    background: #fff;
+}
+.shopCar_carWrap{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+.shopCar_item{
+    display: flex;
+    height: 2.2rem;
+    padding: .2rem;
+    padding-left: 0;
+    background: white;
+    margin-top: 1px;
+    border-bottom: 1px solid #ccc;
+}
+.shopCar_item_img{
+    width: 1.8rem;
+    background: #f4f4f4;
+}
+.shopCar_item_img img{
+    width: 100%;
+}
+.shopCar_item_isChecked{
+    width: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shopCar_item_isChecked img{
+    width: 50%;
+}
+.shopCar_item_msg{
+    flex: 1;
+    padding: .1rem;
+}
+.shopCar_item_msg>div{
+    height: 33.333%;
+    display: flex;
+    align-items: center;
+    font-size: .28rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.shopCar_item_msg .shopCar_item_price{
+    color:red;
+}
