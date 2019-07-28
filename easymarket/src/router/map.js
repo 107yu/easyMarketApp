@@ -7,7 +7,9 @@ class RouterMap extends React.Component {
         const defaultRouter = <Route key={0} path='/' render={() => {
             return <Redirect to='/pages/page' />
         }} exact />
-         const login=token?defaultRouter:<Redirect to='/login' exact/>
+         const login=token?defaultRouter:<Redirect exact to='/login'/>
+         console.log(token)
+         console.log(login)
         return <Switch>
             {
                 routes.length && routes.map((item, index) => {
