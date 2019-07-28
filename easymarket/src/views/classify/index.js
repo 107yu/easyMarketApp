@@ -4,7 +4,6 @@ import CategogContent from "../../components/classify/index"
 import "./classify.scss"
 @inject("classify")
 @observer
-
 class Classify extends React.Component{
     constructor(){
         super()
@@ -16,14 +15,12 @@ class Classify extends React.Component{
         //获取分类页数据
         this.props.classify.getClassify_data()
         this.props.classify.getClassify_Nav(1005000)
-        
     }
     changeStyle(ind,id){
         //点击左侧菜单切换样式
         this.setState({
             ind:ind
         })
-
         this.props.classify.getClassify_Nav(id)
     }
     render(){
@@ -36,7 +33,6 @@ class Classify extends React.Component{
             <div className="classify_wrapper">
                 <ul className="classify_left">
                     {data&&data.map((item,index)=>{
-                        console.log(item,"item")
                     return <li key={item.id} onClick={()=>{this.changeStyle(index,item.id)}}
                     className={index===this.state.ind?"active":""}>{item.name}</li>
                     })}
@@ -48,5 +44,4 @@ class Classify extends React.Component{
         </div>
     }
 }
-
 export default Classify;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import "./topical.css"
 export default class GuestbookList extends Component {
     render() {
         let comments=this.props.comments
@@ -12,7 +12,7 @@ export default class GuestbookList extends Component {
                                 <b>匿名用户</b>
                                 <span>{item.add_time}</span>
                             </p>
-                            <p>{item.content}</p>
+                            <p style={{color:'#aaa'}}>{item.content}</p>
                         </li>
                     })
                 }
