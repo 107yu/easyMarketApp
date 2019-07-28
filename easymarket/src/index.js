@@ -13,6 +13,7 @@ import "./index.css"
 import 'antd-mobile/dist/antd-mobile.css';
 //iconfonts图标
 import './fonts/iconfont.css'
+console.log(RouterView)
 ReactDOM.render(<Provider {...store}>
     <Router>    
         <RouterView/>
