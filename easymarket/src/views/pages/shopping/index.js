@@ -76,7 +76,6 @@ class Shopping extends React.Component{
                    ids.push(item.product_id)
                }
            })
-           console.log(ids)
            this.props.shopCar.deleteGoods({productIds:ids.join(",")})
            Toast.loading('loading');
            this.changeEdit()
