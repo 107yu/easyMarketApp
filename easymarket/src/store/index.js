@@ -10,12 +10,14 @@ import Addcart from "./modules/addcart"
 
 import Collect from "./modules/collect"
 
+import SearchGoods from "./modules/goodsSearch"
 //实例化
 let login=new Login()
 let special=new Special()
 let page=new Page()
 
 let addCart=new Addcart()
+let search=new SearchGoods
 
 
 
@@ -37,6 +39,7 @@ export default{
     shopCar,
     addCart,
 
-    collect    
+    collect, 
 
+    search
 }

@@ -1,11 +1,14 @@
+
 .catego_wrapper{
     width:100%;
     height:100%;
     display:flex;
     flex-direction: column;
+    background: #fff;
     .CategoItem_nav{
         height:.64rem;
         width:100%;
+        background: #fff;
         overflow-x: scroll;
         .CategoItem_wrap{
             width:200%;
@@ -24,8 +27,11 @@
     .CategoItem_content{
         background: hsl(0, 0%, 93%);
         flex:1;
-        overflow-y:hidden;
         padding:.2rem 0;
+        overflow:hidden !important;
+        .CategoItem_title{
+            padding:.2rem 0;
+        }
         .CategoItem_detail{
             height:.6rem;
             line-height:.6rem;
@@ -36,6 +42,7 @@
         }
         .CategoItem_sub_title{
             height:.5rem;
+            line-height: .5rem;
             width:100%;
             text-align: center;
             font-size:.28rem;
