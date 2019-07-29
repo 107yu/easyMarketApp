@@ -3,11 +3,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: #fff;
 }
 
 .catego_wrapper .CategoItem_nav {
   height: .64rem;
   width: 100%;
+  background: #fff;
   overflow-x: scroll;
 }
 
@@ -30,7 +32,11 @@
 .catego_wrapper .CategoItem_content {
   background: #ededed;
   flex: 1;
-  overflow-y: hidden;
+  padding: .2rem 0;
+  overflow: hidden !important;
+}
+
+.catego_wrapper .CategoItem_content .CategoItem_title {
   padding: .2rem 0;
 }
 
@@ -45,6 +51,7 @@
 
 .catego_wrapper .CategoItem_content .CategoItem_sub_title {
   height: .5rem;
+  line-height: .5rem;
   width: 100%;
   text-align: center;
   font-size: .28rem;

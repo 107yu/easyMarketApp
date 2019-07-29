@@ -7,15 +7,18 @@
     height:100%;
     display:flex;
     flex-direction: column;
+    background: #fff;
     .classify_search{
-        height:.9rem;
+        height:.8rem;
         display: flex;
         justify-content:center;
         align-items: center;
+        border-bottom:1px solid #ccc;
         >p{
             width:6.74rem;
-            height:.72rem;
-            line-height:.72rem;
+            margin:.05rem 0;
+            height:.60rem;
+            line-height:.60rem;
             background:#ededed;
             border-radius: .1rem; 
             text-align: center;
@@ -41,6 +44,7 @@
         .active{
             color:#2196f3;
             border-left:2px solid #2196f3;
+            background: #fff;
         }
     }
     .classify_right{

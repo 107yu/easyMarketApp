@@ -6,11 +6,13 @@ import Classify from "./modules/classify"
 import Product from "./modules/productDetail"
 import ShopCar from "./modules/shopCar"
 import Addcart from "./modules/addcart"
+import SearchGoods from "./modules/goodsSearch"
 //实例化
 let login=new Login()
 let special=new Special()
 let page=new Page()
 let addCart=new Addcart()
+let search=new SearchGoods
 
 
 //分类页所有数据
@@ -26,5 +28,6 @@ export default{
     product,
     page,
     shopCar,
-    addCart
+    addCart,
+    search
 }

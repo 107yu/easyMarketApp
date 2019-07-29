@@ -48,6 +48,10 @@ const TopicCommentWrite=Loadable({
     loader:()=>import("../views/pages/special/topicCommentWrite"),
     loading:Loading
 })
+const GoodsSearch=Loadable({
+    loader:()=>import("../views/classify/goodsSearch/index"),
+    loading:Loading
+})
 const routes = [{
     path: '/login',
     component: Login
@@ -96,6 +100,9 @@ const routes = [{
 {
     path:'/productDetail',
     component:ProductDetail
+},{
+    path:'/goodSearch',
+    component:GoodsSearch
 }
 ]
 

@@ -23,12 +23,17 @@ class Classify extends React.Component{
         })
         this.props.classify.getClassify_Nav(id)
     }
+    //点击跳转搜索页面
+    goToSearch(){
+        let {history}=this.props;
+        history.push("/goodsearch")
+    }
     render(){
         //获取到分类页初始化数据
         let data=this.props.classify.categoryList
         return <div className="classify_wrap">
             <div className="classify_search">
-                <p>搜索商品，共239款好商品</p>
+                <p onClick={()=>{this.goToSearch()}}>搜索商品，共239款好商品</p>
             </div>
             <div className="classify_wrapper">
                 <ul className="classify_left">
