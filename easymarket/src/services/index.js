@@ -3,4 +3,4 @@ export * from "./special/special"
 export * from "./page/page"
 export * from "./classify/index"
 export * from "./productDetail/productDetail"
-
+export * from "./collect/collect"

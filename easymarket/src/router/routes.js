@@ -48,6 +48,14 @@ const TopicCommentWrite=Loadable({
     loader:()=>import("../views/pages/special/topicCommentWrite"),
     loading:Loading
 })
+const Collectdetail=Loadable({
+    loader:()=>import("../views/pages/my/collectdetail"),
+    loading:Loading
+})
+const Addressdetail=Loadable({
+    loader:()=>import("../views/pages/my/addressdetail"),
+    loading:Loading
+})
 const routes = [{
     path: '/login',
     component: Login
@@ -96,6 +104,12 @@ const routes = [{
 {
     path:'/productDetail',
     component:ProductDetail
+},{
+    path:'/collectdetail',
+    component:Collectdetail
+},,{
+    path:'/addressdetail',
+    component:Addressdetail
 }
 ]
 

@@ -1,58 +1,40 @@
 import React from 'react'
 import './index.scss'
 
-// import { inject, observer } from "mobx-react"
+import { inject, observer } from "mobx-react"
 
-// @inject('collectdetail')
-// @observer
+@inject('collect')
+@observer
 
 class Collectdetail extends React.Component {
-    // componentDidMount() {
-    //     this.props.collectdetail.getmyData()
-    // }
+    componentDidMount() {
+        this.props.collect.getcollectData({ typeId: 0 })
+    }
     render() {
+        let {getcollectList} =this.props.collect;
         return <div id='collect'>
             <header className='header'>
                 <div className='left'>◁</div>
                 <div className='title'>easyLikeGoods</div>
                 <div className='right'></div>
             </header>
-            <div className='touchClear'>
-                <div className='test'>
-                    <div className='collectItem'>
-                        <img src="http://yanxuan.nosdn.127.net/9126151f028a8804026d530836b481cb.png" alt="" />
+            {
+                getcollectList && getcollectList.map((item,index)=>{
+                    return <div key={index} className='touchClear'>
+                    <div className='test'>
+                        <div className='collectItem'>
+                            <img src={item.list_pic_url} alt="" />
+                        </div>
+                        <div className='collectMsg'>
+                            <div>{item.name}</div>
+                            <div>{item.goods_brief}</div>
+                            <div>￥{item.retail_price}元</div>
+                        </div>
                     </div>
-                    <div className='collectMsg'>
-                        <div>日式素雅纯色流星纹窗帘</div>
-                        <div>日式素雅设计 流星纹简约肌理</div>
-                        <div>￥299元</div>
-                    </div>
+                    <div className='colse'></div>
                 </div>
-            </div>
-            <div className='touchClear'>
-                <div className='test'>
-                    <div className='collectItem'>
-                        <img src="http://yanxuan.nosdn.127.net/9126151f028a8804026d530836b481cb.png" alt="" />
-                    </div>
-                    <div className='collectMsg'>
-                        <div>日式素雅纯色流星纹窗帘</div>
-                        <div>日式素雅设计 流星纹简约肌理</div>
-                        <div>￥299元</div>
-                    </div>
-                </div>
-            </div>
-            <div className='touchClear'>
-                <div className='test'>
-                    <div className='collectItem'>
-                        <img src="http://yanxuan.nosdn.127.net/9126151f028a8804026d530836b481cb.png" alt="" />
-                    </div>
-                    <div className='collectMsg'>
-                        <div>日式素雅纯色流星纹窗帘</div>
-                        <div>日式素雅设计 流星纹简约肌理</div>
-                        <div>￥299元</div>
-                    </div>
-                </div>
-            </div>
+                })
+            }
         </div>
     }
 }
