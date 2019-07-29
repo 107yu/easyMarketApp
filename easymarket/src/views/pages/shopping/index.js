@@ -23,6 +23,7 @@ class Shopping extends React.Component{
         this.setState({
             edit:!edit
         })
+        this.props.shopCar.changeEditGoods("完成")
     }
     //全选-or-反选： 
     changeAllChecked(cartList){
@@ -75,7 +76,10 @@ class Shopping extends React.Component{
                    ids.push(item.product_id)
                }
            })
+           console.log(ids)
            this.props.shopCar.deleteGoods({productIds:ids.join(",")})
+           Toast.loading('loading');
+           this.changeEdit()
        }
     }
     render(){

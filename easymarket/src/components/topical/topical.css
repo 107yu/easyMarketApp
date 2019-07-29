@@ -63,7 +63,8 @@
 .comment_list li p{
     display: flex;
     justify-content:space-between;
-    padding: .2rem 0;
+    padding: .1rem 0;
+    line-height: .4rem;
 }
 .topicItemIsShow{
     display: none;

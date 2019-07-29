@@ -5,7 +5,6 @@ export default class ShopCar{
     @observable allChecked=false; //非编辑状态的---全选---反选状态
     @observable checkedList=[];//选中状态的数据
     @observable doAllChecked=false //编辑状态的全选---反选状态:
-    // @observable deleteNum=[];//要删除的商品数组---：
     //获取购物车列表
     @action getShopCarList= async ()=>{
         let data=await  getShopCar()
@@ -36,15 +35,21 @@ export default class ShopCar{
            this.getShopCarList()
         }
     }
-    //删除购物车里的某条数据的---按钮显示
+    //删除购物车里的某条数据的---按钮显示与否 
     @action changeEditGoods=(payload)=>{
+        //如果没有传参---则表明是编辑状态的删除全选--反选；
         if(!payload){
-            //如果没有传参----则表明是编辑状态的删除全选--反选；
             this.doAllChecked=!this.doAllChecked
             this.shopList.cartList.forEach(item=>{
                 item.isDelete=this.doAllChecked;
             })
             return 
+        }
+        if(payload==="完成"){
+            this.doAllChecked=false;
+            this.shopList.cartList.forEach(item=>{
+                item.isDelete=false;
+            })
         }
         this.shopList.cartList.forEach(item=>{
             if(item.product_id===payload.productIds){
@@ -57,7 +62,6 @@ export default class ShopCar{
     //点击删除按钮时删除某一条数据---or---删除多条数据
     @action deleteGoods=async (payload)=>{
         let data=await removeGoods(payload)
-        console.log(data)
-        this.shopList=data;
+        this.shopList=data.data;
     }
 }
