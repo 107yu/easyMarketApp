@@ -1,0 +1,46 @@
+.addres {
+  width: 100%;
+  height: 0.5rem;
+}
+
+.addres .header {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.addAddress {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.addAddress .am-button {
+  margin-right: 4px;
+  line-height: 1rem;
+  height: 1rem;
+  width: 100%;
+  border-radius: 0px;
+  display: inline-block;
+  padding: 0 15px;
+  color: #fff;
+  background-color: #108ee9;
+  outline: 0 none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: nowrap;
+}
+
+.addAddress .am-button span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-weight: normal;
+}

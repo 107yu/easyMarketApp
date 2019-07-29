@@ -30,7 +30,7 @@ class Page extends React.Component {
             <div className='channelWrap'>
                 {
                     channel && channel.map((item, index) => {
-                        return <Link to='/channe' key={index} className='channelItem'>
+                        return <Link to='' key={index} className='channelItem'>
                             <img src={item.icon_url} alt="" />
                             <div>{item.name}</div>
                         </Link>

@@ -1,8 +1,63 @@
 import React from 'react';
 import './index.scss'
-import {Link} from 'react-router-dom';
+import {Toast} from 'antd-mobile'
+import { Link } from 'react-router-dom';
 class My extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            myList: [{
+                icon: 'icon-wenjianjia',
+                name: '我的收藏',
+                link: '/collectdetail'
+            }, {
+                icon: 'icon-weizhi',
+                name: '地址管理',
+                link: '/addressdetail'
+            }, {
+                icon: 'icon-icon--copy-copy',
+                name: '我的订单'
+            }, {
+                icon: 'icon-rili',
+                name: '周末拼单'
+            }, {
+                icon: 'icon-youhuiquan',
+                name: '优惠券'
+            }, {
+                icon: 'icon--',
+                name: '优选购'
+            }, {
+                icon: 'icon-hongbao',
+                name: '我的红包'
+            }, {
+                icon: 'icon-vip',
+                name: '会员plus'
+            }, {
+                icon: 'icon-desadanshi',
+                name: '邀请返利'
+            }, {
+                icon: 'icon-yijian',
+                name: '意见反馈'
+            }, {
+                icon: 'icon-a069',
+                name: '客服咨询'
+            }, {
+                icon: 'icon-anquan',
+                name: '账户安全'
+            }]
+        }
+    }
+
+    showPower(item) {
+        if ('link' in item) {
+            this.props.history.push(item.link)
+        } else {
+            Toast.offline(`${item.name}功能还未解锁，请耐心等候~`, 1)
+        }
+    }
+
     render() {
+        const { myList } = this.state
         return <div className='tabPageContent'>
             <div id='minePage'>
                 <div className='userMsgWrap'>
@@ -14,54 +69,14 @@ class My extends React.Component {
                 </div>
             </div>
             <div className='userPower'>
-                <Link to='/collectdetail' className='power' > 
-                    <i className='iconfont icon-wenjianjia'></i>
-                    <div>我的收藏</div>
-                </Link>
-                <Link to='/addressdetail' className='power' > 
-                    <i className='iconfont icon-weizhi'></i>
-                    <div>地址管理</div>
-                </Link>
-                <div className='power' > 
-                    <i className='iconfont icon-icon--copy-copy'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon-rili'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon-youhuiquan'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon--'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon-hongbao'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon-vip'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon-desadanshi'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon-yijian'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon-a069'></i>
-                    <div>我的订单</div>
-                </div>
-                 <div className='power' > 
-                    <i className='iconfont icon-anquan'></i>
-                    <div>我的订单</div>
-                </div>
+                {
+                    myList && myList.map((item, index) => {
+                        return <div key={index} className='power' onClick={this.showPower.bind(this, item)} style={'link' in item ? { color: '#2196f3' } : {}}>
+                            <i className={`iconfont ${item.icon}`} style={'link' in item ? { color: '#2196f3' } : {}}></i>
+                            <div>{item.name}</div>
+                        </div>
+                    })
+                }
                 <div className='loginOut'>退出登录</div>
             </div>
         </div>

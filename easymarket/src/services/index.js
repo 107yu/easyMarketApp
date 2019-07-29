@@ -3,6 +3,10 @@ export * from "./special/special"
 export * from "./page/page"
 export * from "./classify/index"
 export * from "./productDetail/productDetail"
+
 export * from "./shopCar/shopCar"
 
 export * from "./addCart/index"
+
+export * from "./collect/collect"
+

@@ -4,7 +4,11 @@ import {getTypeInit,getClassifyNav,getClassifyChild,getproductInfo} from "../../
 class Classify{
     @observable categoryList;
     @observable categoryChild;
+
     @observable ProductInfo=[];
+
+    @observable ProductInfo;
+
 
     //分类页左侧导航
     @action  getClassify_Nav=async(id)=>{
