@@ -63,5 +63,10 @@ export default class ShopCar{
     @action deleteGoods=async (payload)=>{
         let data=await removeGoods(payload)
         this.shopList=data.data;
+        let flag=data.data.cartList.every(item=>item.checked===1)
+        data.data.cartList.forEach(item=>{
+            item.isDelete=false;
+        })
+        this.allChecked=flag
     }
 }
