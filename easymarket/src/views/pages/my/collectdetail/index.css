@@ -46,6 +46,7 @@
   width: 100%;
   height: 2.3rem;
   margin-top: 1.1rem;
+  display: flex;
 }
 
 .touchClear .test {
@@ -54,7 +55,7 @@
 }
 
 .touchClear .test .collectItem {
-  width: 45%;
+  width: 30%;
   height: 2.5rem;
 }
 
@@ -74,4 +75,13 @@
 
 .collectMsg > div:nth-child(3) {
   color: red;
+}
+
+.colse {
+  width: 1rem;
+  height: 2.3rem;
+  text-align: center;
+  background: red;
+  color: #FFF;
+  line-height: 2.3rem;
 }

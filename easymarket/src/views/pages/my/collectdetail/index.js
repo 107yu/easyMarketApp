@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.scss'
-
+import {Link} from 'react-router-dom'
 import { inject, observer } from "mobx-react"
 
 @inject('collect')
@@ -10,11 +10,14 @@ class Collectdetail extends React.Component {
     componentDidMount() {
         this.props.collect.getcollectData({ typeId: 0 })
     }
+    goback(){
+        
+    }
     render() {
         let {getcollectList} =this.props.collect;
         return <div id='collect'>
             <header className='header'>
-                <div className='left'>◁</div>
+                <Link to='/pages/my' className='left'>◁</Link>
                 <div className='title'>easyLikeGoods</div>
                 <div className='right'></div>
             </header>
@@ -31,7 +34,9 @@ class Collectdetail extends React.Component {
                             <div>￥{item.retail_price}元</div>
                         </div>
                     </div>
-                    <div className='colse'></div>
+                    <div className='colse' onClick={()=>{
+                        this.goback()
+                    }}>删除</div>
                 </div>
                 })
             }

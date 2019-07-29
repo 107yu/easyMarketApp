@@ -56,6 +56,11 @@ class My extends React.Component {
         }
     }
 
+    loginout(){
+        window.localStorage.removeItem('token')
+        this.props.history.push('/login')
+    }
+
     render() {
         const { myList } = this.state
         return <div className='tabPageContent'>
@@ -63,7 +68,7 @@ class My extends React.Component {
                 <div className='userMsgWrap'>
                     <div className='userLogo'></div>
                     <div className='userMsgs'>
-                        <div>18012341523</div>
+                        <div>15023807318</div>
                         <div>普通用户</div>
                     </div>
                 </div>
@@ -77,7 +82,9 @@ class My extends React.Component {
                         </div>
                     })
                 }
-                <div className='loginOut'>退出登录</div>
+                <div className='loginOut' onClick={()=>{
+                    this.loginout()
+                }}>退出登录</div>
             </div>
         </div>
     }
