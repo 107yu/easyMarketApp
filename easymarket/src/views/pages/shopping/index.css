@@ -68,10 +68,9 @@
     align-items: center;
     font-size: .28rem;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
 }
-.shopCar_item_msg .shopCar_item_price{
+.shopCar_item_msg .shopCar_item_price span{
     color:red;
 }
 .shopCar_do>div{
@@ -89,4 +88,24 @@
     text-align: center;
     background: #ab2b2b;
     color: #fff;
+}
+.shopCar_item_price{
+    display: flex;
+    justify-content: space-between;
+}
+.shopCar_item_doCount{
+    display: flex;
+    border-left: 1px solid #ccc;
+}
+.shopCar_item_doCount div{
+    width: .6rem;
+    height: .6rem;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    line-height: .6rem;
+}
+.shopCar_item_doCount :nth-child(2){
+    width: 1.2rem;
 }

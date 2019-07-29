@@ -10,18 +10,33 @@ class Shopping extends React.Component{
         super()
         this.state={
             allChecked:false,
+            edit:true
         }
     }
     componentDidMount(){
         this.props.shopCar.getShopCarList()
     }
-    componentDidUpdate(){
-
+    //改变编辑状态：
+    changeEdit(){
+        let {edit}=this.state;
+        this.setState({
+            edit:!edit
+        })
+    }
+    //全选全部选： 
+    changeAllChecked(){
+        let {allChecked}=this.state;
+        this.setState({
+            allChecked:!allChecked
+        })
+        let carList=this.props.shopCar.shopList.cartList;
+        carList.forEach(item=>{
+            console.log(item)
+        })
     }
     render(){
-        let {cartList}=this.props.shopCar.shopList;
-        let {allChecked}=this.state
-        console.log(cartList)
+        let cartList=this.props.shopCar.shopList.cartList;
+        let {allChecked,edit}=this.state
         return <div className="shopCar">
            <div className="shopCar_header">
                <span><b>★</b>30天无忧退货</span>
@@ -40,28 +55,40 @@ class Shopping extends React.Component{
                                     <div className="shopCar_item_img">
                                         <img src={item.list_pic_url} alt=""/>
                                     </div>
-                                    <div className="shopCar_item_msg">
+                                    {
+                                        edit?<><div className="shopCar_item_msg">
                                         <div>{item.goods_name}</div>
                                         <div></div>
-                                        <div className="shopCar_item_price">￥：{item.market_price}</div>
+                                        <div className="shopCar_item_price"><span>￥：{item.market_price}</span></div>
                                     </div>
-                                    <div>x{item.number}</div>
-                                        
-                                    
+                                    <div>x{item.number}</div></>:<><div className="shopCar_item_msg">
+                                        <div>已选择：</div>
+                                        <div></div>
+                                        <div className="shopCar_item_price">
+                                            <span>￥：{item.market_price}</span>
+                                            <div className="shopCar_item_doCount">
+                                                <div>-</div>
+                                                <div>{item.number}</div>
+                                                <div>+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   </>
+                                    }
                                 </div>
                       })
                   }
               </div>
            </div>
            <div className="shopCar_do">
-                <div className="shopCar_item_isChecked">
+                <div className="shopCar_item_isChecked" onClick={()=>{this.changeAllChecked()}}>
                     <img src={allChecked?isChecked:noChecked} alt=""/>
                 </div>
                 <div className="shopCar_allMsg">
-                    已选(1) ￥24
+                {edit?'已选（） ￥':'已选（）'} 
                 </div>
-                <div className="shopCar_edit">编辑</div>
-                <div className="shopCar_edit shopCar_pay">下单</div>
+                <div className="shopCar_edit" onClick={()=>{this.changeEdit()}}>{edit?'编辑':'完成'}</div>
+                <div className="shopCar_edit shopCar_pay">{edit?'下单':'删除所选'}</div>
            </div>
         </div>
     }
