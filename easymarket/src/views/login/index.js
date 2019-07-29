@@ -15,9 +15,6 @@ class Login extends React.Component{
         if(localStorage.getItem("token")){
             this.props.history.push("/pages/page")
         }
-        if(this.props.login.isLogin===0){
-            this.props.history.push("/pages/page")
-        }
     }
     getInfomation(){
       let info={
