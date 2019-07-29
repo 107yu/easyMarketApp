@@ -7,7 +7,6 @@ export default class collect{
     @action getcollectData=  (info)=>{
         getcollect(info).then(res => {
            this.getcollectList=res
-           console.log(res)
         })
     }
 }

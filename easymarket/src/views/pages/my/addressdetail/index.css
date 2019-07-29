@@ -1,41 +1,94 @@
-.addres {
-  width: 100%;
-  height: 0.5rem;
-}
-
-.addres .header {
-  width: 100%;
+#addressPage .header {
   justify-content: space-between;
 }
 
-.addAddress {
+#addressPage .addressList {
+  padding-top: 5px;
+  overflow: hidden;
+  background: url("../../../../static/img/line.png") repeat-x;
+  background-size: auto 5px;
+}
+
+#addressPage .addressList .addressItem {
+  height: 80px;
+  background: white;
+  margin-top: 0.2rem;
+  border-bottom: 1px solid gainsboro;
+  position: relative;
+}
+
+#addressPage .addressList .addressItem .isChooseAddress {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  height: 90%;
+  width: 6px;
+  background: #108ee9;
+}
+
+#addressPage .addressList .addressItem .addressMsg {
+  position: absolute;
+  left: 15px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+#addressPage .addressList .addressItem .addressMsg .concatName {
+  width: 4em;
+  height: 33.333%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff9500;
+}
+
+#addressPage .addressList .addressItem .addressMsg .addressDetail {
+  flex: 1;
+}
+
+#addressPage .addressList .addressItem .addressMsg .addressDetail .concatPhone {
+  height: 33.333%;
+  display: flex;
+  align-items: center;
+}
+
+#addressPage .addressList .addressItem .addressMsg .addressDetail .concatAddress {
+  height: 33.333%;
+  display: flex;
+  align-items: center;
+  color: gray;
+}
+
+#addressPage .addressList .addressItem .addressMsg .deleteAddress {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#addressPage .addressList .addressItem .addressMsg .deleteAddress img {
+  width: 55%;
+}
+
+#addressPage .addAddress {
   position: fixed;
   bottom: 0;
   width: 100%;
 }
 
-.addAddress .am-button {
-  margin-right: 4px;
-  line-height: 1rem;
-  height: 1rem;
+#addressPage .addAddress .am-button {
   width: 100%;
-  border-radius: 0px;
-  display: inline-block;
-  padding: 0 15px;
   color: #fff;
   background-color: #108ee9;
-  outline: 0 none;
-  -webkit-appearance: none;
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 18px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-word;
-  white-space: nowrap;
 }
 
-.addAddress .am-button span {
+#addressPage .addAddress .am-button span {
   margin: 0;
   padding: 0;
   border: 0;
