@@ -20,7 +20,6 @@
 .shopCar_main{
     flex: 1;
     overflow: hidden;
-    background: #fff;
 }
 .shopCar_do{
     width: 100%;
@@ -40,7 +39,6 @@
     padding-left: 0;
     background: white;
     margin-top: 1px;
-    border-bottom: 1px solid #ccc;
 }
 .shopCar_item_img{
     width: 1.8rem;

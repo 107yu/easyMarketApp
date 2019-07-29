@@ -3,11 +3,11 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 class RouterMap extends React.Component {
     render() {
         const { routes } = this.props
-          let token=localStorage.getItem("token")
+        // let token=localStorage.getItem("token")
         const defaultRouter = <Route key={0} path='/' render={() => {
             return <Redirect to='/pages/page' />
         }} exact />
-         const login=token?defaultRouter:<Redirect exact to='/login'/>
+        //  const login=token==null?<Redirect exact to='/login'/>:defaultRouter
         return <Switch>
             {
                 routes.length && routes.map((item, index) => {
@@ -18,7 +18,7 @@ class RouterMap extends React.Component {
                         }}/>
                     }
                     return true;
-                }).concat([login])
+                }).concat([defaultRouter])
             }
         </Switch>
     }

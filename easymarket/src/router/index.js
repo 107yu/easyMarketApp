@@ -7,5 +7,4 @@ class RouterView extends React.Component {
         return <RouterMap routes={routes} />
     }
 }
-
 export default RouterView
