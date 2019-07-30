@@ -9,31 +9,26 @@ import "./categoItem.scss"
 @observer
  class CategoItem extends Component {
     constructor(props){
+        let categoId=props.match.params.id
         super(props)
         this.state={
             ind:0,
             page:1,
             size:10,
             categoScroll:null,
-            id:-1,
+            id:Number(categoId),
             info:"上拉加载...",
             flag:false
         }
         this.catego = React.createRef();
     }
     componentDidMount(){
-        //获取地址栏参数，需要改进
-        let paramsArray = window.location.search.substr(1).split('&'), 
-        i,
-        paramsObj = {};
-
-        paramsArray.forEach((item) => {
-            i = item.indexOf('=');
-            paramsObj[item.slice(0, i)] = item.slice(i+1);
-        })
-        let id=window.location.search.slice(1).split("=")[1];
-        this.props.classify.getClassify_Nav(id)
-        this.props.classify.getproduct_Info(id,this.state.size,this.state.page) 
+        //获取id
+        let categoId=this.props.match.params.id
+        let obj=JSON.parse(sessionStorage.getItem("categoInfo"));
+        this.props.classify.getClassify_Nav(categoId)
+        this.props.classify.getproduct_Info(obj.id.toString(),this.state.size,this.state.page) 
+        this.props.classify.getinfo(categoId)
         //实例化scroll
         let el=this.catego.current;
         this.setState({
@@ -41,8 +36,9 @@ import "./categoItem.scss"
                 click:true,
                 probeType:2 
             }),
-            id:Number(paramsArray[2].split("=")[1])
+            id:Number(categoId)
         })  
+
         let that=this
         setTimeout(()=>{
             //滚动开始
@@ -64,7 +60,7 @@ import "./categoItem.scss"
                 if(that.state.flag){
                     that.state.page++;
                     console.log(that.state.page++)
-                    that.props.classify.getproduct_Info(id,that.state.size,that.state.page) 
+                    that.props.classify.getproduct_Info(obj.id,that.state.size,that.state.page) 
                     this.refresh()
                 }
             })
@@ -78,10 +74,9 @@ import "./categoItem.scss"
         this.props.classify.getproduct_Info(id)
     }
     render() {
-        console.log(this.state.id)
         return (
             <div className="catego_wrapper">
-                <Header title={"奇趣分类"} flag={true}></Header>
+                <Header title={"奇趣分类"} flag={true} path={"/pages/classify"}></Header>
                 <div className="CategoItem_nav">
                     <ul className="CategoItem_wrap">
                         {this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList.map((item,index)=>{

@@ -6,10 +6,10 @@ export default class Header extends Component {
         super(props)
     }
     render() {
-        let {title,flag}=this.props
+        let {title,flag,path}=this.props
         return (
             <div className="header">
-                <a href="/pages/classify"  className={flag?"show":""}>&lt;</a>
+                <a href={path} className={flag?"show":""}>&lt;</a>
                 <p>{title}</p>
                 <span></span>
             </div>

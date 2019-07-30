@@ -9,12 +9,10 @@ class Product{
     @action async products(id){
         const data=await getProduct(id)
         this.productInfo=data
-        console.log(data,"produvt11")
     }
     @action async relatedProducts(id){
         const data=await getRelated(id)
         this.relatedInfo=data.goodsList
-        console.log(data,"relate")
     }
 }
 export default Product;

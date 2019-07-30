@@ -102,7 +102,7 @@ const routes = [{
     path:'/topicCommentWrite',
     component:TopicCommentWrite
 },{
-    path:'/catego_detail',
+    path:'/catego_detail/:id',
     component:Catego
 },
 {

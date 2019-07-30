@@ -35,11 +35,8 @@ export default{
     classify,
     product,
     page,
-
     shopCar,
     addCart,
-
     collect, 
-
     search
 }

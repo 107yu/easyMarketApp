@@ -33,6 +33,17 @@ import "./productStanded.scss";
                             <i>x</i>
                         </div>
                     </div>
+                    {productInfo&&productInfo.specificationList.map((item)=>{
+                        return <div className="goods_standed_num goods_standed_color" key={item.specification_id}>
+                                    <p>{item.name}</p>
+                                    <ul>
+                                       {item.valueList.map((item)=>{
+                                           return <li key={item.id}>{item.value}</li>
+                                       })}
+                                    </ul>
+                                </div>
+                    })} 
+                    
                     <div className="goods_standed_num">
                         <p>数量</p>
                         <div>

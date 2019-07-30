@@ -7,11 +7,11 @@ class CategoItem extends Component {
         super(props)
     }
     catego_page(id,catego_id){
-        this.props.history.push(`/catego_detail?id=${id}&&catego_id=${catego_id}`)
+        sessionStorage.setItem("categoInfo",JSON.stringify({id:id,categoId:catego_id}))
+        this.props.history.push(`/catego_detail/${id}`)
     }
     render() {
         let {item,id}=this.props
-        console.log(item,"item11")
         return (
             <div className="CategoItem" onClick={()=>{this.catego_page(id,item.id)}}>
                 <img src={item&&item.wap_banner_url}/>

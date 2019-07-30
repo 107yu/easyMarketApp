@@ -1,14 +1,17 @@
-.product_wrap {
+#root, html, body, .product_wrap {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.product_wrap {
   display: flex;
   flex-direction: column;
 }
 
 .product_content {
   flex: 1;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .product_footer {
@@ -21,6 +24,10 @@
 
 .product_footer .addcartBtn {
   position: relative;
+}
+
+.product_footer .collect {
+  color: yellow;
 }
 
 .product_footer i {
@@ -91,9 +98,21 @@
 }
 
 .goods_message .goods_price {
-  height: 1rem;
   color: #f00;
   font-size: .4rem;
+}
+
+.goods_message .goods_making {
+  margin-top: .1rem !important;
+  height: .4rem;
+}
+
+.goods_message .goods_making span {
+  font-size: .24rem !important;
+  border: 1px solid orange;
+  color: orange;
+  padding: .05rem .1rem;
+  border-radius: .1rem;
 }
 
 .goods_size {
@@ -113,10 +132,58 @@
 
 .goods_size .goods_noCon {
   flex: 1;
+  color: #2196f3;
+}
+
+.goods_size .goods_noCon span {
+  margin-right: .2rem;
+}
+
+.goods_comments {
+  width: 100%;
+  background: #fff;
+}
+
+.goods_comments .goods_comments_title {
+  padding: .4rem;
+  width: 100%;
+  height: .1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.goods_comments .goods_comments_content {
+  padding: .2rem;
+}
+
+.goods_comments .goods_comments_content .comments_user_info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: .8rem;
+  align-items: center;
+}
+
+.goods_comments .goods_comments_content .user_comment_img {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: .1rem;
+}
+
+.goods_comments .goods_comments_content .user_comment_img li {
+  width: 33%;
+}
+
+.goods_comments .goods_comments_content .user_comment_img li img {
+  width: 2rem;
+  height: 2rem;
 }
 
 .goods_attribute {
-  padding: .4rem;
+  padding: .4rem !important;
   background: #fff;
 }
 
@@ -141,6 +208,7 @@
   margin-top: .1rem;
   display: flex;
   align-items: center;
+  padding: .16rem .3rem;
 }
 
 .goods_attribute .attribute_item .attribute_item_name {
@@ -158,12 +226,34 @@
   overflow: hidden;
 }
 
-.attribute_des img {
+.attribute_des p {
+  margin: 0;
+  padding: 0;
+}
+
+.attribute_des p img {
   width: 100%;
+  height: 100%;
 }
 
 .attribute_questions {
+  padding: .4rem !important;
   background: #fff;
+}
+
+.attribute_questions .attribute_title {
+  height: .356rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .56rem;
+}
+
+.attribute_questions .attribute_title .line {
+  width: .516rem;
+  height: .01rem;
+  background: #2196f3;
+  margin: 0 .24rem;
 }
 
 .attribute_questions .attribute_qes_title {

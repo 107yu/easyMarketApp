@@ -16,7 +16,8 @@ import ProductItem from "../../../components/productItem/index"
             keyword:"",
             style:"componse",
             typeFlag:false,
-            allTypeFlag:false
+            allTypeFlag:false,
+            priceStyle:null
         }
     }
     componentDidMount(){
@@ -41,6 +42,10 @@ import ProductItem from "../../../components/productItem/index"
         //如果input 为空，则不渲染searchList
         if(e.target.value===""){
             this.props.search.Search()
+            this.setState({
+                historyFlag:false,
+                flag:false
+            })
         }
     }
     /**
@@ -97,29 +102,51 @@ import ProductItem from "../../../components/productItem/index"
         this.props.search.getType({categoryId:id,keyword:this.state.keyword}) 
     }
     /**
-     * 
+     * 点击全部，价格，全部分类
      */
-    changeList(val){
+    changeList(e,val){
+        if(e.target.tagName==="B"){
+            if(e.target.innerHTML==="∨"){
+                this.setState({
+                    priceStyle:!this.state.priceStyle
+                })
+
+            }else if(e.target.innerHTML==="∧"){
+                this.setState({
+                    priceStyle:!this.state.priceStyle
+                })
+            }
+            
+        }
         this.setState({
             style:val
         })
         if(val==="componse"){
             this.props.search.searchRelated({keyword:this.state.val})
             this.setState({
-                allTypeFlag:false
+                allTypeFlag:false,
+                priceStyle:""
             })
         }else if(val==="price"){
             this.setState({
                 typeFlag:!this.state.typeFlag,
-                allTypeFlag:false
+                allTypeFlag:false,
+                priceStyle:!this.state.priceStyle
             },()=>{
                 this.props.search.searchRelated({keyword:this.state.val,sort:"price",order:this.state.typeFlag?"asc":"desc"})
             })
         }else if(val==="allType"){
             this.setState({
-                allTypeFlag:true
+                allTypeFlag:!this.state.allTypeFlag,
+                priceStyle:""
             })
         }
+    }
+    /**
+     * 价格升序降序
+     */
+    changePrice(){
+
     }
 
     render() {
@@ -158,9 +185,9 @@ import ProductItem from "../../../components/productItem/index"
                 </div>
                 <div className="related_info" style={this.state.productFlag?{display:"block"}:{display:"none"}}>
                     <ul className="related_info_title">
-                        <li className={this.state.style==="componse"?"type":""} onClick={()=>{this.changeList("componse")}}>综合</li>
-                        <li className={this.state.style==="price"?"type":""} onClick={()=>{this.changeList("price")}}>价格<span><b className={this.state.allTypeFlag?"style":""}>∨</b><b>∧</b></span></li>
-                        <li className={this.state.style==="allType"?"type":""} onClick={()=>{this.changeList("allType")}}>全部分类</li>
+                        <li className={this.state.style==="componse"?"type":""} onClick={(e)=>{this.changeList(e,"componse")}}>综合</li>
+                        <li className={this.state.style==="price"?"type":""} onClick={(e)=>{this.changeList(e,"price")}}>价格<span><b className={this.state.priceStyle===true?"style":""} onClick={()=>{this.changePrice("asc")}}>∨</b><b className={this.state.priceStyle===false?"style":""} onClick={()=>{this.changePrice("desc")}}>∧</b></span></li>
+                        <li className={this.state.style==="allType"?"type":""} onClick={(e)=>{this.changeList(e,"allType")}}>全部分类</li>
                     </ul>
                     <div className="all_classify_list" style={this.state.allTypeFlag?{display:"block"}:{display:"none"}}>
                         {this.props.search.filterCategory&&this.props.search.filterCategory.map((item,index)=>{

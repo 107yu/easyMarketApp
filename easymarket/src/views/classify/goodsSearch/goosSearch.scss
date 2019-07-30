@@ -97,6 +97,7 @@
                 padding-left:.1rem;
                 b{
                     position: absolute;
+                    color:#333;
                     &:nth-child(1){
                         top:-.05rem;
                     }
@@ -104,7 +105,7 @@
                         bottom:-.05rem;
                     }
                     &.style{
-                        color:#333;
+                        color:#f00;
                     }
                 }
             }

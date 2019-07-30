@@ -19,10 +19,9 @@ class Classify{
      * 子分类页导航信息
      */
 
-    // @action getinfo=async(id)=>{
-    //     const data=await getClassifyNav(id)
-    //     console.log(data,"getClassifyNa")
-    // }
+    @action getinfo=async(id)=>{
+        const data=await getClassifyNav(id)
+    }
 
      /**
      * 分类页初始数据

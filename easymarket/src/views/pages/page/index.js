@@ -23,14 +23,13 @@ class Page extends React.Component {
         this.props.page.getpageData()
     }
     render() {
-        console.log(this.props.page.getpageList)
         let { brandList, newGoodsList, hotGoodsList, topicList, categoryList, channel } = this.props.page.getpageList;
         return <div className='page'>
             <Carousel></Carousel>
             <div className='channelWrap'>
                 {
                     channel && channel.map((item, index) => {
-                        return <Link to='' key={index} className='channelItem'>
+                        return <Link to={`/catego_detail/${item.id}`} key={index} className='channelItem'>
                             <img src={item.icon_url} alt="" />
                             <div>{item.name}</div>
                         </Link>
