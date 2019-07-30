@@ -1,13 +1,12 @@
 import React from "react"
 import Loadable from "react-loadable"
-import Catego from "../views/classify/categoItem/categoItem"
-import ProductDetail from "../views/classify/productDetail/productDetail"
-//import Login from '../views/login'
+import { Toast} from 'antd-mobile';
 function Loading(){
     return <div className="loading">
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564210029472&di=3da7da476dc8bd9ac1d42afaa7c05d9a&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F611bb3198c03cfefea188d170f33f27f1611c8e8a3ea-o8nm2q_fw658" alt=""/>
+      { Toast.loading('loading',1)}
     </div>
 }
+
 const Login=Loadable({
     loader:()=>import('../views/login'),
     loading:Loading
@@ -58,6 +57,14 @@ const Addressdetail=Loadable({
 })
 const GoodsSearch=Loadable({
     loader:()=>import("../views/classify/goodsSearch/index"),
+    loading:Loading
+})
+const Catego=Loadable({
+    loader:()=>import('../views/classify/categoItem/categoItem'),
+    loading:Loading
+})
+const ProductDetail=Loadable({
+    loader:()=>import('../views/classify/productDetail/productDetail'),
     loading:Loading
 })
 const routes = [{

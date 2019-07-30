@@ -1,0 +1,49 @@
+.touchClear{
+    width: 100%;
+    height: 2.3rem;
+    position: relative;
+}
+.touchClear .test{
+    width: 100%;
+    display: flex;
+    position: relative;
+    top:0;
+    left:0;
+    z-index: 999;
+    background: #fff;
+   transition: all .2s;
+}
+.touchClear .touchClear_show{
+     transform: translateX(-1rem)
+}
+.touch_delete{
+    position: absolute;
+    top:0;
+    right:0;
+    width: 1rem;
+    height: 2.3rem;
+    text-align: center;
+    background: red;
+    color: #FFF;
+    line-height: 2.3rem;
+    z-index: 1;
+}
+.touchClear .test .collectItem{ 
+    width: 30%;
+    height: 2.5rem;
+}
+.touchClear .test .collectItem img{
+    width: 85%;
+    height: 2.1rem;
+}
+.collectMsg>div:nth-child(1){
+    margin-top: 0.6rem;
+    font-size: .32rem;
+}
+.collectMsg>div:nth-child(2){
+        color: darkgrey;
+}
+.collectMsg>div:nth-child(3){
+        color: red;
+}
+

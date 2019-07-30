@@ -17,6 +17,11 @@
 .shopCar_header span b{
     color:red;
 }
+.shopCar_content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 .shopCar_main{
     flex: 1;
     overflow: hidden;

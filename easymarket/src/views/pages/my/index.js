@@ -47,7 +47,6 @@ class My extends React.Component {
             }]
         }
     }
-
     showPower(item) {
         if ('link' in item) {
             this.props.history.push(item.link)
@@ -55,12 +54,10 @@ class My extends React.Component {
             Toast.offline(`${item.name}功能还未解锁，请耐心等候~`, 1)
         }
     }
-
     loginout(){
         window.localStorage.removeItem('token')
         this.props.history.push('/login')
     }
-
     render() {
         const { myList } = this.state
         return <div className='tabPageContent'>

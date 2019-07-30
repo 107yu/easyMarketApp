@@ -38,7 +38,6 @@ export default class Special{
     @action topicalAllComment=(payload)=>{
         getComment(payload).then(res=>{
             this.Allcomments=res.data;
-            console.log(res)
         })
     }
      //添加评论
