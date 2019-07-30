@@ -3,7 +3,6 @@ import './index.scss'
 import { Picker, List, WhiteSpace ,PickerView  } from 'antd-mobile';
 import city from './address.js'
 import { createForm } from 'rc-form';
-
 class Addrest extends React.Component {
     constructor(props){
         super(props)
@@ -25,7 +24,7 @@ class Addrest extends React.Component {
         return <div id='addressPage'>
             <header className='header'>
                 <div>◁</div>
-                <div>地址管理</div>
+                <div>添加地址</div>
                 <div></div>
             </header>
             <div className='section'>
@@ -98,7 +97,6 @@ class Addrest extends React.Component {
     }
 }
 
-// export default Addrest
 export default createForm()(Addrest)
 
 

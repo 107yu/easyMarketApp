@@ -10,6 +10,7 @@ export default class ShopCar{
         let data=await  getShopCar()
         if(data.cartList){
             this.shopList=data;
+            console.log(data)
             let flag= this.shopList.cartList.every(item=>item.checked===1)
             this.allChecked=flag
             //给每一条数据添加编辑状态的是否选中状态：

@@ -29,7 +29,7 @@ class Addressdetail extends React.Component {
         let { getaddresList } = this.props.addres;
         let { isaddress } = this.state;
         if(isaddress){
-            return <Addrest />
+            return <Addrest {...this.props}/>
         }
         return <div id='addressPage'>
             <header className='header'>
