@@ -6,4 +6,6 @@ export * from "./productDetail/productDetail"
 export * from "./shopCar/shopCar"
 export * from "./addCart/index"
 export * from "./collect/collect"
+
+export * from "./addres/addres"
 export * from "./goodsSearch/index"

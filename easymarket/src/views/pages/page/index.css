@@ -29,6 +29,10 @@
   text-align: center;
 }
 
+.channelWrap .channelItem a {
+  color: #000;
+}
+
 .hotGoodsBox {
   margin-top: .2rem;
   background: white;

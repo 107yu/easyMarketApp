@@ -39,4 +39,5 @@ class Collectdetail extends React.Component {
     );
   }
 }
-export default Collectdetail;
+
+export default Collectdetail
