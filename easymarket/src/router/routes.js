@@ -1,14 +1,12 @@
 import React from "react"
 import Loadable from "react-loadable"
 import { Toast} from 'antd-mobile';
-import Catego from "../views/classify/categoItem/categoItem"
-import ProductDetail from "../views/classify/productDetail/productDetail"
-//import Login from '../views/login'
 function Loading(){
     return <div className="loading">
-      { Toast.loading('loading')}
+      { Toast.loading('loading',1)}
     </div>
 }
+
 const Login=Loadable({
     loader:()=>import('../views/login'),
     loading:Loading
@@ -59,6 +57,14 @@ const Addressdetail=Loadable({
 })
 const GoodsSearch=Loadable({
     loader:()=>import("../views/classify/goodsSearch/index"),
+    loading:Loading
+})
+const Catego=Loadable({
+    loader:()=>import('../views/classify/categoItem/categoItem'),
+    loading:Loading
+})
+const ProductDetail=Loadable({
+    loader:()=>import('../views/classify/productDetail/productDetail'),
     loading:Loading
 })
 const routes = [{

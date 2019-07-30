@@ -3,6 +3,7 @@ import "./index.scss";
 import { Toast} from 'antd-mobile';
 import { Link } from "react-router-dom";
 import Touch from "../../../../components/touch/touch.js"
+import Header from "../../../../components/goback/goBack.js"
 import { inject, observer } from "mobx-react";
 @inject("collect")
 @observer
@@ -25,13 +26,7 @@ class Collectdetail extends React.Component {
     let { getcollectList } = this.props.collect;
     return (
       <div id="collect">
-        <header className="header">
-          <Link to="/pages/my" className="left">
-            ◁
-          </Link>
-          <div className="title">easyLikeGoods</div>
-          <div className="right" />
-        </header>
+        <Header title="easyLikeGoods" {...this.props}></Header>
         <div className="touch_content">
             {
             getcollectList && getcollectList.map((item,index)=>{

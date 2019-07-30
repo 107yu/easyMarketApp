@@ -12,12 +12,10 @@
 .goBack_title{
     width: 80%;
     font-size: .34rem;
-    font-weight: 600;
     text-align: center;
 }
 .goBack_left{
     font-size: .6rem;
     text-align: center;
     width: 10%; 
-    font-weight: 600;
 }
