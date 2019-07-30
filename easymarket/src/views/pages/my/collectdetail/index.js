@@ -1,47 +1,53 @@
-import React from 'react'
-import './index.scss'
-import {Link} from 'react-router-dom'
-import { inject, observer } from "mobx-react"
-
-@inject('collect')
+import React from "react";
+import "./index.scss";
+import { Toast} from 'antd-mobile';
+import { Link } from "react-router-dom";
+import Touch from "../../../../components/touch/touch.js"
+import { inject, observer } from "mobx-react";
+@inject("collect")
 @observer
-
 class Collectdetail extends React.Component {
-    componentDidMount() {
-        this.props.collect.getcollectData({ typeId: 0 })
+    constructor(){
+        super()
+        this.state={
+            startX:null,
+        }
     }
-    goback(){
-        
-    }
-    render() {
-        let {getcollectList} =this.props.collect;
-        return <div id='collect'>
-            <header className='header'>
-                <Link to='/pages/my' className='left'>◁</Link>
-                <div className='title'>easyLikeGoods</div>
-                <div className='right'></div>
-            </header>
+  componentDidMount() {
+    this.props.collect.getcollectData({ typeId: 0 });
+  }
+  changeCollect(item){
+    let {value_id,type_id}=item;
+    this.props.collect.cancelCollect({typeId:type_id,valueId:value_id });
+    Toast.loading('loading');
+  }
+  render() {
+    let { getcollectList } = this.props.collect;
+    return (
+      <div id="collect">
+        <header className="header">
+          <Link to="/pages/my" className="left">
+            ◁
+          </Link>
+          <div className="title">easyLikeGoods</div>
+          <div className="right" />
+        </header>
+        <div className="touch_content">
             {
-                getcollectList && getcollectList.map((item,index)=>{
-                    return <div key={index} className='touchClear'>
-                    <div className='test'>
-                        <div className='collectItem'>
-                            <img src={item.list_pic_url} alt="" />
-                        </div>
-                        <div className='collectMsg'>
-                            <div>{item.name}</div>
-                            <div>{item.goods_brief}</div>
-                            <div>￥{item.retail_price}元</div>
-                        </div>
-                    </div>
-                    <div className='colse' onClick={()=>{
-                        this.goback()
-                    }}>删除</div>
-                </div>
+            getcollectList && getcollectList.map((item,index)=>{
+                return <Touch 
+                        key={index}
+                        src={item.list_pic_url} 
+                        name={item.name} 
+                        goods_brief={item.goods_brief}
+                        retail_price={item.retail_price}
+                        changeCollect={()=>{this.changeCollect(item)}}
+                        ></Touch>
                 })
             }
         </div>
-    }
+      </div>
+    );
+  }
 }
-
-export default Collectdetail
+export default Collectdetail;
