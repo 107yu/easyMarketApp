@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { inject,observer } from 'mobx-react';
 import AddcartBtn from "../addcartBtn/addcartBtn"
 import "./productStanded.scss";
-@inject("product","addCart")
+import ProductAttar from '../productAttar';
+@inject("product","addCart","shopCar")
 @observer
 
  class ProductStanded extends Component {
+    closeModule(){
+        this.props.close()
+    }
     render() {
         let {productInfo} =this.props.product
         return (
@@ -24,24 +28,17 @@ import "./productStanded.scss";
                                 库存：<span>{productInfo.info.goods_number}件</span>
                             </div>
                             <div className="goods_standed_price">
-                                已选择：<span></span>
+                                已选择：<span style={{color:"#2196f3"}}>{this.props.addCart.colorId&&this.props.addCart.colorId.value}</span><span>{this.props.addCart.attarId&&this.props.addCart.attarId.value}</span>
                             </div>
                         </div>
                         </div>
                         
                         <div className="goods_standed_close">
-                            <i>x</i>
+                            <i onClick={()=>{this.closeModule()}}>x</i>
                         </div>
                     </div>
-                    {productInfo&&productInfo.specificationList.map((item)=>{
-                        return <div className="goods_standed_num goods_standed_color" key={item.specification_id}>
-                                    <p>{item.name}</p>
-                                    <ul>
-                                       {item.valueList.map((item)=>{
-                                           return <li key={item.id}>{item.value}</li>
-                                       })}
-                                    </ul>
-                                </div>
+                    {productInfo&&productInfo.specificationList.map((item)=>{ 
+                        return <ProductAttar key={item.specification_id} item={item}></ProductAttar>
                     })} 
                     
                     <div className="goods_standed_num">

@@ -14,6 +14,5 @@ export default class collect{
     @action addcollect =async(params)=>{
         const data=await addCollect(params)
         this.collectInfo=data.data.type==="delete"?0:1
-        console.log(data.data.type,"collect")
     }
 }

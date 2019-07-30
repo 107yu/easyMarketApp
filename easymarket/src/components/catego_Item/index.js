@@ -8,7 +8,6 @@ class CategoItem extends Component {
     }
     catego_page(id,catego_id){
         sessionStorage.setItem("categoInfo",JSON.stringify({id:id,categoId:catego_id}))
-        console.log()
         this.props.history.push(`/catego_detail/${catego_id}`)
     }
     render() {
