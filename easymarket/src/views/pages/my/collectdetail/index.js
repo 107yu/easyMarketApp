@@ -34,9 +34,6 @@ class Collectdetail extends React.Component {
                             <div>￥{item.retail_price}元</div>
                         </div>
                     </div>
-                    <div className='colse' onClick={()=>{
-                        this.goback()
-                    }}>删除</div>
                 </div>
                 })
             }
@@ -45,3 +42,13 @@ class Collectdetail extends React.Component {
 }
 
 export default Collectdetail
+
+
+
+
+
+
+
+// <div className='colse' onClick={()=>{
+//                         this.goback()
+//                     }}>删除</div>

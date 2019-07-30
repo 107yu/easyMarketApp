@@ -10,4 +10,6 @@ export * from "./addCart/index"
 
 export * from "./collect/collect"
 
+export * from "./addres/addres"
+
 export * from "./goodsSearch/index"

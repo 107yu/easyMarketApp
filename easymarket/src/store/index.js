@@ -10,6 +10,8 @@ import Addcart from "./modules/addcart"
 
 import Collect from "./modules/collect"
 
+import Addres from "./modules/addres"
+
 import SearchGoods from "./modules/goodsSearch"
 //实例化
 let login=new Login()
@@ -19,9 +21,8 @@ let page=new Page()
 let addCart=new Addcart()
 let search=new SearchGoods
 
-
-
 let collect=new Collect()
+let addres=new Addres()
 
 //分类页所有数据
 const classify=new Classify()
@@ -40,6 +41,7 @@ export default{
     addCart,
 
     collect, 
+    addres,
 
     search
 }
