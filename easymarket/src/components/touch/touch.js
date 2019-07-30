@@ -28,6 +28,12 @@ class Touch extends React.Component {
             })
         }
     }
+    delete(){
+        this.props.changeCollect()
+        this.setState({
+            hidden:false
+        })
+    }
     render() {
         let {hidden}=this.state;
         return (
@@ -43,7 +49,7 @@ class Touch extends React.Component {
                             <div>￥{this.props.retail_price}元</div>
                         </div>
                     </div>
-                    <div className='touch_delete' onClick={()=>{this.props.changeCollect()}}>删除</div>
+                    <div className='touch_delete' onClick={()=>{this.delete()}}>删除</div>
             </div>
         );
     }

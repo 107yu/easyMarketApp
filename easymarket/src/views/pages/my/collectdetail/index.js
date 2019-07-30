@@ -8,12 +8,6 @@ import { inject, observer } from "mobx-react";
 @inject("collect")
 @observer
 class Collectdetail extends React.Component {
-    constructor(){
-        super()
-        this.state={
-            startX:null,
-        }
-    }
   componentDidMount() {
     this.props.collect.getcollectData({ typeId: 0 });
   }
