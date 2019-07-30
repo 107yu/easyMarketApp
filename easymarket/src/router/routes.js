@@ -56,6 +56,10 @@ const Addressdetail=Loadable({
     loader:()=>import("../views/pages/my/addressdetail"),
     loading:Loading
 })
+const GoodsSearch=Loadable({
+    loader:()=>import("../views/classify/goodsSearch/index"),
+    loading:Loading
+})
 const routes = [{
     path: '/login',
     component: Login
@@ -107,9 +111,12 @@ const routes = [{
 },{
     path:'/collectdetail',
     component:Collectdetail
-},,{
+},{
     path:'/addressdetail',
     component:Addressdetail
+},{
+    path:'/goodSearch',
+    component:GoodsSearch
 }
 ]
 
