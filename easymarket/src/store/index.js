@@ -48,7 +48,6 @@ export default{
     collect, 
     addres,
     brandetail,
-    search
     search,
     loading
 }
