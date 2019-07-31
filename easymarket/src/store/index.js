@@ -13,6 +13,8 @@ import Collect from "./modules/collect"
 import Addres from "./modules/addres"
 
 import SearchGoods from "./modules/goodsSearch"
+import IsLoading from "./modules/loading"
+
 //实例化
 let login=new Login()
 let special=new Special()
@@ -30,6 +32,8 @@ const classify=new Classify()
 const product=new Product()
 let shopCar =new ShopCar()
 
+let loading=new IsLoading()
+
 export default{
     login,
     special,
@@ -39,8 +43,7 @@ export default{
     shopCar,
     addCart,
     collect, 
-
     addres,
-
-    search
+    search,
+    loading
 }

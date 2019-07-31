@@ -13,6 +13,7 @@ export default class collect{
     //添加收藏
     @action addcollect =async(params)=>{
         const data=await addCollect(params)
+        console.log(data)
         this.collectInfo=data.data.type==="delete"?0:1
     }
     //删除收藏：

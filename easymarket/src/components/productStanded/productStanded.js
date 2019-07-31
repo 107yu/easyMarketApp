@@ -27,8 +27,8 @@ import ProductAttar from '../productAttar';
                             <div className="goods_standed_price">
                                 库存：<span>{productInfo.info.goods_number}件</span>
                             </div>
-                            <div className="goods_standed_price">
-                                已选择：<span style={{color:"#2196f3"}}>{this.props.addCart.colorId&&this.props.addCart.colorId.value}</span><span>{this.props.addCart.attarId&&this.props.addCart.attarId.value}</span>
+                            <div className="goods_standed_price" style={{color:"#2196f3"}}>
+                                已选择：<span>{this.props.addCart.colorId&&this.props.addCart.colorId.value}</span><span>{this.props.addCart.attarId&&this.props.addCart.attarId.value}</span>
                             </div>
                         </div>
                         </div>
