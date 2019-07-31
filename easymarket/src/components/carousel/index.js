@@ -2,6 +2,7 @@ import React from "react"
 import {Carousel} from "antd"
 import './carousel.css'
 import 'antd/dist/antd.css'
+import ImgLoading from "../imgLoading/imgLoading"
 class Carousels extends React.Component{
   constructor(props){
     super(props)

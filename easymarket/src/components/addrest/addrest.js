@@ -119,7 +119,7 @@ class Addrest extends React.Component {
         let {arr,name,mobile,address,is_default}=this.state
         let html=arr.map(item=>item).join("/")
         return <div id='addressPage'>
-           <div className="addressPage_header">新增地址</div>
+           <div className="addressPage_header">{this.props.item?"修改地址":"新增地址"}</div>
             <div className='section'>
                 <div className='onePx_bottom'>
                     <input type="text" className='addressInput' placeholder='姓名' 
@@ -164,8 +164,5 @@ class Addrest extends React.Component {
             </div>
         </div>
     }
-   
 }
 export default createForm()(Addrest)
-
-
