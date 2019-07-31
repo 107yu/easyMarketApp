@@ -60,6 +60,10 @@ const GoodsSearch=Loadable({
     loader:()=>import("../views/classify/goodsSearch/index"),
     loading:Loading
 })
+const Brandetail=Loadable({
+    loader:()=>import("../components/page/brand/brandetail"),
+    loading:Loading
+})
 const routes = [{
     path: '/login',
     component: Login
@@ -117,6 +121,9 @@ const routes = [{
 },{
     path:'/goodSearch',
     component:GoodsSearch
+},{
+    path:'/brandetail/:id',
+    component:Brandetail
 }
 ]
 

@@ -1,59 +1,80 @@
 import React from 'react';
 import './index.scss'
-import { Picker, List, WhiteSpace ,PickerView  } from 'antd-mobile';
+import { Picker, List, WhiteSpace, PickerView, Toast } from 'antd-mobile';
 import city from './address.js'
 import { createForm } from 'rc-form';
 
 class Addrest extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
-            arr:[]
+        this.state = {
+            arr: [],
+            name:'',
+            phone:'',
+            city:'',
+            detail:'',
         }
     }
 
-    cancel() {
-
+    closeDo = () => {
+        // this.props.history.push('/addressdetail')
+        this.props.event(false)
+    }
+    changeVal(type,e){
+            if(type=='name'){
+                this.setState({
+                    name:e.target.value
+                })
+            }else if(type=='phone'){
+                this.setState({
+                    phone:e.target.value
+                })
+            }else if(type=='detail'){
+                this.setState({
+                    detail:e.target.value
+                })
+            }
     }
 
-    confirm() {
-
+    submitForm() {
+        console.log(this.state
+        )
     }
 
     render() {
         const { getFieldProps } = this.props.form;
         return <div id='addressPage'>
             <header className='header'>
-                <div>◁</div>
-                <div>地址管理</div>
+                <div></div>
+                <div>新增地址</div>
                 <div></div>
             </header>
             <div className='section'>
                 <div className='onePx_bottom'>
-                    <input type="text" className='addressInput' placeholder='姓名' />
+                    <input type="text" className='addressInput' placeholder='姓名' onChange={(e)=>{this.changeVal('name',e)}}/>
+                </div>
+                <div className='onePx_bottom'> 
+                    <input type="text" className='addressInput' placeholder='电话号码'   onChange={(e)=>{this.changeVal('phone',e)}}/>
                 </div>
                 <div className='onePx_bottom'>
-                    <input type="text" className='addressInput' placeholder='电话号码' />
-                </div>
-                <div className='onePx_bottom'>
-                    <List style={{ backgroundColor: 'white' }} className="picker-list">
+                    <List style={{ backgroundColor: 'white' }} className="picker-list" >
                         <Picker extra="请选择(可选)"
                             data={city}
                             title="Areas"
                             {...getFieldProps('city', {
                                 initialValue: ['340000', '341500', '341502'],
                             }) }
-                            onOk={(e)=>{this.val(e)}}
-                            onDismiss={e => console.log('dismiss', e)}
+                            onOk={(e) => { this.val(e) }}
+                            onDismiss={e => console.log('dismiss', e)} 
                         >
                             <List.Item>
-                              
+                                {this.state.arr}
                             </List.Item>
                         </Picker>
                     </List>
                 </div>
                 <div className='onePx_bottom'>
-                    <input type="text" className='addressInput' placeholder='详细地址' />
+                    <input type="text" className='addressInput' placeholder='详细地址'  onChange={(e)=>{this.changeVal('detail',e)}}/>
                 </div>
                 <div className='onePx_bottom'>
                     <div className='isDefaultAddress'>
@@ -63,29 +84,25 @@ class Addrest extends React.Component {
                 </div>
             </div>
             <div className='addAdd'>
-                <span onClick={() => {
-                    this.cancel()
-                }}>取消</span>
-                <span onClick={() => {
-                    this.confirm()
-                }}>确定</span>
+                <span onClick={this.closeDo.bind(this)}>取消</span>
+                <span onClick={this.submitForm.bind(this)}>确定</span>
             </div>
         </div>
     }
-    val(e){
+    val(e) {
         console.log(e)
-        let num=0
-        let arr=[]
-       city.filter((item,index)=>{
-            if(item.value==e[0]){
+        let num = 0
+        let arr = []
+        city.filter((item, index) => {
+            if (item.value == e[0]) {
                 console.log(item)
                 arr.push(item.label)
-                item.children.filter((item,index)=>{
-                    if(item.value==e[1]){
+                item.children.filter((item, index) => {
+                    if (item.value == e[1]) {
                         console.log(item)
                         arr.push(item.label)
-                         item.children.filter((item,index)=>{
-                            if(item.value==e[2]){
+                        item.children.filter((item, index) => {
+                            if (item.value == e[2]) {
                                 console.log(item)
                                 arr.push(item.label)
                             }
@@ -93,45 +110,14 @@ class Addrest extends React.Component {
                     }
                 })
             }
-       })
-       console.log(arr)
+        })
+        this.setState({
+            arr: arr
+        })
     }
 }
 
-// export default Addrest
 export default createForm()(Addrest)
 
 
 
-// <List style={{ backgroundColor: 'white' }} className="picker-list">
-//                         <Picker extra="请选择(可选)"
-//                             data={district}
-//                             title="Areas"
-//                             {...getFieldProps('district', {
-//                                 initialValue: ['340000', '341500', '341502'],
-//                             }) }
-//                             onOk={e => console.log('ok', e)}
-//                             onDismiss={e => console.log('dismiss', e)}
-//                         >
-//                             <List.Item arrow="horizontal">Multiple & cascader</List.Item>
-//                         </Picker>
-//                     </List>
-
-
-// <div className='chooseAddress'>北京/北京市/东城区</div>
-
-
-
-// <List style={{ backgroundColor: 'white' }} className="picker-list">
-//                         <Picker extra="请选择(可选)"
-//                             data={city}
-//                             title="Areas"
-//                             {...getFieldProps('city', {
-//                                 initialValue: ['340000', '341500', '341502'],
-//                             }) }
-//                             onOk={e => console.log('ok', e)}
-//                             onDismiss={e => console.log('dismiss', e)}
-//                         >
-//                             <List.Item arrow="horizontal"></List.Item>
-//                         </Picker>
-//                     </List>

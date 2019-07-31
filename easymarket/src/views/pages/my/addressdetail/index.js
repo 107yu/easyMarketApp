@@ -25,11 +25,17 @@ class Addressdetail extends React.Component {
             isaddress:!isaddress
         })
     }
+    children(val){
+        this.setState({
+            isaddress:val
+        })
+    }
     render() {
         let { getaddresList } = this.props.addres;
         let { isaddress } = this.state;
+        console.log(isaddress)
         if(isaddress){
-            return <Addrest />
+            return <Addrest event={this.children.bind(this)} />
         }
         return <div id='addressPage'>
             <header className='header'>
@@ -39,7 +45,7 @@ class Addressdetail extends React.Component {
             </header>
             {
                 getaddresList.length>0 && getaddresList.map((item, index) => {
-                    return <div className='addressList'>
+                    return <div key={index} className='addressList'>
                         <div className='addressItem'>
                             <div className='isChooseAddress'></div>
                             <div className='addressMsg'>
@@ -71,21 +77,3 @@ class Addressdetail extends React.Component {
 }
 
 export default Addressdetail
-
-
-
-
-
-// <div className='addressMsg'>
-//                     <div className='concatName'>XXX</div>
-//                     <div className='addressDetail'>
-//                         <div>15026346812</div>
-//                         <div>XXXXXXX</div>
-//                         <div>XXXXXXX</div>
-//                     </div>
-//                 </div>
-//                 <div className='addAddress'>
-//                     <a className='am-button'>
-//                         <span>新建地址</span>
-//                     </a>
-//                 </div>

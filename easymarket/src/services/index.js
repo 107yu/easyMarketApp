@@ -13,3 +13,5 @@ export * from "./collect/collect"
 export * from "./addres/addres"
 
 export * from "./goodsSearch/index"
+
+export * from "./brandetail/brandetail"
