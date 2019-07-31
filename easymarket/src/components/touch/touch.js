@@ -21,20 +21,24 @@ class Touch extends React.Component {
             this.setState({
                 hidden:true
             })
+            // this.props.changeHidden(true)
         }
         else{
             this.setState({
                 hidden:false
             })
+            // this.props.changeHidden(false)
         }
     }
     delete(){
         this.props.changeCollect()
         this.setState({
-            hidden:false
+            hidden:true,
         })
+        // this.props.changeHidden(true)
     }
     render() {
+        // let {hidden}=this.props;
         let {hidden}=this.state;
         return (
                 <div  className='touchClear' 

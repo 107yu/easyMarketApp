@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import "./imgLoading.css"
-
  class ImgLazyLoad extends Component {
     constructor(props){
         super(props)
