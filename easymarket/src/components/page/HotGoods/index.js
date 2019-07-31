@@ -18,9 +18,6 @@ class HotGoods extends React.Component {
                     return <div key={index} className='newGoodsWrap' onClick={()=>{this.goTo(item)}}>
                         <a className='hotGoodsItem'>
                             <ImgLazyload className='imgLazyload' imgSrc={item.list_pic_url}></ImgLazyload>
-                            {/* <LazyLoad style={{height:200}}>
-                                <img className='imgLazyload' src={item.list_pic_url} alt="" />
-                            </LazyLoad> */}
                             <div className='hotGoodsInfos'>
                                 <div className='hotGoodsName'>{item.name}</div>
                                 <div className='hotGoodsInfo'>{item.goods_brief}</div>

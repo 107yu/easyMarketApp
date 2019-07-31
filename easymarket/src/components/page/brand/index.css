@@ -18,6 +18,10 @@
   flex-wrap: wrap;
 }
 
+.brandBox .title a {
+  color: #000;
+}
+
 .brandBox .brandWrap {
   width: 50%;
   background: white;

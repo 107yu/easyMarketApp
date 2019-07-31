@@ -26,8 +26,8 @@ class Collectdetail extends React.Component {
             getcollectList && getcollectList.map((item,index)=>{
                 return <Touch 
                         key={index}
-                        src={item.list_pic_url} 
-                        name={item.name} 
+                        src={item.list_pic_url}
+                        name={item.name}
                         goods_brief={item.goods_brief}
                         retail_price={item.retail_price}
                         changeCollect={()=>{this.changeCollect(item)}}

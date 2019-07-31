@@ -158,7 +158,7 @@ class Addrest extends React.Component {
                 <span onClick={() => {
                     this.cancel()
                 }}>取消</span>
-                <span onClick={() => {
+                <span onClick={() => {  
                     this.confirm()
                 }}>确定</span>
             </div>

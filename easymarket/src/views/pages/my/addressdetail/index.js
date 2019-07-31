@@ -27,7 +27,7 @@ class Addressdetail extends React.Component {
         this.props.addres.deleteAddress({id})
     }
     render() {
-         let { getaddresList } = this.props.addres;
+        let { getaddresList } = this.props.addres;
         let { isaddress,item } = this.state;
         if(isaddress){
         return <Addrest {...this.props} changeAddress={()=>{this.addresDo()}} item={item}/>
