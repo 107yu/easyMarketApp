@@ -40,6 +40,7 @@
 
 .topGoodsBox .topGoodsWrap .slider .frame .topGoodsItem {
   height: 5rem;
+  color: #000;
 }
 
 .topGoodsBox .topGoodsWrap .slider .frame .topGoodsItem img {

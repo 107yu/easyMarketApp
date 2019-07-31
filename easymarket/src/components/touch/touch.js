@@ -33,7 +33,7 @@ class Touch extends React.Component {
     delete(){
         this.props.changeCollect()
         this.setState({
-            hidden:true,
+            hidden:true
         })
         // this.props.changeHidden(true)
     }
