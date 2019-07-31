@@ -12,6 +12,8 @@ import Collect from "./modules/collect"
 
 import Addres from "./modules/addres"
 
+import Brandetail from "./modules/brandetail"
+
 import SearchGoods from "./modules/goodsSearch"
 //实例化
 let login=new Login()
@@ -30,6 +32,8 @@ const classify=new Classify()
 const product=new Product()
 let shopCar =new ShopCar()
 
+let brandetail =new Brandetail()
+
 export default{
     login,
     special,
@@ -41,6 +45,6 @@ export default{
     collect, 
 
     addres,
-
+    brandetail,
     search
 }
