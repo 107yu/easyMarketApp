@@ -15,6 +15,8 @@ import Addres from "./modules/addres"
 import Brandetail from "./modules/brandetail"
 
 import SearchGoods from "./modules/goodsSearch"
+import IsLoading from "./modules/loading"
+
 //实例化
 let login=new Login()
 let special=new Special()
@@ -33,6 +35,7 @@ const product=new Product()
 let shopCar =new ShopCar()
 
 let brandetail =new Brandetail()
+let loading=new IsLoading()
 
 export default{
     login,
@@ -43,8 +46,9 @@ export default{
     shopCar,
     addCart,
     collect, 
-
     addres,
     brandetail,
     search
+    search,
+    loading
 }

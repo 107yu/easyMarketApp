@@ -118,7 +118,7 @@ const routes = [{
     component:Catego
 },
 {
-    path:'/productDetail',
+    path:'/productDetail/:id',
     component:ProductDetail
 },{
     path:'/collectdetail',

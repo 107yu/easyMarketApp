@@ -18,7 +18,8 @@ import "./categoItem.scss"
             categoScroll:null,
             id:Number(categoId),
             info:"上拉加载...",
-            flag:false
+            flag:false,
+            pflag:false
         }
         this.catego = React.createRef();
     }
@@ -38,7 +39,6 @@ import "./categoItem.scss"
             }),
             id:Number(categoId)
         })  
-
         let that=this
         setTimeout(()=>{
             //滚动开始
@@ -97,7 +97,7 @@ import "./categoItem.scss"
                                 })}
                             </div>
                         </div>
-                        <p className="info_box">{this.state.info}</p>
+                        <p className="info_box" style={this.props.classify.ProductInfo?{display:"block"}:{display:"none"}}>{this.state.info}</p>
                     </div>
                 </div>
             </div>
