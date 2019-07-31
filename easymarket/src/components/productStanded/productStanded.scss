@@ -78,6 +78,11 @@
             border-radius:.05rem;
             padding:.12rem .16rem;
             margin-right:.2rem;
+            &.active{
+                color:#2196f3;
+                border-color:#2196f3;
+
+            }
         }
     }
 }

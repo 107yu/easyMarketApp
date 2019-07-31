@@ -44,6 +44,8 @@ import BScroll from "better-scroll"
         new BScroll(current,{
             click:true,
         })
+        //清空购物车数量
+        this.props.addCart.change()
     }
     showModal = key => (e) => {
         e.preventDefault(); // 修复 Android 上点击穿透
@@ -67,14 +69,18 @@ import BScroll from "better-scroll"
         //添加收藏
         this.props.collect.addcollect({typeId:this.props.product.productInfo.userHasCollect,valueId:this.props.product.productInfo.info.id})
     }
-    
+    close(){
+        this.setState({
+            modal2: false,
+        });
+    }
     render() {
         let {product}=this.props;
         let obj=JSON.parse(sessionStorage.getItem("categoInfo"));
-        console.log()
+        console.log(product.productInfo)
         return (
             <div className="product_wrap">
-                <Header title={product.productInfo&&product.productInfo.info.name} flag={true} path={`/catego_detail?id=${obj.id}&&catego_id=${obj.categoId}`}></Header>
+                <Header title={product.productInfo&&product.productInfo.info.name} flag={true} path={`/catego_detail/${obj.categoId}`}></Header>
                 <div className="product_content" ref={this.bsroll}>
                     <div>
                         <div className="swiper-container product_swiper" ref={this.banner_Swiper}>
@@ -112,7 +118,7 @@ import BScroll from "better-scroll"
                                 <span style={product.productInfo&&product.productInfo.specificationList[0]?{display:"block"}:{display:"none"}}>1.{product.productInfo&&product.productInfo.specificationList[0]&&product.productInfo.specificationList[0].valueList[0].value}</span>
                                 <span style={product.productInfo&&product.productInfo.specificationList[0]?{display:"block"}:{display:"none"}}>2.{product.productInfo&&product.productInfo.specificationList[1]&&product.productInfo.specificationList[1].valueList[0].value}</span>
                             </div>
-                            <div className="goods_totle_price">x 0</div>
+                            <div className="goods_totle_price">x {this.props.addCart.number}</div>
                             <div>选择规格<i>&gt;</i></div>
                         </div>
                         <div className="goods_comments">
@@ -186,7 +192,7 @@ import BScroll from "better-scroll"
                             onClose={this.onClose('modal2')}
                             animationType="slide-up"
                             >
-                            <ProStanded></ProStanded>
+                            <ProStanded close={()=>{this.close()}}></ProStanded>
                         </Modal>
                     </div>
                 </div>
