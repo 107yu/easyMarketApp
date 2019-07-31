@@ -89,3 +89,8 @@
   padding: .12rem .16rem;
   margin-right: .2rem;
 }
+
+.goods_standed_color ul li.active {
+  color: #2196f3;
+  border-color: #2196f3;
+}

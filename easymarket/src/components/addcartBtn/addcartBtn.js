@@ -7,7 +7,15 @@ import {inject,observer} from "mobx-react"
 class AddcartBtn extends Component {
     addCart(){
         let {productInfo}=this.props.product;
-        this.props.addCart.addGoods({goodsId:productInfo.info.id+"",number:this.props.addCart.number,productId:productInfo.productList[0].id})
+        let data=productInfo.productList.filter((item)=>{
+            return item.goods_specification_ids===`${this.props.addCart.colorId.id}_${this.props.addCart.attarId.id}`
+        })
+        if(data&&data[0].goods_number>this.props.addCart.number){
+            this.props.addCart.addGoods({goodsId:productInfo.info.id+"",number:this.props.addCart.number,productId:data&&data[0].id})
+        }else{
+            alert("error")
+        }
+        
     }
     render() {
         return (

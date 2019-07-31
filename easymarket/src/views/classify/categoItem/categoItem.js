@@ -79,7 +79,7 @@ import "./categoItem.scss"
                 <Header title={"奇趣分类"} flag={true} path={"/pages/classify"}></Header>
                 <div className="CategoItem_nav">
                     <ul className="CategoItem_wrap">
-                        {this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList.map((item,index)=>{
+                        {this.props.classify.NavInfo&&this.props.classify.NavInfo.map((item,index)=>{
                             return <li className={this.state.id===item.id?"active":""} key={index} onClick={()=>{this.changeCon(item.id,index)}}>{item.name}</li>
                         })}
                     </ul>
@@ -88,8 +88,8 @@ import "./categoItem.scss"
                     <div style={{position:"relative"}}>
                         <div>
                             <div className="CategoItem_title">
-                                <div className="CategoItem_detail">{this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList[this.state.ind].name}</div>
-                                <div className="CategoItem_sub_title">{this.props.classify.categoryChild&&this.props.classify.categoryChild.subCategoryList[this.state.ind].front_name}</div>
+                                <div className="CategoItem_detail">{this.props.classify.NavInfo&&this.props.classify.NavInfo[this.state.ind].name}</div>
+                                <div className="CategoItem_sub_title">{this.props.classify.NavInfo&&this.props.classify.NavInfo[this.state.ind].front_name}</div>
                             </div>
                             <div className="CategoItem_con">
                                 {this.props.classify.ProductInfo&&this.props.classify.ProductInfo.map((item,index)=>{

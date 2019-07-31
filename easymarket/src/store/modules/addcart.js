@@ -4,9 +4,10 @@ class Addcart{
     @observable mes;
     @observable number=0;
     @observable totalNum=0;
+    @observable colorId;
+    @observable attarId;
     @action async addGoods(params){
         const data=await addCart(params)
-        console.log(data)
     }
     //点击减
     @action  up(params){
@@ -20,10 +21,22 @@ class Addcart{
         this.number++
         
     }
+    @action change(){
+        this.number=0;
+    }
     //获取购物车商品总量
     @action async getNum(){
         const data=await goodscount()
         this.totalNum=data.cartTotal.goodsCount 
+    }
+    //存储颜色
+    @action  saveColor(color){
+        this.colorId=color
+         
+    }
+    //存储规格
+    @action saveStyle(attar){
+        this.attarId=attar 
     }
 }
 export default Addcart

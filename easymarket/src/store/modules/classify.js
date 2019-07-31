@@ -7,7 +7,7 @@ class Classify{
 
     @observable ProductInfo=[];
 
-    @observable ProductInfo;
+    @observable NavInfo;
 
 
     //分类页左侧导航
@@ -21,6 +21,7 @@ class Classify{
 
     @action getinfo=async(id)=>{
         const data=await getClassifyNav(id)
+        this.NavInfo=data.brotherCategory
     }
 
      /**
