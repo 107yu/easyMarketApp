@@ -1,5 +1,6 @@
 import React from 'react';
 import {observer, inject} from 'mobx-react'
+import "./index.scss"
 
 @inject('loading')
 @observer

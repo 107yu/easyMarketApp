@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss'
 import {withRouter} from "react-router-dom"
-import ImgLazyload from "../../../components/ImgLoading/ImgLoading"
+
 
 class NewGoods extends React.Component {
     goTo(item){
@@ -17,8 +17,7 @@ class NewGoods extends React.Component {
                 newGoodsList && newGoodsList.map((item, index) => {
                     return <div key={index} className='newGoodsWrap' onClick={()=>{this.goTo(item)}}>
                         <a className='newGoodsItem'>
-                            <ImgLazyload className='imgLazyload' imgSrc={item.list_pic_url}></ImgLazyload>
-                            {/* <img src={item.list_pic_url} alt="" /> */}
+                            <img src={item.list_pic_url} alt="" />
                             <div className='newGoodsName'>{item.name}</div>
                             <div className='newGoodsPrice'>￥{item.retail_price}元</div>
                         </a>

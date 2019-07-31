@@ -14,12 +14,17 @@ import 'antd-mobile/dist/antd-mobile.css';
 import "../node_modules/swiper/dist/css/swiper.min.css"
 //iconfonts图标
 import './fonts/iconfont.css'
+import {inject,observer} from "mobx-react"
 
 //引入loading组件
 import Loading from "./components/common/Loading/index"
+
 ReactDOM.render(<Provider {...store}>
-    <Router>    
-        <RouterView/>
-    </Router>
+    <React.Fragment>
+        <Router>    
+            <RouterView/>
+        </Router>
+        {false?<Loading/>:null}
+    </React.Fragment>
 </Provider>,document.getElementById('root'));
 

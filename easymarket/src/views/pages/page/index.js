@@ -13,7 +13,7 @@ import CateGoryGoods from '../../../components/page/CateGoryGoods'
 //
 import { Link } from 'react-router-dom'
 import { inject, observer } from "mobx-react"
-import BScroll from "better-scroll"
+
 @inject('page',"loading")
 @observer
 
@@ -25,15 +25,22 @@ class Page extends React.Component {
     }
     componentDidMount() {
         this.props.page.getpageData()
-        new BScroll(this.wrapper.current,{
-            click:true
-        })
-
+        // setInterval(()=>{
+        //     this.props.loading.changeLoading(!this.props.loading.isLoading);
+        // },1000)
+        
+        
     }
     render() {
+        //判断
+        if(!this.props.page.getpageList){
+            this.props.loading.changeLoading(false);
+        }else{
+            this.props.loading.changeLoading(true);
+        }
         let { brandList, newGoodsList, hotGoodsList, topicList, categoryList, channel } = this.props.page.getpageList;
+        
         return <div className='page' ref={this.wrapper}>
-                <div>
                     <Carousel></Carousel>
                     <div className='channelWrap'>
                         {
@@ -49,8 +56,7 @@ class Page extends React.Component {
                     <NewGoods newGoodsList={newGoodsList}></NewGoods>
                     <HotGoods hotGoodsList={hotGoodsList}></HotGoods>
                     <TopGoods topicList={topicList}></TopGoods>
-                    <CateGoryGoods categoryList={categoryList}></CateGoryGoods>
-                </div>
+                    <CateGoryGoods categoryList={categoryList}></CateGoryGoods>     
         </div>
     }
 }
