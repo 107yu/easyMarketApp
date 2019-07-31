@@ -7,7 +7,7 @@
     position: fixed;
     top:0;
     left:0;
-   
+    z-index: 999;
 }
 .goBack_title{
     width: 80%;

@@ -83,6 +83,10 @@ class Shopping extends React.Component{
            this.changeEdit()
        }
     }
+    //跳详情：
+    goToDetail(id){
+        this.props.history.push(`/productDetail?id=${id}`) 
+    }
     render(){
         let{ cartList,cartTotal}=this.props.shopCar.shopList;
         let {allChecked,doAllChecked}=this.props.shopCar
@@ -109,7 +113,7 @@ class Shopping extends React.Component{
                                             }
                                             </div>
                                             <div className="shopCar_item_img">
-                                                <img src={item.list_pic_url} alt=""/>
+                                                <img src={item.list_pic_url} alt="" onClick={()=>{this.goToDetail(item.id)}}/>
                                             </div>
                                             {
                                                 !edit?<><div className="shopCar_item_msg">

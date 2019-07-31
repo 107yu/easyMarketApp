@@ -1,63 +1,156 @@
 import React from 'react';
 import './index.scss'
-import { Picker, List, WhiteSpace ,PickerView  } from 'antd-mobile';
+import { Picker, List,Toast} from 'antd-mobile';
 import city from './address.js'
 import { createForm } from 'rc-form';
+import isChecked from "../../static/img/isCheck.png"
+import noChecked from "../../static/img/noCheck.png"
+import { inject, observer } from "mobx-react"
+@inject('addres')
+@observer
 class Addrest extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            arr:[]
+            ids:[2,37,403],//得到的省市区的id
+            arr:["北京","北京市","东城区"],
+            name:"",//姓名
+            mobile:"",//电话
+            address:"",//详细地址
+            is_default:false,//是否默认地址
+            province_id: null,//省
+            city_id:null,//城市
+            district_id: null,//区
+            id:null,
         }
     }
-
-    cancel() {
-
+    componentDidMount(){
+        let {item}=this.props;
+        if(item){
+            this.setState({
+                arr:[item.province_name,item.city_name,item.district_name],
+                name:item.name,
+                mobile:item.mobile,
+                address:item.address,
+                is_default:item.is_default,
+                province_id:item.province_id,
+                city_id:item.city_id,
+                district_id:item.district_id,
+                id:item.id
+            })
+        }
     }
-
-    confirm() {
-
+    cancel() {//取消
+        this.props.changeAddress()
     }
-
+    confirm() {//确定
+        let {ids,name,mobile,address,is_default,id}=this.state
+        if(name===""){
+            Toast.fail('姓名不能为空', 1);
+            return;
+        }
+        if(mobile===""){
+            Toast.fail('电话号码不能为空', 1);
+            return;
+        }
+        if(mobile&&!/^1[3456789]\d{9}$/.test(mobile)){
+            Toast.fail('请输入正确的电话号码', 1);
+            return;
+        }
+       this.props.addres.changeAddress({
+            name:name,
+            mobile:mobile,
+            address:address,
+            is_default:is_default,
+            province_id:ids[0],
+            city_id:ids[1],
+            district_id:ids[2],
+            id:id,
+       })
+       this.props.changeAddress()
+    }
+    pcickerChange(e){
+        let arr=[]
+        city.filter((item,index)=>{
+            if(item.value==e[0]){
+                arr.push(item.label)
+                item.children.filter((item,index)=>{
+                    if(item.value==e[1]){
+                        arr.push(item.label)
+                            item.children.filter((item,index)=>{
+                            if(item.value==e[2]){
+                                arr.push(item.label)
+                            }
+                        })
+                    }
+                })
+            }
+        })
+        this.setState({
+            arr:arr,
+            ids:e
+        })
+    }
+    changeName(e){//姓名
+        this.setState({
+            name:e.target.value
+        })
+    }
+    changeMobile(e){//电话
+        if (/^[0-9]*$/.test(e.target.value)){
+            this.setState({
+                mobile:e.target.value
+            })
+         }
+    }
+    changeFullAddress(e){//随意输入的详细地址
+        this.setState({
+            address:e.target.value
+        })
+    }
+    changeDefault(){//改变选中状态
+        let {is_default}=this.state;
+        this.setState({
+            is_default:!is_default
+        })
+    }
     render() {
         const { getFieldProps } = this.props.form;
+        let {arr,name,mobile,address,is_default}=this.state
+        let html=arr.map(item=>item).join("/")
         return <div id='addressPage'>
-            <header className='header'>
-                <div>◁</div>
-                <div>添加地址</div>
-                <div></div>
-            </header>
+           <div className="addressPage_header">新增地址</div>
             <div className='section'>
                 <div className='onePx_bottom'>
-                    <input type="text" className='addressInput' placeholder='姓名' />
+                    <input type="text" className='addressInput' placeholder='姓名' 
+                            value={name} onChange={(e)=>{this.changeName(e)}}/>
                 </div>
                 <div className='onePx_bottom'>
-                    <input type="text" className='addressInput' placeholder='电话号码' />
+                    <input type="text" className='addressInput' placeholder='电话号码' 
+                        value={mobile} onChange={(e)=>{this.changeMobile(e)}}/>
                 </div>
                 <div className='onePx_bottom'>
                     <List style={{ backgroundColor: 'white' }} className="picker-list">
-                        <Picker extra="请选择(可选)"
+                        <Picker extra=" "
                             data={city}
-                            title="Areas"
                             {...getFieldProps('city', {
                                 initialValue: ['340000', '341500', '341502'],
                             }) }
-                            onOk={(e)=>{this.val(e)}}
+                            onOk={(e)=>{this.pcickerChange(e)}}
                             onDismiss={e => console.log('dismiss', e)}
+                            value={arr}
                         >
-                            <List.Item>
-                              
-                            </List.Item>
+                            <List.Item arrow="horizontal">{html}</List.Item>
                         </Picker>
                     </List>
                 </div>
                 <div className='onePx_bottom'>
-                    <input type="text" className='addressInput' placeholder='详细地址' />
+                    <input type="text" className='addressInput' placeholder='详细地址' 
+                        value={address} onChange={(e)=>{this.changeFullAddress(e)}}/>
                 </div>
                 <div className='onePx_bottom'>
                     <div className='isDefaultAddress'>
-                        设置默认地址
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABCUExURUdwTMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzAV+Z0EAAAAVdFJOUwAJ+KUEFTPay2bzRXdZ7RkhmJ6qJOWhY+QAAAEDSURBVDjLnZTplsIgDIUNWwK2tdt9/1cdxHGmVcAc+dH25Hw0+71cvjhztDIZM4mNc4txo+BwZKxSVwbSFoMn8iFuCeDrG0RLNkc6GGK+ttCZ8gIzuJcgBgPxJ4rB4T2OkM0HjgRyq8V7Y8i/3/V06YVb/nKECa0qBYPffB1jaFd8AD8+RrBrY8R41FkQew2MkPtrR6IeRglzoW1/HrbizfZ9Pv8jCH0slOAm+D7mMeUn4PoYwegxpVNlCsqCKMurbJay9R8GyT0HSTmWeciTYsh7K+MPK1MW0H9eQOU652sqcch+15rUrFQXLpuFy7ksXLYuXDUZbBZ9v4sqiqju34jyD97JD4dkfgo1AAAAAElFTkSuQmCC" alt="" />
+                        设置默认地址<img src={is_default?isChecked:noChecked} alt="" onClick={()=>{this.changeDefault()}}/>
                     </div>
                 </div>
             </div>
@@ -71,65 +164,8 @@ class Addrest extends React.Component {
             </div>
         </div>
     }
-    val(e){
-        console.log(e)
-        let num=0
-        let arr=[]
-       city.filter((item,index)=>{
-            if(item.value==e[0]){
-                console.log(item)
-                arr.push(item.label)
-                item.children.filter((item,index)=>{
-                    if(item.value==e[1]){
-                        console.log(item)
-                        arr.push(item.label)
-                         item.children.filter((item,index)=>{
-                            if(item.value==e[2]){
-                                console.log(item)
-                                arr.push(item.label)
-                            }
-                        })
-                    }
-                })
-            }
-       })
-       console.log(arr)
-    }
+   
 }
-
 export default createForm()(Addrest)
 
 
-
-// <List style={{ backgroundColor: 'white' }} className="picker-list">
-//                         <Picker extra="请选择(可选)"
-//                             data={district}
-//                             title="Areas"
-//                             {...getFieldProps('district', {
-//                                 initialValue: ['340000', '341500', '341502'],
-//                             }) }
-//                             onOk={e => console.log('ok', e)}
-//                             onDismiss={e => console.log('dismiss', e)}
-//                         >
-//                             <List.Item arrow="horizontal">Multiple & cascader</List.Item>
-//                         </Picker>
-//                     </List>
-
-
-// <div className='chooseAddress'>北京/北京市/东城区</div>
-
-
-
-// <List style={{ backgroundColor: 'white' }} className="picker-list">
-//                         <Picker extra="请选择(可选)"
-//                             data={city}
-//                             title="Areas"
-//                             {...getFieldProps('city', {
-//                                 initialValue: ['340000', '341500', '341502'],
-//                             }) }
-//                             onOk={e => console.log('ok', e)}
-//                             onDismiss={e => console.log('dismiss', e)}
-//                         >
-//                             <List.Item arrow="horizontal"></List.Item>
-//                         </Picker>
-//                     </List>
