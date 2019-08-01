@@ -56,7 +56,7 @@ class My extends React.Component {
     }
     loginout(){
         window.localStorage.removeItem('token')
-        this.props.history.push('/login')
+        this.props.history.push({pathname:'/login'})
     }
     render() {
         const { myList } = this.state

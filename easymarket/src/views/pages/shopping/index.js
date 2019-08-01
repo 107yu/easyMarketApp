@@ -93,6 +93,12 @@ class Shopping extends React.Component{
         let {edit}=this.state
         //要删除商品的个数
         let deleteNum=cartList&&cartList.filter(item=>item.isDelete)
+        // //如果没有登录--to login
+        // if(!this.props.shopCar.isLogin){
+        //    this.props.history.push("/login")
+        //    this.props.shopCar.changeLogin()
+        // }
+        console.log("islogin",this.props.shopCar.isLogin)
         return <div className="shopCar">
             <div className="shopCar_header">
                <span><b>★</b>30天无忧退货</span>
