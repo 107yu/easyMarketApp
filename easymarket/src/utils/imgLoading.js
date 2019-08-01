@@ -17,13 +17,14 @@ LazyLoad.prototype = {
     },
     loadImg(){
         //获取到所有的图片
-        console.log(this.el.scrollY,"111")
-        
+        // console.log(this.el.scrollY,"111333333333333333333333333333333333333333333")
+        let that=this;
         setTimeout(()=>{
-            let imgs = this.el.querySelectorAll(".imgLazyload");
+            let imgs = that.el.querySelectorAll(".imgLazyload");
             imgs.forEach(item=>{
                 // 先判断是否加载过
-                console.log(item.src,item.dataset.src)
+                // console.log(item.src,item.dataset.src)
+                // console.log(item)
                 if (item.src !== item.dataset.src){
                     // 判断元素是否进入视口
                     if (this.isIntoView(item,this.scrollY)){
@@ -36,8 +37,8 @@ LazyLoad.prototype = {
     isIntoView(el,height){
         let rect = el.getBoundingClientRect();
         //图片距离顶部的距离  与 父元素滚动的距离作比较
-        console.log(this.el,height,"111")
-        console.log(rect.top,window.innerHeight,111)
+        // console.log(this.el,height,"111")
+        // console.log(rect.top,window.innerHeight,111)
         if (rect.top > 0 && rect.top < window.innerHeight && rect.left > 0 && rect.left < window.innerWidth){
             return true;
         }

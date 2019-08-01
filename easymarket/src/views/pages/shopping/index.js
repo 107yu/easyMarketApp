@@ -1,11 +1,12 @@
 import React ,{Fragment}from 'react';
 import "./index.css"
+import Loading from "../../../components/common/Loading/index"
 import {inject,observer} from "mobx-react"
 import isChecked from "../../../static/img/isCheck.png"
 import noChecked from "../../../static/img/noCheck.png"
 import { Toast} from 'antd-mobile';
 import noShopping from "../../../static/img/noGoods.png"
-@inject('shopCar')
+@inject('shopCar',"loading")
 @observer
 class Shopping extends React.Component{
     constructor(){
@@ -13,10 +14,12 @@ class Shopping extends React.Component{
         this.state={
             edit:false
         }
+        
     }
     componentDidMount(){
         //初始化购物车
         this.props.shopCar.getShopCarList()
+        console.log(this)
     }
     //改变编辑状态-编辑or完成：
     changeEdit(){
@@ -46,12 +49,14 @@ class Shopping extends React.Component{
     changeCount(item,type){
         let {goods_id,number,product_id}=item
         if(number+type>=1){
+            this.props.loading.changeLoading(true);
             this.props.shopCar.addShop({
                 goodsId:goods_id,
                 number:type,
                 productId:product_id
             })
         }
+        this.props.loading.changeLoading(false);
     } 
     //编辑和非编辑状态的---改变商品的选中状态：
     changeGoodsStutes(item){
@@ -100,8 +105,8 @@ class Shopping extends React.Component{
                 <div className="shopCar_main">
                     <div className="shopCar_carWrap">
                         {
-                            cartList&&cartList.map(item=>{
-                                return <div className="shopCar_item" key={item.goods_id}> 
+                            cartList&&cartList.map((item,index)=>{
+                                return <div className="shopCar_item" key={index}> 
                                             <div className="shopCar_item_isChecked" 
                                                 onClick={()=>{this.changeGoodsStutes(item,cartList)}}>
                                             {
@@ -153,6 +158,7 @@ class Shopping extends React.Component{
                     <a href="/pages/page">去添加商品</a>
             </div>
             }
+             {this.props.loading.isLoading?<Loading/>:null}
         </div>
     }
 }

@@ -13,33 +13,19 @@ import CateGoryGoods from '../../../components/page/CateGoryGoods'
 //
 import { Link } from 'react-router-dom'
 import { inject, observer } from "mobx-react"
-
 @inject('page',"loading")
 @observer
-
 class Page extends React.Component {
     constructor(props){
         super(props)
         this.wrapper=React.createRef()
-
     }
     componentDidMount() {
         this.props.page.getpageData()
-        // setInterval(()=>{
-        //     this.props.loading.changeLoading(!this.props.loading.isLoading);
-        // },1000)
-        
-        
+           
     }
     render() {
-        //判断
-        if(!this.props.page.getpageList){
-            this.props.loading.changeLoading(false);
-        }else{
-            this.props.loading.changeLoading(true);
-        }
         let { brandList, newGoodsList, hotGoodsList, topicList, categoryList, channel } = this.props.page.getpageList;
-        
         return <div className='page' ref={this.wrapper}>
                     <Carousel></Carousel>
                     <div className='channelWrap'>

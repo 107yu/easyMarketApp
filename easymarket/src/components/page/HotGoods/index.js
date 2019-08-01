@@ -1,8 +1,10 @@
 import React from 'react';
 import {withRouter} from "react-router-dom"
-import ImgLazyload from "../../../utils/imgLoading"
-// import LazyLoad from 'react-lazy-load';
-import origin from "../../../static/img/market.jpg"
+
+import Lazyimg, { withLazyimg } from 'react-lazyimg-component';
+// 引入 volecity.js
+
+
 
 class HotGoods extends React.Component {
     constructor(props){
@@ -18,21 +20,23 @@ class HotGoods extends React.Component {
     }
     render() {
         let { hotGoodsList } = this.props;
-        if(hotGoodsList){
-            new ImgLazyload(this.wrapper.current)
-        }
+       // 配置
+        const config = {
+            js_effect: 'transition.shrinkIn', // 支持 velocity.js 动画效果
+            threshold: 10000,
+            placeholder:"http://downza.img.zz314.com/news/pc/rdtj-1023/2018-03-06/794b93b77c3cb7c5a9343267be9f9e7a.png",
+        };
+        const Lazy = withLazyimg(config);
         return <div className='hotGoodsBox' ref={this.wrapper}>
             <div className='hotGoodsTitle'>人气推荐</div>
             {
                 hotGoodsList && hotGoodsList.map((item, index) => {
                     return <div key={index} className='newGoodsWrap' onClick={()=>{this.goTo(item)}}>
                         <a className='hotGoodsItem'>
-                        {/* <img src="origin" data-src="value.CoverPhoto" alt="value.Name"> */}
-                            <img className='imgLazyload' src={origin}  data-src={item.list_pic_url} alt="" />
-                            {/* <ImgLazyload className='imgLazyload' imgSrc={item.list_pic_url}></ImgLazyload> */}
-                            {/* <LazyLoad offsetVertical={0} width={140}>
-                                
-                            </LazyLoad> */}
+                            <Lazy
+                                className="lazy"
+                                src={item.list_pic_url}
+                            />
                             <div className='hotGoodsInfos'>
                                 <div className='hotGoodsName'>{item.name}</div>
                                 <div className='hotGoodsInfo'>{item.goods_brief}</div>
