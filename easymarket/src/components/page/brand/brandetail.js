@@ -14,7 +14,7 @@ class Brandetail extends React.Component {
     render() {
         let { getbrandList } = this.props.brandetail;
         return <div className='brandetail'>
-            <header className='header'>
+            <header className='headers'>
                 <Link to='/pages/page'>◁</Link>
                 <div>{getbrandList.name}</div>
                 <div></div>

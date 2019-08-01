@@ -12,6 +12,7 @@ import CateGoryGoods from '../../../components/page/CateGoryGoods'
 import { Link } from 'react-router-dom'
 import { inject, observer } from "mobx-react"
 import BScroll from "better-scroll"
+
 @inject('page',"loading")
 @observer
 class Page extends React.Component {
@@ -27,7 +28,7 @@ class Page extends React.Component {
     }
     render() {
         let { brandList, newGoodsList, hotGoodsList, topicList, categoryList, channel } = this.props.page.getpageList;
-        return <div className='page' ref={this.wrapper}>k
+        return <div className='page' ref={this.wrapper}>
                 <div>
                     <Carousel></Carousel>
                     <div className='channelWrap'>
