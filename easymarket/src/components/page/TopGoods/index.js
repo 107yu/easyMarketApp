@@ -17,7 +17,6 @@ class TopGoods extends React.Component {
                 autoplay
                 infinite
                 dots={false}
-                beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
                 afterChange={index => this.setState({ slideIndex: index })}
             >
                 {this.props.topicList && this.props.topicList.map((val, index) => (
