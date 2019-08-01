@@ -24,7 +24,7 @@ class Addrest extends React.Component {
             id:null,
         }
     }
-    componentDidMount(){
+     componentDidMount(){
         let {item}=this.props;
         if(item){
             this.setState({
@@ -69,7 +69,7 @@ class Addrest extends React.Component {
        })
        this.props.changeAddress()
     }
-    pcickerChange(e){
+     pcickerChange(e){
         let arr=[]
         city.filter((item,index)=>{
             if(item.value==e[0]){
@@ -158,7 +158,7 @@ class Addrest extends React.Component {
                 <span onClick={() => {
                     this.cancel()
                 }}>取消</span>
-                <span onClick={() => {
+                <span onClick={() => {  
                     this.confirm()
                 }}>确定</span>
             </div>

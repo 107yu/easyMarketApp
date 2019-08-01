@@ -20,6 +20,7 @@
   height: auto;
   background: white;
   padding: .2rem;
+  color: #000;
   position: relative;
 }
 
@@ -41,6 +42,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: #000;
   padding-bottom: .3rem;
   padding-top: .1rem;
 }

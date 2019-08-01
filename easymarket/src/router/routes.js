@@ -59,12 +59,17 @@ const GoodsSearch=Loadable({
     loader:()=>import("../views/classify/goodsSearch/index"),
     loading:Loading
 })
+
 const Catego=Loadable({
     loader:()=>import('../views/classify/categoItem/categoItem'),
     loading:Loading
 })
 const ProductDetail=Loadable({
     loader:()=>import('../views/classify/productDetail/productDetail'),
+    loading:Loading
+})
+const Brandetail=Loadable({
+    loader:()=>import("../components/page/brand/brandetail"),
     loading:Loading
 })
 const routes = [{
@@ -113,7 +118,7 @@ const routes = [{
     component:Catego
 },
 {
-    path:'/productDetail',
+    path:'/productDetail/:id',
     component:ProductDetail
 },{
     path:'/collectdetail',
@@ -124,6 +129,9 @@ const routes = [{
 },{
     path:'/goodSearch',
     component:GoodsSearch
+},{
+    path:'/brandetail/:id',
+    component:Brandetail
 }
 ]
 

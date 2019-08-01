@@ -77,7 +77,7 @@ import BScroll from "better-scroll"
     render() {
         let {product}=this.props;
         let obj=JSON.parse(sessionStorage.getItem("categoInfo"));
-        console.log(product.productInfo)
+        console.log(this.props)
         return (
             <div className="product_wrap">
                 <Header title={product.productInfo&&product.productInfo.info.name} flag={true} path={`/catego_detail/${obj.categoId}`}></Header>
@@ -213,4 +213,4 @@ import BScroll from "better-scroll"
         )
     }
 }
-export default ProductDetail
+export default (props)=><ProductDetail {...props} key={props.location.pathname}/>

@@ -1,7 +1,13 @@
 import React from 'react';
 import './index.scss'
+import {withRouter} from "react-router-dom"
+import ImgLazyload from "../../../components/ImgLoading/ImgLoading"
 
 class NewGoods extends React.Component {
+    goTo(item){
+        sessionStorage.setItem("productId",JSON.stringify({id:item.id}))
+        this.props.history.push(`/productDetail/${item.id}`) 
+    }
     render() {
         let { newGoodsList } = this.props;
         return <div className='newGoodsBox'>
@@ -9,9 +15,9 @@ class NewGoods extends React.Component {
             <div className='title'>
                 {
                 newGoodsList && newGoodsList.map((item, index) => {
-                    return <div key={index} className='newGoodsWrap'>
+                    return <div key={index} className='newGoodsWrap' onClick={()=>{this.goTo(item)}}>
                         <a className='newGoodsItem'>
-                            <img src={item.list_pic_url} alt="" />
+                            <ImgLazyload className='imgLazyload' imgSrc={item.list_pic_url}></ImgLazyload>
                             <div className='newGoodsName'>{item.name}</div>
                             <div className='newGoodsPrice'>￥{item.retail_price}元</div>
                         </a>
@@ -24,4 +30,4 @@ class NewGoods extends React.Component {
 }
 
 
-export default NewGoods
+export default withRouter(NewGoods)

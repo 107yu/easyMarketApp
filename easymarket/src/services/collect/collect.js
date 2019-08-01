@@ -6,7 +6,7 @@ export function getcollect(params) {
 }
 //添加收藏
 export function addCollect(params) {
-    return request.get('/collect/list',params);
+    return request.post('/collect/addordelete',params);
 }
 //取消收藏：
 export function removeCollect(params) {
