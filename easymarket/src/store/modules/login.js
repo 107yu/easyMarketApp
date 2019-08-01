@@ -9,11 +9,15 @@ export default class Login{
             if(res.errno === 0) {
                 // alert('登录成功')
                localStorage.setItem("token",res.data.sessionKey)
+               localStorage.setItem("info",res.data.mobile)
                 this.isLogin = res.errno
             } else {
                 alert(res.errmsg)
                 this.isLogin = res.errno
             }
         })
+    }
+    @action clear=()=>{
+         this.isLogin =-1;
     }
 } 

@@ -13,7 +13,8 @@ class Login extends React.Component{
     }
     componentDidMount(){
         if(localStorage.getItem("token")){
-            this.props.history.push("/pages/page")
+            // this.props.history.push("/pages/page")
+            this.props.history.goBack()
         }
     }
     getInfomation(){
@@ -25,7 +26,9 @@ class Login extends React.Component{
     }
     render(){
         if(this.props.login.isLogin===0){
-            this.props.history.push("/pages/page")
+            // this.props.history.push("/pages/page")
+             this.props.history.goBack()
+            this.props.login.clear()
             return null;
         }
         return <div className="login_page">

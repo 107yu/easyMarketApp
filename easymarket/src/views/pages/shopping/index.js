@@ -88,6 +88,11 @@ class Shopping extends React.Component{
         this.props.history.push(`/productDetail?id=${id}`) 
     }
     render(){
+        if(this.props.shopCar.shopList.errno===401){
+            this.props.history.push({pathname:"/login"})
+            this.props.shopCar.init()
+            return null;
+        }
         let{ cartList,cartTotal}=this.props.shopCar.shopList;
         let {allChecked,doAllChecked}=this.props.shopCar
         let {edit}=this.state
