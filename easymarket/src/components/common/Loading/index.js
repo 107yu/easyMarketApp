@@ -1,5 +1,7 @@
 import React from 'react';
 import {observer, inject} from 'mobx-react'
+import "./index.scss"
+import { Toast} from 'antd-mobile';
 
 @inject('loading')
 @observer
@@ -9,29 +11,8 @@ class Loading extends React.Component{
             return null;
         }
         return <div className="loading">
-           <div className="circle-loader">
-                <div className="circle-line">
-                    <div className="circle circle-blue"></div>
-                    <div className="circle circle-blue"></div>
-                    <div className="circle circle-blue"></div>
-                </div>
-                <div className="circle-line">
-                    <div className="circle circle-yellow"></div>
-                    <div className="circle circle-yellow"></div>
-                    <div className="circle circle-yellow"></div>
-                </div>
-                <div className="circle-line">
-                    <div className="circle circle-red"></div>
-                    <div className="circle circle-red"></div>
-                    <div className="circle circle-red"></div>
-                </div>
-                <div className="circle-line">
-                    <div className="circle circle-green"></div>
-                    <div className="circle circle-green"></div>
-                    <div className="circle circle-green"></div>
-                </div>
-            </div>
-        </div>
+        { Toast.loading('loading',1)}
+      </div>
     }
 }
 

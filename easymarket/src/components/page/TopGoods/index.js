@@ -1,6 +1,11 @@
 import React from 'react';
 import './index.scss'
 import { Carousel, WingBlank } from 'antd-mobile';
+import Lazyimg, { withLazyimg } from 'react-lazyimg-component';
+// 引入 volecity.js
+import 'velocity-animate';
+import 'velocity-animate/velocity.ui';
+
 class TopGoods extends React.Component {
     state = {
         data: ['1', '2', '3'],
