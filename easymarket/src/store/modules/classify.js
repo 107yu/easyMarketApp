@@ -37,12 +37,6 @@ class Classify{
     @action getproduct_Info(id,size,page){
         getproductInfo(id,size,page).then(res=>{
             this.ProductInfo=res.data
-            // if(!this.ProductInfo.length){
-            //     this.ProductInfo=res.data
-            // }else{
-            //     this.ProductInfo.push(...res.data)
-            // }
-            
         })
     }
 }

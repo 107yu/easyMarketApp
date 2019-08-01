@@ -62,10 +62,6 @@ import BScroll from "better-scroll"
      * 添加收藏
      */
     addCol(){
-        //userHasCollect
-        // this.setState({
-        //     flag:!this.state.flag
-        // })
         //添加收藏
         this.props.collect.addcollect({typeId:this.props.product.productInfo.userHasCollect,valueId:this.props.product.productInfo.info.id})
     }
@@ -77,7 +73,6 @@ import BScroll from "better-scroll"
     render() {
         let {product}=this.props;
         let obj=JSON.parse(sessionStorage.getItem("categoInfo"));
-        console.log(this.props)
         return (
             <div className="product_wrap">
                 <Header title={product.productInfo&&product.productInfo.info.name} flag={true} path={`/catego_detail/${obj.categoId}`}></Header>

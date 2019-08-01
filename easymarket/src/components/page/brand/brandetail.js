@@ -29,18 +29,3 @@ class Brandetail extends React.Component {
 
 export default Brandetail
 
-
-
-
-
-
-
-//  {
-//                 getbrandList.length>0 && getbrandList.map((item, index) => {
-//                     return <header className='header'>
-//                         <Link to='/pages/page'>◁</Link>
-//                         <div>{item.name}</div>
-//                         <div></div>
-//                     </header>
-//                 })
-//             }

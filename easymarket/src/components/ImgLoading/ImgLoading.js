@@ -11,7 +11,6 @@ import React, { Component } from 'react'
     }
     componentDidMount(){
         this.handle()
-        // window.addEventListener("scroll",this.handle)
     }
     handle(){
         if(!this.state.isLoading){
@@ -20,9 +19,6 @@ import React, { Component } from 'react'
             let changedBottom=window.scrollY+document.documentElement.clientHeight;
             //获取图片距离顶部的距离
             let offsetT=IMG.offsetTop;
-            // if(offsetT changeBottom){
-    
-            // }
             let imgObj = new Image()
             imgObj.src = this.props.imgSrc
             this.setState({isLoading: true})
@@ -39,16 +35,10 @@ import React, { Component } from 'react'
         }else{
             window.removeEventListener('scroll', this.handler)
         }
-       
-
-
-
-
     }
     render() {
         //需要去判断
         //如果isLoad为true就显示默认 否则就显示图片
-
         let {imgSrc,initUrl}=this.props
         return (
             <img ref={this.imgs} className={this.state.isLoad?'imgLazyload loadEnd': 'imgLazyload loading'} src={imgSrc} alt="imgLazyLoad"/>

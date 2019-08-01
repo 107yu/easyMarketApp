@@ -11,50 +11,62 @@ const Login=Loadable({
     loader:()=>import('../views/login'),
     loading:Loading
 })
+
 const Pages=Loadable({
     loader:()=>import('../views/indexPage'),
     loading:Loading
 })
+
 const Page=Loadable({
     loader:()=>import('../views/pages/page'),
     loading:Loading
 })
+
 const Special=Loadable({
     loader:()=>import('../views/pages/special'),
     loading:Loading
 })
+
 const Classify=Loadable({
     loader:()=>import('../views/classify'),
     loading:Loading
 })
+
 const Shopping=Loadable({
     loader:()=>import('../views/pages/shopping'),
     loading:Loading
 })
+
 const My=Loadable({
     loader:()=>import('../views/pages/my'),
     loading:Loading
 })
+
 const TopicalDetail=Loadable({
     loader:()=>import("../views/pages/special/topicalDetail"),
     loading:Loading
 })
+
 const TopicalComment=Loadable({
     loader:()=>import("../views/pages/special/allRelated"),
     loading:Loading
 })
+
 const TopicCommentWrite=Loadable({
     loader:()=>import("../views/pages/special/topicCommentWrite"),
     loading:Loading
 })
+
 const Collectdetail=Loadable({
     loader:()=>import("../views/pages/my/collectdetail"),
     loading:Loading
 })
+
 const Addressdetail=Loadable({
     loader:()=>import("../views/pages/my/addressdetail"),
     loading:Loading
 })
+
 const GoodsSearch=Loadable({
     loader:()=>import("../views/classify/goodsSearch/index"),
     loading:Loading
@@ -64,14 +76,17 @@ const Catego=Loadable({
     loader:()=>import('../views/classify/categoItem/categoItem'),
     loading:Loading
 })
+
 const ProductDetail=Loadable({
     loader:()=>import('../views/classify/productDetail/productDetail'),
     loading:Loading
 })
+
 const Brandetail=Loadable({
     loader:()=>import("../components/page/brand/brandetail"),
     loading:Loading
 })
+
 const routes = [{
     path: '/login',
     component: Login
