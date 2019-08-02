@@ -13,6 +13,7 @@ class CategoContent extends Component {
     }
     render() {
         let data=this.props.classify.categoryChild
+        console.log(data)
         return (
             <div className="Catego_Content">
                  <div className="Catego_banner" style={{backgroundImage:`url(${data&&data.banner_url})`,backgroundSize:"100%"}}>
@@ -26,7 +27,7 @@ class CategoContent extends Component {
                      </div>
                  </div>
                  <div className="sub_content">
-                    {data&&data.subCategoryList.map((item,index)=>{
+                    {data.subCategoryList&&data.subCategoryList.map((item,index)=>{
                         return <CategoItem key={item.id} item={item} id={data.id}></CategoItem>
                      })}
                  </div>

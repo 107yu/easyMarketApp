@@ -1,12 +1,6 @@
 import axios from 'axios'
 const instance = axios.create({
-<<<<<<< HEAD
-
-  baseURL: 'http://169.254.32.130:8888',
-
-=======
   baseURL: 'http://169.254.12.157:8888',
->>>>>>> e5098e5e721e45f76cd13f5ff5e0ca260e21adb6
   // withCredentials: true, 
   timeout: 5000 // request timeout
 })
