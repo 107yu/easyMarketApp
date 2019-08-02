@@ -6,20 +6,14 @@ export default class ShopCar{
     @observable allChecked=false; //非编辑状态的---全选---反选状态
     @observable checkedList=[];//选中状态的数据
     @observable doAllChecked=false //编辑状态的全选---反选状态:
-    //登陆之后改变状态
-    @action changeLogin(){
-         this.isLogin=true
+    @action init=()=>{
+        this.shopList={};
     }
     //获取购物车列表--添加是否编辑状态--初始化false
     @action getShopCarList= async ()=>{
         let data=await  getShopCar()
-        if(data.errno===401){
-            this.isLogin=false
-           return;
-        }
-        this.isLogin=true;
+        this.shopList=data;
         if(data.cartList){
-            this.shopList=data;
             let flag= this.shopList.cartList.every(item=>item.checked===1)
             this.allChecked=flag
             //给每一条数据添加编辑状态的是否选中状态：

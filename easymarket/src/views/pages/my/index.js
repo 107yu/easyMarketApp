@@ -6,6 +6,7 @@ class My extends React.Component {
     constructor() {
         super()
         this.state = {
+            isLogin:false,
             myList: [{
                 icon: 'icon-wenjianjia',
                 name: '我的收藏',
@@ -47,7 +48,25 @@ class My extends React.Component {
             }]
         }
     }
+    componentDidMount(){
+         let token=localStorage.getItem("token")
+         if(token){
+             this.setState({
+                 isLogin:true
+             })
+         }
+         else{
+             this.setState({
+                 isLogin:false
+             })
+         }
+    }
     showPower(item) {
+        let token=localStorage.getItem("token")
+       if(!token){
+           this.props.history.push({pathname:"/login"})
+           return;
+       }
         if ('link' in item) {
             this.props.history.push(item.link)
         } else {
@@ -55,17 +74,27 @@ class My extends React.Component {
         }
     }
     loginout(){
-        window.localStorage.removeItem('token')
-        this.props.history.push({pathname:'/login'})
+        let {isLogin}=this.state;
+        if(isLogin){
+          window.localStorage.removeItem('token')
+          window.localStorage.removeItem('info')
+        }
+        else{
+          this.props.history.push('/login')
+        }
+        this.setState({
+          isLogin:!isLogin
+        })
     }
     render() {
-        const { myList } = this.state
+        const { myList,isLogin } = this.state
+        let info=localStorage.getItem("info")
         return <div className='tabPageContent'>
             <div id='minePage'>
                 <div className='userMsgWrap'>
                     <div className='userLogo'></div>
                     <div className='userMsgs'>
-                        <div>15023807318</div>
+                        <div>{info}</div>
                         <div>普通用户</div>
                     </div>
                 </div>
@@ -81,7 +110,11 @@ class My extends React.Component {
                 }
                 <div className='loginOut' onClick={()=>{
                     this.loginout()
-                }}>退出登录</div>
+                }}>
+                {
+                    isLogin?"退出登录":"登录"
+                }
+                </div>
             </div>
         </div>
     }
