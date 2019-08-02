@@ -7,13 +7,13 @@ import { Button} from 'antd-mobile';
 class Login extends React.Component{
     constructor(){
         super()
-        this.getInfomation=this.getInfomation.bind(this)
         this.valRef=React.createRef()
         this.pwdRef=React.createRef()
     }
     componentDidMount(){
         if(localStorage.getItem("token")){
-            this.props.history.push("/pages/page")
+            // this.props.history.push("/pages/page")
+            this.props.history.goBack()
         }
     }
     getInfomation(){
@@ -25,7 +25,9 @@ class Login extends React.Component{
     }
     render(){
         if(this.props.login.isLogin===0){
-            this.props.history.push("/pages/page")
+            // this.props.history.push("/pages/page")
+             this.props.history.goBack()
+            this.props.login.clear()
             return null;
         }
         return <div className="login_page">

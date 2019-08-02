@@ -14,12 +14,10 @@ class Shopping extends React.Component{
         this.state={
             edit:false
         }
-        
     }
     componentDidMount(){
         //初始化购物车
         this.props.shopCar.getShopCarList()
-        console.log(this)
     }
     //改变编辑状态-编辑or完成：
     changeEdit(){
@@ -90,14 +88,24 @@ class Shopping extends React.Component{
     }
     //跳详情：
     goToDetail(id){
-        this.props.history.push(`/productDetail?id=${id}`) 
+         this.props.history.push(`/productDetail/${id}`) 
     }
     render(){
+        if(this.props.shopCar.shopList.errno===401){
+            this.props.history.push({pathname:"/login"})
+            this.props.shopCar.init()
+            return null;
+        }
         let{ cartList,cartTotal}=this.props.shopCar.shopList;
         let {allChecked,doAllChecked}=this.props.shopCar
         let {edit}=this.state
         //要删除商品的个数
         let deleteNum=cartList&&cartList.filter(item=>item.isDelete)
+        // //如果没有登录--to login
+        // if(!this.props.shopCar.isLogin){
+        //    this.props.history.push("/login")
+        //    this.props.shopCar.changeLogin()
+        // }
         return <div className="shopCar">
             <div className="shopCar_header">
                <span><b>★</b>30天无忧退货</span>
@@ -118,7 +126,7 @@ class Shopping extends React.Component{
                                             }
                                             </div>
                                             <div className="shopCar_item_img">
-                                                <img src={item.list_pic_url} alt="" onClick={()=>{this.goToDetail(item.id)}}/>
+                                                <img src={item.list_pic_url} alt="" onClick={()=>{this.goToDetail(item.goods_id)}}/>
                                             </div>
                                             {
                                                 !edit?<><div className="shopCar_item_msg">

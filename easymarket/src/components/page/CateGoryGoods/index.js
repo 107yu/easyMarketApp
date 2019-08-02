@@ -2,7 +2,6 @@ import React from 'react'
 import './index.scss'
 import {withRouter} from "react-router-dom"
 import Lazyimg, { withLazyimg } from 'react-lazyimg-component';
-// 引入 volecity.js
 import 'velocity-animate';
 import 'velocity-animate/velocity.ui';
 
