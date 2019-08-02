@@ -2,12 +2,14 @@ import {observable,action} from "mobx"
 import {getTypeInit,getClassifyNav,getClassifyChild,getproductInfo} from "../../services/index"
 
 class Classify{
-    @observable categoryList;
-    @observable categoryChild;
+    @observable categoryList=[];
+    @observable categoryChild=[];
+    @observable NavInfo=[];
 
+    // 分类数据
     @observable ProductInfo=[];
-
-    @observable NavInfo;
+    @observable page = 1;
+    @observable hasMore = false;
 
 
     //分类页左侧导航
@@ -34,16 +36,19 @@ class Classify{
     /**
      * 子分类页点击导航数据
      */
-    @action getproduct_Info(id,size,page){
-        getproductInfo(id,size,page).then(res=>{
-            this.ProductInfo=res.data
-            // if(!this.ProductInfo.length){
-            //     this.ProductInfo=res.data
-            // }else{
-            //     this.ProductInfo.push(...res.data)
-            // }
-            
-        })
+    @action getproduct_Info = async (id,page,size=10)=>{
+        const data = await getproductInfo(id, size, page);
+
+        // 更新page
+        this.page = page;
+        // 判断数据是追加还是替换
+        if (page == 1){
+            this.ProductInfo = data.data;
+        }else{
+            this.ProductInfo = [...this.ProductInfo, ...data.data];
+        }
+        // 判断是否还有更多
+        this.hasMore = data.totalPages == page;
     }
 }
 export default Classify

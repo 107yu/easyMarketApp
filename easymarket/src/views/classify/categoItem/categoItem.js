@@ -17,63 +17,86 @@ import "./categoItem.scss"
             size:10,
             categoScroll:null,
             id:Number(categoId),
-            info:"上拉加载...",
             flag:false,
             pflag:false
         }
         this.catego = React.createRef();
     }
+
     componentDidMount(){
         //获取id
         let categoId=this.props.match.params.id
         let obj=JSON.parse(sessionStorage.getItem("categoInfo"));
-        this.props.classify.getClassify_Nav(categoId)
-        this.props.classify.getproduct_Info(obj.id.toString(),this.state.size,this.state.page) 
+        this.props.classify.getClassify_Nav(categoId).then(res=>{
+            console.log(this.catego.current);
+        })
+        this.props.classify.getproduct_Info(obj.id.toString(), this.props.classify.page) 
         this.props.classify.getinfo(categoId)
-        //实例化scroll
-        let el=this.catego.current;
+       
         this.setState({
-            categoScroll:new BScroll(el,{
-                click:true,
-                probeType:2 
-            }),
             id:Number(categoId)
         })  
-        let that=this
-        setTimeout(()=>{
-            //滚动开始
-            that.state.categoScroll.on("scroll",function(){
-                if(this.y<this.maxScrollY-40){
-                    that.setState({
-                        flag:true,
-                        info:"释放刷新"
-                    })
-                }else{
-                    that.setState({
-                        flag:false,
-                        info:"上拉加载..."
-                    })
-                }
-            })
-            //滚动结束事件
-            that.state.categoScroll.on("scrollEnd",function(){
-                if(that.state.flag){
-                    that.state.page++;
-                    console.log(that.state.page++)
-                    that.props.classify.getproduct_Info(obj.id,that.state.size,that.state.page) 
-                    this.refresh()
-                }
-            })
-        })
     }
+
+    componentDidUpdate(){
+        if (this.catego.current && !this.scroll){
+            let obj=JSON.parse(sessionStorage.getItem("categoInfo"));
+            let {getproduct_Info, page} = this.props.classify;
+
+            //实例化scroll
+            let el=this.catego.current;
+            // 初始化better-scroll
+            this.scroll = new BScroll(el,{
+                click:true,
+                probeType:2,
+                pullDownRefresh: {
+                    threshold: 50,
+                    stop: 20
+                },
+                pullUpLoad: {
+                    threshold: 50
+                },
+                pullingDown: async function(){
+                    console.log(123);
+                    // 下拉刷新
+                    await getproduct_Info(obj.id, 1)
+                    this.finishPullDown()
+                },
+                pullingUp: async function(){
+                    console.log(456);
+                    // 上拉加载
+                    
+                }
+            });
+            this.scroll.on('pullingUp', async ()=>{
+                // 拼接上拉后续请求参数
+                console.log('pullingup')
+                await getproduct_Info(obj.id, this.props.classify.page+1)
+                this.scroll.finishPullUp();
+            })
+
+            this.scroll.on('pullingDown', async ()=>{
+                // 拼接下拉后续请求参数
+                console.log('pullingDown')
+                await getproduct_Info(obj.id, 1)
+                this.scroll.finishPullDown()
+            })
+        }
+    }
+
+    // 分类切换
     changeCon(id,ind){
         this.setState({
             ind:ind,
             id:id
         })
-        this.props.classify.getproduct_Info(id)
+        this.props.classify.getproduct_Info(id, 1);
     }
+
     render() {
+        if (!this.props.classify.NavInfo.length){
+            return null;
+        }
         return (
             <div className="catego_wrapper">
                 <Header title={"奇趣分类"} flag={true} path={"/pages/classify"}></Header>
@@ -97,7 +120,7 @@ import "./categoItem.scss"
                                 })}
                             </div>
                         </div>
-                        <p className="info_box" style={this.props.classify.ProductInfo?{display:"block"}:{display:"none"}}>{this.state.info}</p>
+                        {this.props.classify.hasMore?<p className="info_box" style={this.props.classify.ProductInfo?{display:"block"}:{display:"none"}}>上拉加载...</p>: null}
                     </div>
                 </div>
             </div>
