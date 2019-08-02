@@ -3,8 +3,8 @@ import './index.scss'
 import {withRouter} from "react-router-dom"
 import Lazyimg, { withLazyimg } from 'react-lazyimg-component';
 // // 引入 volecity.js
-// import 'velocity-animate';
-// import 'velocity-animate/velocity.ui';
+import 'velocity-animate';
+import 'velocity-animate/velocity.ui';
 
 
 class CateGoryGoods extends React.Component {
