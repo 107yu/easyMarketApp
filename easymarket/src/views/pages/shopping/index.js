@@ -85,7 +85,7 @@ class Shopping extends React.Component{
     }
     //跳详情：
     goToDetail(id){
-        this.props.history.push(`/productDetail?id=${id}`) 
+         this.props.history.push(`/productDetail/${id}`) 
     }
     render(){
         if(this.props.shopCar.shopList.errno===401){
@@ -118,7 +118,7 @@ class Shopping extends React.Component{
                                             }
                                             </div>
                                             <div className="shopCar_item_img">
-                                                <img src={item.list_pic_url} alt="" onClick={()=>{this.goToDetail(item.id)}}/>
+                                                <img src={item.list_pic_url} alt="" onClick={()=>{this.goToDetail(item.goods_id)}}/>
                                             </div>
                                             {
                                                 !edit?<><div className="shopCar_item_msg">
