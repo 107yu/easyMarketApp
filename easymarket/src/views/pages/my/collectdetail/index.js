@@ -31,7 +31,6 @@ class Collectdetail extends React.Component {
         <div className="touch_content">
           {
             getcollectList && getcollectList.map((item,index)=>{
-              console.log(item)
                 return  <SwipeAction
                     key={index}
                     autoClose
