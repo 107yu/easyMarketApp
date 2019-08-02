@@ -1,7 +1,12 @@
 import React from 'react'
 import './index.scss'
 import {withRouter} from "react-router-dom"
-import ImgLazyload from "../../../components/ImgLoading/ImgLoading"
+import Lazyimg, { withLazyimg } from 'react-lazyimg-component';
+// 引入 volecity.js
+import 'velocity-animate';
+import 'velocity-animate/velocity.ui';
+
+
 class CateGoryGoods extends React.Component {
     goTo(item){
         sessionStorage.setItem("productId",JSON.stringify({id:item.id}))
@@ -14,6 +19,13 @@ class CateGoryGoods extends React.Component {
     }
     render() {
         let { categoryList } = this.props
+        // 配置
+        const config = {
+            js_effect: 'transition.shrinkIn', // 支持 velocity.js 动画效果
+            threshold: 10000,
+            placeholder:"http://downza.img.zz314.com/news/pc/rdtj-1023/2018-03-06/794b93b77c3cb7c5a9343267be9f9e7a.png",
+        };
+        const Lazy = withLazyimg(config);
         return <div className='cateGoryBox'>
             {
                 categoryList && categoryList.map((item, index) => {
@@ -24,7 +36,10 @@ class CateGoryGoods extends React.Component {
                                 item.goodsList.map((item, index) => {
                                     return <a key={index}>
                                         <div className='goodsItemImg' onClick={()=>{this.goTo(item)}}>
-                                            <ImgLazyload imgSrc={item.list_pic_url}></ImgLazyload>
+                                        <Lazy
+                                            className="lazy"
+                                            src={item.list_pic_url}
+                                        />
                                         </div>
                                         <div className='goodsItemName'>{item.name}</div>
                                         <div className='goodsItemPrice'>￥{item.retail_price}</div>

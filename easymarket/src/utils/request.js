@@ -1,7 +1,11 @@
 import axios from 'axios'
 const instance = axios.create({
 
+<<<<<<< HEAD
   baseURL: 'http://169.254.12.157:8888',
+=======
+  baseURL: 'http://169.254.12.174:8888',
+>>>>>>> a25c235a44666b4dd0fd09d1e3c458b4a39813c2
 
   // withCredentials: true, 
   timeout: 5000 // request timeout

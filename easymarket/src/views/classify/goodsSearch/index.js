@@ -142,13 +142,6 @@ import ProductItem from "../../../components/productItem/index"
             })
         }
     }
-    /**
-     * 价格升序降序
-     */
-    changePrice(){
-
-    }
-
     render() {
         let {defaultKeyword,historyKeywordList,hotKeywordList,searchList}=this.props.search
         return (

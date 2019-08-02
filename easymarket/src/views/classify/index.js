@@ -1,8 +1,9 @@
 import React from 'react';
 import {inject,observer} from "mobx-react"
 import CategogContent from "../../components/classify/index"
+import Loading from "../../components/common/Loading"
 import "./classify.scss"
-@inject("classify")
+@inject("classify","loading")
 @observer
 class Classify extends React.Component{
     constructor(){
@@ -13,15 +14,19 @@ class Classify extends React.Component{
     }
     componentDidMount(){
         //获取分类页数据
+        this.props.loading.changeLoading(true);
         this.props.classify.getClassify_data()
         this.props.classify.getClassify_Nav(1005000)
+        this.props.loading.changeLoading(false);
     }
     changeStyle(ind,id){
         //点击左侧菜单切换样式
+        this.props.loading.changeLoading(true);
         this.setState({
             ind:ind
         })
         this.props.classify.getClassify_Nav(id)
+        this.props.loading.changeLoading(false);
     }
     //点击跳转搜索页面
     goToSearch(){

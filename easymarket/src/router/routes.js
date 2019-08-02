@@ -3,7 +3,7 @@ import Loadable from "react-loadable"
 import { Toast} from 'antd-mobile';
 function Loading(){
     return <div className="loading">
-      { Toast.loading('loading',1)}
+      {/* { Toast.loading('loading',1)} */}
     </div>
 }
 
