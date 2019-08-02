@@ -14,12 +14,10 @@ class Shopping extends React.Component{
         this.state={
             edit:false
         }
-        
     }
     componentDidMount(){
         //初始化购物车
         this.props.shopCar.getShopCarList()
-        console.log(this)
     }
     //改变编辑状态-编辑or完成：
     changeEdit(){
@@ -108,7 +106,6 @@ class Shopping extends React.Component{
         //    this.props.history.push("/login")
         //    this.props.shopCar.changeLogin()
         // }
-        console.log("islogin",this.props.shopCar.isLogin)
         return <div className="shopCar">
             <div className="shopCar_header">
                <span><b>★</b>30天无忧退货</span>
