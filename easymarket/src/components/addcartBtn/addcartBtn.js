@@ -8,14 +8,16 @@ class AddcartBtn extends Component {
     addCart(){
         let {productInfo}=this.props.product;
         let data=productInfo.productList.filter((item)=>{
-            return item.goods_specification_ids===`${this.props.addCart.colorId.id}_${this.props.addCart.attarId.id}`
+            console.log(item,"item",this.props.addCart.colorId)
+            return item.goods_specification_ids===`${this.props.addCart.colorId&&this.props.addCart.colorId.id}_${this.props.addCart.attarId&&this.props.addCart.attarId.id}`
         })
-        if(data&&data[0].goods_number>this.props.addCart.number){
+        //如果需要选择产品规格
+        if(data.length&&data[0].goods_number>this.props.addCart.number){
             this.props.addCart.addGoods({goodsId:productInfo.info.id+"",number:this.props.addCart.number,productId:data&&data[0].id})
         }else{
-            alert("error")
-        }
-        
+        //只有一种规格
+            this.props.addCart.addGoods({goodsId:productInfo.info.id+"",number:this.props.addCart.number,productId:productInfo.productList[0].id})
+        }  
     }
     render() {
         return (
