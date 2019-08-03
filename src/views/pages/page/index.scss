@@ -1,0 +1,77 @@
+.page{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.channelWrap{
+        width: 100%;
+        height: 1.4rem;
+        padding: .1rem 0;
+        background: white;
+        display: flex;
+        a{
+            color: #000;
+        }
+        .channelItem{
+            width: 20%;
+            height: 100%;
+            img{
+                    height: 80%;
+                    display: block;
+                    padding: .2rem;
+                    margin: auto;
+            }
+            div{
+                height: 20%;
+                font-size: .24rem;
+                text-align: center;
+            }
+        }
+}
+
+.hotGoodsBox{
+    margin-top: .2rem;
+    background: white;
+    .hotGoodsTitle{
+            height: 1rem;
+            background: white;
+            text-align: center;
+            font-size: .3rem;
+            line-height: 1rem;
+            letter-spacing: .02rem;
+            font-weight: bold;
+    }
+   
+    .newGoodsWrap{
+        width: 100%;
+        padding: 0 .2rem;
+        min-height: 150px;
+        .hotGoodsItem{
+            height: 3rem;
+            position: relative;
+            padding: 0.1rem 0;
+            display: flex;
+            img{
+                    width: auto;
+                    height: 100%;
+            }
+            .hotGoodsInfos{
+                    flex: 1 1;
+                    padding: 0.5rem 0;
+                    .hotGoodsName{
+                        font-size: .32rem;
+                        color: #000;
+                    }
+                    .hotGoodsInfo{
+                        color: darkgray;
+                        font-size: .28rem;
+                    }
+                    .hotGoodsPrice{
+                            color: darkred;
+                            font-size: .3rem;
+                    }
+            }
+        }
+    }
+}
