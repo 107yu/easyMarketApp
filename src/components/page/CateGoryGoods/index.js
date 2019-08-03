@@ -10,7 +10,6 @@ class CateGoryGoods extends React.Component {
     goTo(item){
         sessionStorage.setItem("productId",JSON.stringify({id:item.id}))
         this.props.history.push(`/productDetail/${item.id}`) 
-      
     }
     goTopage(item){
         sessionStorage.setItem("categoInfo",JSON.stringify({id:item.id,categoId:item.id}))
@@ -59,37 +58,3 @@ class CateGoryGoods extends React.Component {
 
 export default withRouter(CateGoryGoods)
 
-
-
-
-// <div className='cateGoryName'>居家</div>
-//             <div className='cateGoryGoodsWrap'>
-//                 <a>
-//                     <div className='goodsItemImg'>
-//                         <img src="http://yanxuan.nosdn.127.net/149dfa87a7324e184c5526ead81de9ad.png" alt="" />
-//                     </div>
-//                     <div className='goodsItemName'>日式和风懒人沙发</div>
-//                     <div className='goodsItemPrice'>￥599</div>
-//                 </a>
-//                 <a>
-//                     <div className='goodsItemImg'>
-//                         <img src="http://yanxuan.nosdn.127.net/149dfa87a7324e184c5526ead81de9ad.png" alt="" />
-//                     </div>
-//                     <div className='goodsItemName'>日式和风懒人沙发</div>
-//                     <div className='goodsItemPrice'>￥599</div>
-//                 </a>
-//                 <a>
-//                     <div className='goodsItemImg'>
-//                         <img src="http://yanxuan.nosdn.127.net/149dfa87a7324e184c5526ead81de9ad.png" alt="" />
-//                     </div>
-//                     <div className='goodsItemName'>日式和风懒人沙发</div>
-//                     <div className='goodsItemPrice'>￥599</div>
-//                 </a>
-//                 <a>
-//                     <div className='goodsItemImg'>
-//                         <img src="http://yanxuan.nosdn.127.net/149dfa87a7324e184c5526ead81de9ad.png" alt="" />
-//                     </div>
-//                     <div className='goodsItemName'>日式和风懒人沙发</div>
-//                     <div className='goodsItemPrice'>￥599</div>
-//                 </a>
-//             </div>

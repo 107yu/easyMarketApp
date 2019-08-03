@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss'
+import { Link } from 'react-router-dom'
 import { Carousel, WingBlank } from 'antd-mobile';
 import Lazyimg, { withLazyimg } from 'react-lazyimg-component';
 // 引入 volecity.js
@@ -25,13 +26,12 @@ class TopGoods extends React.Component {
                 afterChange={index => this.setState({ slideIndex: index })}
             >
                 {this.props.topicList && this.props.topicList.map((val, index) => (
-                    <a
+                    <Link to={`/topicalDetail/` + val.id}
                         key={val.id}
                         style={{
                             display: 'block',
                             position: 'relative',
                             height: this.state.imgHeight,
-                       
                         }}
                     >
                         <img className='img'
@@ -47,7 +47,7 @@ class TopGoods extends React.Component {
                             <span className='topGoodPrice'>￥{val.price_info}元起</span>
                         </div>
                         <div className='topGoodTitle'>{val.subtitle}</div>
-                    </a>
+                    </Link>
                 ))}
             </Carousel>
         </WingBlank>

@@ -1,7 +1,6 @@
 import axios from 'axios'
 const instance = axios.create({
-  baseURL: 'http://169.254.12.157:8888',
-  // withCredentials: true, 
+  baseURL: 'http://169.254.32.130:8888',
   timeout: 5000 // request timeout
 })
 const getNewHeaders = () =>{

@@ -21,13 +21,11 @@ class Touch extends React.Component {
             this.setState({
                 hidden:true
             })
-            // this.props.changeHidden(true)
         }
         else{
             this.setState({
                 hidden:false
             })
-            // this.props.changeHidden(false)
         }
     }
     delete(){
@@ -35,10 +33,8 @@ class Touch extends React.Component {
         this.setState({
             hidden:true
         })
-        // this.props.changeHidden(true)
     }
     render() {
-        // let {hidden}=this.props;
         let {hidden}=this.state;
         return (
                 <div  className='touchClear' 

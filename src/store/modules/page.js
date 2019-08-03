@@ -7,6 +7,7 @@ export default class Page{
     @action getpageData=  (info)=>{
         getpage(info).then(res => {
            this.getpageList=res
+           console.log(res)
         })
     }
 }

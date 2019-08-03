@@ -19,7 +19,6 @@ class Addcart{
     //点击加
     @action  add(params){
         this.number++
-        
     }
     @action change(){
         this.number=0;

@@ -50,5 +50,10 @@ class Classify{
         // 判断是否还有更多
         this.hasMore = data.totalPages == page;
     }
+    @action getproduct_Info(id,size,page){
+        getproductInfo(id,size,page).then(res=>{
+            this.ProductInfo=res.data
+        })
+    }
 }
 export default Classify

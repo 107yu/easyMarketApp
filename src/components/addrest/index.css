@@ -30,3 +30,19 @@
   background: #FFF;
   color: #000;
 }
+
+.addressPage_header {
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  background: #fff;
+  border-bottom: .01rem solid #ccc;
+}
+
+.onePx_bottom {
+  border-bottom: .01rem solid #ccc;
+}
+
+.am-list-extra {
+  display: none;
+}

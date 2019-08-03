@@ -43,14 +43,14 @@ class Collectdetail extends React.Component {
                     ]}
                   >
                     <List.Item>
-                      <div  className='touch_list' >
+                      <Link to={`/productDetail/` + item.id} className='touch_list' >
                         <div className='touch_list_img'><img src={item.list_pic_url} alt="" /> </div>
                         <div className='touch_list_msg'>
                             <div>{item.name}</div>
                             <div>{item.goods_brief}</div>
                             <div>￥{item.retail_price}元</div>
                         </div>
-                    </div>
+                    </Link>
                   </List.Item>
                 </SwipeAction>
               })
@@ -61,15 +61,3 @@ class Collectdetail extends React.Component {
   }
 }
 export default Collectdetail
-// {
-//   getcollectList && getcollectList.map((item,index)=>{
-//       return <Touch 
-//               key={index}
-//               src={item.list_pic_url} 
-//               name={item.name} 
-//               goods_brief={item.goods_brief}
-//               retail_price={item.retail_price}
-//               changeCollect={()=>{this.changeCollect(item)}}
-//               ></Touch>
-//       })
-//   }
