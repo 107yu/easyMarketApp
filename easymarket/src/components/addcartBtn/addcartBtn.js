@@ -15,7 +15,6 @@ class AddcartBtn extends Component {
         }else{
             alert("error")
         }
-        
     }
     render() {
         return (

@@ -27,10 +27,10 @@ class Page extends React.Component {
         })
     }
     render() {
-        let { brandList, newGoodsList, hotGoodsList, topicList, categoryList, channel } = this.props.page.getpageList;
+        let {banner, brandList, newGoodsList, hotGoodsList, topicList, categoryList, channel } = this.props.page.getpageList;
         return <div className='page' ref={this.wrapper}>
                 <div>
-                    <Carousel></Carousel>
+                    <Carousel banner={banner}></Carousel>
                     <div className='channelWrap'>
                         {
                             channel && channel.map((item, index) => {

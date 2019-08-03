@@ -43,14 +43,14 @@ class Collectdetail extends React.Component {
                     ]}
                   >
                     <List.Item>
-                      <div  className='touch_list' >
+                      <Link to={`/productDetail/` + item.id} className='touch_list' >
                         <div className='touch_list_img'><img src={item.list_pic_url} alt="" /> </div>
                         <div className='touch_list_msg'>
                             <div>{item.name}</div>
                             <div>{item.goods_brief}</div>
                             <div>￥{item.retail_price}元</div>
                         </div>
-                    </div>
+                    </Link>
                   </List.Item>
                 </SwipeAction>
               })

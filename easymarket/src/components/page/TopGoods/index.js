@@ -27,7 +27,6 @@ class TopGoods extends React.Component {
                             display: 'block',
                             position: 'relative',
                             height: this.state.imgHeight,
-                       
                         }}
                     >
                         <img className='img'

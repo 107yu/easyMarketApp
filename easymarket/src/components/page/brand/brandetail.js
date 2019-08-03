@@ -11,7 +11,7 @@ class Brandetail extends React.Component {
     componentDidMount() {
         this.props.brandetail.getbrandData({ id: this.props.match.params.id })
     }
-    render() {
+    render() {       
         let { getbrandList } = this.props.brandetail;
         return <div className='brandetail'>
             <header className='headers'>
@@ -23,7 +23,7 @@ class Brandetail extends React.Component {
                 <img src={getbrandList.list_pic_url} alt="" />
                 <p className='breadDesc'>{getbrandList.simple_desc}</p>
             </div>
-        </div>
+        </div>                  
     }
 }
 

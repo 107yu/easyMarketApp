@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import {inject,observer} from "mobx-react"
 import CategoItem from "../../components/catego_Item/index"
 import "./classify.scss"
-// import { Item } from '_antd-mobile@2.2.14@antd-mobile/lib/tab-bar';
-// import { url } from 'inspector';
 @inject("classify")
 @observer
 
